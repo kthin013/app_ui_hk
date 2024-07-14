@@ -1,0 +1,15 @@
+.main-container {
+	padding: 20rpx 24rpx 0rpx 24rpx;
+}
+
+@font-face {
+	font-family: Manrope;
+	src: url('~@/static/font/Manrope-VariableFont_wght.ttf');
+}
+
+.title-text-24 {
+	font-family: Manrope;
+	font-size: 24rpx;
+	font-weight: 700;
+	line-height: 36rpx;
+}
