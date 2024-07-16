@@ -1,0 +1,31 @@
+.main-container {
+	padding: 2.89017341vh 6.4vw 0vh 6.4vw;
+	font-size: 10px;
+}
+
+@font-face {
+	font-family: Manrope;
+	src: url('~@/static/font/Manrope-VariableFont_wght.ttf');
+}
+
+@font-face {
+	font-family: Urbanist;
+	src: url('~@/static/font/Urbanist-VariableFont_wght.ttf');
+}
+
+.title-text-24 {
+	font-family: Manrope;
+	font-size: 6.4vw;
+	font-weight: 700;
+	line-height: 9.6vw;
+}
+
+.next-button-text-20 {
+	font-family: Urbanist;
+	font-size: 1.1em;
+	color: white;
+	font-weight: 800;
+	line-height: 1.3em;
+}
+
+/* 375 * 86 + 375 * 692 + 375 * 34 */
