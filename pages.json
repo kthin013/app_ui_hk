@@ -3,14 +3,25 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": ""
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton": true,
+						"backButton": {
+							"color": "#161616",
+							"fontSize": "24px"
+						}
+					}
+				},
+				"navigationBarShadow": {
+					"colorType": "grey"
+				}
 			}
 		}
 	],
 	"globalStyle": {
+		// "navigationBarBackgroundColor": "#ffffff",
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "",
-		"navigationBarBackgroundColor": "#ffffff",
 		"backgroundColor": "#ffffff"
 	},
 	"uniIdRouter": {}

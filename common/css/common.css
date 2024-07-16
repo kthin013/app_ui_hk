@@ -13,15 +13,21 @@
 	src: url('~@/static/font/Urbanist-VariableFont_wght.ttf');
 }
 
+@font-face {
+	font-family: Avenir;
+	src: url('~@/static/font/Avenir Regular.ttf');
+}
+
+
 .title-text-24 {
-	font-family: Manrope;
+	font-family: Avenir;
 	font-size: 6.4vw;
 	font-weight: 700;
 	line-height: 9.6vw;
 }
 
 .next-button-text-20 {
-	font-family: Urbanist;
+	font-family: Avenir;
 	font-size: 1.1em;
 	color: white;
 	font-weight: 800;

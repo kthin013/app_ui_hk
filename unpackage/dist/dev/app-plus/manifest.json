@@ -73,7 +73,7 @@
     "statusbar": {
       "immersed": "supportedDevice",
       "style": "dark",
-      "background": "#F8F8F8"
+      "background": "#000000"
     },
     "uniStatistics": {
       "enable": false

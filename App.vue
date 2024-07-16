@@ -14,4 +14,5 @@
 
 <style>
 	@import url('./common/css/common.css');
+	@import url('./static/icon/iconfont.css');
 </style>
