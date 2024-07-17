@@ -99,7 +99,7 @@
 	}
 
 	.resend-code-text {
-		margin-top: 1.74vh;
+		margin-top: 2.74vh;
 		font-family: Avenir;
 		font-weight: 700;
 		font-size: 3.7vw;
@@ -112,12 +112,16 @@
 		border-radius: 8.5vw 8.5vw 0 0;
 
 		.wd-number-keyboard__body {
-			height: 100%;
-			padding: 1.5vh;
+			height: 95%;
+			padding: 1.3vh 1.5vw;
 
 			.wd-key {
-				background-color: #F9F9F9 !important;
+				background-color: #F9F9F9;
 				height: 100%;
+			}
+
+			.wd-key:active {
+				background-color: #e2e2e2;
 			}
 		}
 	}

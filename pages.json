@@ -8,6 +8,7 @@
 			// 			"autoBackButton": true,
 			// 			"backButton": {
 			// 				"color": "#161616",
+			//				"fontWeight": "bold",
 			// 				"fontSize": "24px"
 			// 			}
 			// 		}
@@ -23,7 +24,8 @@
 						"autoBackButton": true,
 						"backButton": {
 							"color": "#161616",
-							"fontSize": "24px"
+							"fontWeight": "bold",
+							"fontSize": "28px"
 						}
 					}
 				},
