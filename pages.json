@@ -1,7 +1,22 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			// "path": "pages/index/index",
+			// "style": {
+			// 	"app-plus": {
+			// 		"titleNView": {
+			// 			"autoBackButton": true,
+			// 			"backButton": {
+			// 				"color": "#161616",
+			// 				"fontSize": "24px"
+			// 			}
+			// 		}
+			// 	},
+			// 	"navigationBarShadow": {
+			// 		"colorType": "grey"
+			// 	}
+			// },
+			"path": "pages/optLoginPage",
 			"style": {
 				"app-plus": {
 					"titleNView": {
