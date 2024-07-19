@@ -16,6 +16,11 @@
 	font-family: Avenir;
 	src: url('static/font/Avenir Regular.ttf');
 }
+.custom-nav-bar .uni-icons.uniui-left {
+	color: #161616 !important;
+	font-weight: 500 !important;
+	font-size: 28px !important;
+}
 .title-text-24 {
 	font-family: Avenir;
 	font-size: 6.4vw;
@@ -33,9 +38,9 @@
 /* 375 * 86 + 375 * 692 + 375 * 34 */
 @font-face {
   font-family: "iconfont"; /* Project id 4622488 */
-  src: url('static/icon/iconfont.woff2?t=1721113746249') format('woff2'),
-       url('static/icon/iconfont.woff?t=1721113746249') format('woff'),
-       url('static/icon/iconfont.ttf?t=1721113746249') format('truetype');
+  src: url('static/icon/iconfont.woff2?t=1721379639650') format('woff2'),
+       url('static/icon/iconfont.woff?t=1721379639650') format('woff'),
+       url('static/icon/iconfont.ttf?t=1721379639650') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -43,6 +48,9 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-person:before {
+  content: "\e61a";
 }
 .icon-google:before {
   content: "\e87a";

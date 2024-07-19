@@ -41,6 +41,1036 @@ if (uni.restoreGlobal) {
   function resolveEasycom(component, easycom) {
     return typeof component === "string" ? easycom : component;
   }
+  const fontData = [
+    {
+      "font_class": "arrow-down",
+      "unicode": ""
+    },
+    {
+      "font_class": "arrow-left",
+      "unicode": ""
+    },
+    {
+      "font_class": "arrow-right",
+      "unicode": ""
+    },
+    {
+      "font_class": "arrow-up",
+      "unicode": ""
+    },
+    {
+      "font_class": "auth",
+      "unicode": ""
+    },
+    {
+      "font_class": "auth-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "back",
+      "unicode": ""
+    },
+    {
+      "font_class": "bars",
+      "unicode": ""
+    },
+    {
+      "font_class": "calendar",
+      "unicode": ""
+    },
+    {
+      "font_class": "calendar-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "camera",
+      "unicode": ""
+    },
+    {
+      "font_class": "camera-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "cart",
+      "unicode": ""
+    },
+    {
+      "font_class": "cart-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "chat",
+      "unicode": ""
+    },
+    {
+      "font_class": "chat-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatboxes",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatboxes-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatbubble",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatbubble-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "checkbox",
+      "unicode": ""
+    },
+    {
+      "font_class": "checkbox-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "checkmarkempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "circle",
+      "unicode": ""
+    },
+    {
+      "font_class": "circle-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "clear",
+      "unicode": ""
+    },
+    {
+      "font_class": "close",
+      "unicode": ""
+    },
+    {
+      "font_class": "closeempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-download",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-download-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-upload",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-upload-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "color",
+      "unicode": ""
+    },
+    {
+      "font_class": "color-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "compose",
+      "unicode": ""
+    },
+    {
+      "font_class": "contact",
+      "unicode": ""
+    },
+    {
+      "font_class": "contact-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "down",
+      "unicode": ""
+    },
+    {
+      "font_class": "bottom",
+      "unicode": ""
+    },
+    {
+      "font_class": "download",
+      "unicode": ""
+    },
+    {
+      "font_class": "download-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "email",
+      "unicode": ""
+    },
+    {
+      "font_class": "email-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye-slash",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye-slash-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "fire",
+      "unicode": ""
+    },
+    {
+      "font_class": "fire-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "flag",
+      "unicode": ""
+    },
+    {
+      "font_class": "flag-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "folder-add",
+      "unicode": ""
+    },
+    {
+      "font_class": "folder-add-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "font",
+      "unicode": ""
+    },
+    {
+      "font_class": "forward",
+      "unicode": ""
+    },
+    {
+      "font_class": "gear",
+      "unicode": ""
+    },
+    {
+      "font_class": "gear-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "gift",
+      "unicode": ""
+    },
+    {
+      "font_class": "gift-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-down",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-down-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-up",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-up-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "headphones",
+      "unicode": ""
+    },
+    {
+      "font_class": "heart",
+      "unicode": ""
+    },
+    {
+      "font_class": "heart-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "help",
+      "unicode": ""
+    },
+    {
+      "font_class": "help-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "home",
+      "unicode": ""
+    },
+    {
+      "font_class": "home-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "image",
+      "unicode": ""
+    },
+    {
+      "font_class": "image-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "images",
+      "unicode": ""
+    },
+    {
+      "font_class": "images-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "info",
+      "unicode": ""
+    },
+    {
+      "font_class": "info-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "left",
+      "unicode": ""
+    },
+    {
+      "font_class": "link",
+      "unicode": ""
+    },
+    {
+      "font_class": "list",
+      "unicode": ""
+    },
+    {
+      "font_class": "location",
+      "unicode": ""
+    },
+    {
+      "font_class": "location-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "locked",
+      "unicode": ""
+    },
+    {
+      "font_class": "locked-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "loop",
+      "unicode": ""
+    },
+    {
+      "font_class": "mail-open",
+      "unicode": ""
+    },
+    {
+      "font_class": "mail-open-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "map",
+      "unicode": ""
+    },
+    {
+      "font_class": "map-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "map-pin",
+      "unicode": ""
+    },
+    {
+      "font_class": "map-pin-ellipse",
+      "unicode": ""
+    },
+    {
+      "font_class": "medal",
+      "unicode": ""
+    },
+    {
+      "font_class": "medal-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "mic",
+      "unicode": ""
+    },
+    {
+      "font_class": "mic-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "micoff",
+      "unicode": ""
+    },
+    {
+      "font_class": "micoff-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "minus",
+      "unicode": ""
+    },
+    {
+      "font_class": "minus-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "more",
+      "unicode": ""
+    },
+    {
+      "font_class": "more-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "navigate",
+      "unicode": ""
+    },
+    {
+      "font_class": "navigate-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "notification",
+      "unicode": ""
+    },
+    {
+      "font_class": "notification-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "paperclip",
+      "unicode": ""
+    },
+    {
+      "font_class": "paperplane",
+      "unicode": ""
+    },
+    {
+      "font_class": "paperplane-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "person",
+      "unicode": ""
+    },
+    {
+      "font_class": "person-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "personadd",
+      "unicode": ""
+    },
+    {
+      "font_class": "personadd-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "personadd-filled-copy",
+      "unicode": ""
+    },
+    {
+      "font_class": "phone",
+      "unicode": ""
+    },
+    {
+      "font_class": "phone-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "plus",
+      "unicode": ""
+    },
+    {
+      "font_class": "plus-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "plusempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "pulldown",
+      "unicode": ""
+    },
+    {
+      "font_class": "pyq",
+      "unicode": ""
+    },
+    {
+      "font_class": "qq",
+      "unicode": ""
+    },
+    {
+      "font_class": "redo",
+      "unicode": ""
+    },
+    {
+      "font_class": "redo-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "refresh",
+      "unicode": ""
+    },
+    {
+      "font_class": "refresh-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "refreshempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "reload",
+      "unicode": ""
+    },
+    {
+      "font_class": "right",
+      "unicode": ""
+    },
+    {
+      "font_class": "scan",
+      "unicode": ""
+    },
+    {
+      "font_class": "search",
+      "unicode": ""
+    },
+    {
+      "font_class": "settings",
+      "unicode": ""
+    },
+    {
+      "font_class": "settings-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "shop",
+      "unicode": ""
+    },
+    {
+      "font_class": "shop-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "smallcircle",
+      "unicode": ""
+    },
+    {
+      "font_class": "smallcircle-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "sound",
+      "unicode": ""
+    },
+    {
+      "font_class": "sound-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "spinner-cycle",
+      "unicode": ""
+    },
+    {
+      "font_class": "staff",
+      "unicode": ""
+    },
+    {
+      "font_class": "staff-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "star",
+      "unicode": ""
+    },
+    {
+      "font_class": "star-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "starhalf",
+      "unicode": ""
+    },
+    {
+      "font_class": "trash",
+      "unicode": ""
+    },
+    {
+      "font_class": "trash-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "tune",
+      "unicode": ""
+    },
+    {
+      "font_class": "tune-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "undo",
+      "unicode": ""
+    },
+    {
+      "font_class": "undo-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "up",
+      "unicode": ""
+    },
+    {
+      "font_class": "top",
+      "unicode": ""
+    },
+    {
+      "font_class": "upload",
+      "unicode": ""
+    },
+    {
+      "font_class": "upload-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "videocam",
+      "unicode": ""
+    },
+    {
+      "font_class": "videocam-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "vip",
+      "unicode": ""
+    },
+    {
+      "font_class": "vip-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "wallet",
+      "unicode": ""
+    },
+    {
+      "font_class": "wallet-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "weibo",
+      "unicode": ""
+    },
+    {
+      "font_class": "weixin",
+      "unicode": ""
+    }
+  ];
+  const _export_sfc = (sfc, props) => {
+    const target = sfc.__vccOpts || sfc;
+    for (const [key, val] of props) {
+      target[key] = val;
+    }
+    return target;
+  };
+  const getVal$1 = (val) => {
+    const reg = /^[0-9]*$/g;
+    return typeof val === "number" || reg.test(val) ? val + "px" : val;
+  };
+  const _sfc_main$d = {
+    name: "UniIcons",
+    emits: ["click"],
+    props: {
+      type: {
+        type: String,
+        default: ""
+      },
+      color: {
+        type: String,
+        default: "#333333"
+      },
+      size: {
+        type: [Number, String],
+        default: 16
+      },
+      customPrefix: {
+        type: String,
+        default: ""
+      },
+      fontFamily: {
+        type: String,
+        default: ""
+      }
+    },
+    data() {
+      return {
+        icons: fontData
+      };
+    },
+    computed: {
+      unicode() {
+        let code = this.icons.find((v) => v.font_class === this.type);
+        if (code) {
+          return code.unicode;
+        }
+        return "";
+      },
+      iconSize() {
+        return getVal$1(this.size);
+      },
+      styleObj() {
+        if (this.fontFamily !== "") {
+          return `color: ${this.color}; font-size: ${this.iconSize}; font-family: ${this.fontFamily};`;
+        }
+        return `color: ${this.color}; font-size: ${this.iconSize};`;
+      }
+    },
+    methods: {
+      _onClick() {
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "text",
+      {
+        style: vue.normalizeStyle($options.styleObj),
+        class: vue.normalizeClass(["uni-icons", ["uniui-" + $props.type, $props.customPrefix, $props.customPrefix ? $props.type : ""]]),
+        onClick: _cache[0] || (_cache[0] = (...args) => $options._onClick && $options._onClick(...args))
+      },
+      [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$3], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const _sfc_main$c = {
+    name: "UniStatusBar",
+    data() {
+      return {
+        statusBarHeight: 20
+      };
+    },
+    mounted() {
+      this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight + "px";
+    }
+  };
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        style: vue.normalizeStyle({ height: $data.statusBarHeight }),
+        class: "uni-status-bar"
+      },
+      [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ],
+      4
+      /* STYLE */
+    );
+  }
+  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$2], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+  const getVal = (val) => typeof val === "number" ? val + "px" : val;
+  const _sfc_main$b = {
+    name: "UniNavBar",
+    components: {
+      statusBar
+    },
+    emits: ["clickLeft", "clickRight", "clickTitle"],
+    props: {
+      dark: {
+        type: Boolean,
+        default: false
+      },
+      title: {
+        type: String,
+        default: ""
+      },
+      leftText: {
+        type: String,
+        default: ""
+      },
+      rightText: {
+        type: String,
+        default: ""
+      },
+      leftIcon: {
+        type: String,
+        default: ""
+      },
+      rightIcon: {
+        type: String,
+        default: ""
+      },
+      fixed: {
+        type: [Boolean, String],
+        default: false
+      },
+      color: {
+        type: String,
+        default: ""
+      },
+      backgroundColor: {
+        type: String,
+        default: ""
+      },
+      statusBar: {
+        type: [Boolean, String],
+        default: false
+      },
+      shadow: {
+        type: [Boolean, String],
+        default: false
+      },
+      border: {
+        type: [Boolean, String],
+        default: true
+      },
+      height: {
+        type: [Number, String],
+        default: 44
+      },
+      leftWidth: {
+        type: [Number, String],
+        default: 60
+      },
+      rightWidth: {
+        type: [Number, String],
+        default: 60
+      },
+      stat: {
+        type: [Boolean, String],
+        default: ""
+      }
+    },
+    computed: {
+      themeBgColor() {
+        if (this.dark) {
+          if (this.backgroundColor) {
+            return this.backgroundColor;
+          } else {
+            return this.dark ? "#333" : "#FFF";
+          }
+        }
+        return this.backgroundColor || "#FFF";
+      },
+      themeColor() {
+        if (this.dark) {
+          if (this.color) {
+            return this.color;
+          } else {
+            return this.dark ? "#fff" : "#333";
+          }
+        }
+        return this.color || "#333";
+      },
+      navbarHeight() {
+        return getVal(this.height);
+      },
+      leftIconWidth() {
+        return getVal(this.leftWidth);
+      },
+      rightIconWidth() {
+        return getVal(this.rightWidth);
+      }
+    },
+    mounted() {
+      if (uni.report && this.stat && this.title !== "") {
+        uni.report("title", this.title);
+      }
+    },
+    methods: {
+      onClickLeft() {
+        this.$emit("clickLeft");
+      },
+      onClickRight() {
+        this.$emit("clickRight");
+      },
+      onClickTitle() {
+        this.$emit("clickTitle");
+      }
+    }
+  };
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_status_bar = vue.resolveComponent("status-bar");
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_4);
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass(["uni-navbar", { "uni-dark": $props.dark, "uni-nvue-fixed": $props.fixed }])
+      },
+      [
+        vue.createElementVNode(
+          "view",
+          {
+            class: vue.normalizeClass(["uni-navbar__content", { "uni-navbar--fixed": $props.fixed, "uni-navbar--shadow": $props.shadow, "uni-navbar--border": $props.border }]),
+            style: vue.normalizeStyle({ "background-color": $options.themeBgColor })
+          },
+          [
+            $props.statusBar ? (vue.openBlock(), vue.createBlock(_component_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
+            vue.createElementVNode(
+              "view",
+              {
+                style: vue.normalizeStyle({ color: $options.themeColor, backgroundColor: $options.themeBgColor, height: $options.navbarHeight }),
+                class: "uni-navbar__header"
+              },
+              [
+                vue.createElementVNode(
+                  "view",
+                  {
+                    onClick: _cache[0] || (_cache[0] = (...args) => $options.onClickLeft && $options.onClickLeft(...args)),
+                    class: "uni-navbar__header-btns uni-navbar__header-btns-left",
+                    style: vue.normalizeStyle({ width: $options.leftIconWidth })
+                  },
+                  [
+                    vue.renderSlot(_ctx.$slots, "left", {}, () => [
+                      $props.leftIcon.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", {
+                        key: 0,
+                        class: "uni-navbar__content_view"
+                      }, [
+                        vue.createVNode(_component_uni_icons, {
+                          color: $options.themeColor,
+                          type: $props.leftIcon,
+                          size: "20"
+                        }, null, 8, ["color", "type"])
+                      ])) : vue.createCommentVNode("v-if", true),
+                      $props.leftText.length ? (vue.openBlock(), vue.createElementBlock(
+                        "view",
+                        {
+                          key: 1,
+                          class: vue.normalizeClass([{ "uni-navbar-btn-icon-left": !$props.leftIcon.length > 0 }, "uni-navbar-btn-text"])
+                        },
+                        [
+                          vue.createElementVNode(
+                            "text",
+                            {
+                              style: vue.normalizeStyle({ color: $options.themeColor, fontSize: "12px" })
+                            },
+                            vue.toDisplayString($props.leftText),
+                            5
+                            /* TEXT, STYLE */
+                          )
+                        ],
+                        2
+                        /* CLASS */
+                      )) : vue.createCommentVNode("v-if", true)
+                    ], true)
+                  ],
+                  4
+                  /* STYLE */
+                ),
+                vue.createElementVNode("view", {
+                  class: "uni-navbar__header-container",
+                  onClick: _cache[1] || (_cache[1] = (...args) => $options.onClickTitle && $options.onClickTitle(...args))
+                }, [
+                  vue.renderSlot(_ctx.$slots, "default", {}, () => [
+                    $props.title.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", {
+                      key: 0,
+                      class: "uni-navbar__header-container-inner"
+                    }, [
+                      vue.createElementVNode(
+                        "text",
+                        {
+                          class: "uni-nav-bar-text uni-ellipsis-1",
+                          style: vue.normalizeStyle({ color: $options.themeColor })
+                        },
+                        vue.toDisplayString($props.title),
+                        5
+                        /* TEXT, STYLE */
+                      )
+                    ])) : vue.createCommentVNode("v-if", true)
+                  ], true)
+                ]),
+                vue.createElementVNode(
+                  "view",
+                  {
+                    onClick: _cache[2] || (_cache[2] = (...args) => $options.onClickRight && $options.onClickRight(...args)),
+                    class: "uni-navbar__header-btns uni-navbar__header-btns-right",
+                    style: vue.normalizeStyle({ width: $options.rightIconWidth })
+                  },
+                  [
+                    vue.renderSlot(_ctx.$slots, "right", {}, () => [
+                      $props.rightIcon.length ? (vue.openBlock(), vue.createElementBlock("view", { key: 0 }, [
+                        vue.createVNode(_component_uni_icons, {
+                          color: $options.themeColor,
+                          type: $props.rightIcon,
+                          size: "22"
+                        }, null, 8, ["color", "type"])
+                      ])) : vue.createCommentVNode("v-if", true),
+                      $props.rightText.length && !$props.rightIcon.length ? (vue.openBlock(), vue.createElementBlock("view", {
+                        key: 1,
+                        class: "uni-navbar-btn-text"
+                      }, [
+                        vue.createElementVNode(
+                          "text",
+                          {
+                            class: "uni-nav-bar-right-text",
+                            style: vue.normalizeStyle({ color: $options.themeColor })
+                          },
+                          vue.toDisplayString($props.rightText),
+                          5
+                          /* TEXT, STYLE */
+                        )
+                      ])) : vue.createCommentVNode("v-if", true)
+                    ], true)
+                  ],
+                  4
+                  /* STYLE */
+                )
+              ],
+              4
+              /* STYLE */
+            )
+          ],
+          6
+          /* CLASS, STYLE */
+        ),
+        $props.fixed ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 0,
+          class: "uni-navbar__placeholder"
+        }, [
+          $props.statusBar ? (vue.openBlock(), vue.createBlock(_component_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
+          vue.createElementVNode(
+            "view",
+            {
+              class: "uni-navbar__placeholder-view",
+              style: vue.normalizeStyle({ height: $options.navbarHeight })
+            },
+            null,
+            4
+            /* STYLE */
+          )
+        ])) : vue.createCommentVNode("v-if", true)
+      ],
+      2
+      /* CLASS */
+    );
+  }
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$1], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
   function addUnit(num) {
     return Number.isNaN(Number(num)) ? num : `${num}px`;
   }
@@ -295,14 +1325,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const _export_sfc = (sfc, props) => {
-    const target = sfc.__vccOpts || sfc;
-    for (const [key, val] of props) {
-      target[key] = val;
-    }
-    return target;
-  };
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-fa6d4629"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-password-input/wd-password-input.vue"]]);
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-fa6d4629"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-password-input/wd-password-input.vue"]]);
   const transitionProps = {
     ...baseProps,
     /**
@@ -507,7 +1530,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-af59a128"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-transition/wd-transition.vue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-af59a128"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-transition/wd-transition.vue"]]);
   const overlayProps = {
     ...baseProps,
     /**
@@ -550,7 +1573,7 @@ if (uni.restoreGlobal) {
       function noop() {
       }
       return (_ctx, _cache) => {
-        const _component_wd_transition = resolveEasycom(vue.resolveDynamicComponent("wd-transition"), __easycom_0$3);
+        const _component_wd_transition = resolveEasycom(vue.resolveDynamicComponent("wd-transition"), __easycom_0$2);
         return vue.openBlock(), vue.createBlock(_component_wd_transition, {
           show: _ctx.show,
           name: "fade",
@@ -569,7 +1592,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-6e0d1141"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-overlay/wd-overlay.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-6e0d1141"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-overlay/wd-overlay.vue"]]);
   const iconProps = {
     ...baseProps,
     /**
@@ -650,7 +1673,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
   const popupProps = {
     ...baseProps,
     transition: String,
@@ -862,8 +1885,8 @@ if (uni.restoreGlobal) {
       function noop() {
       }
       return (_ctx, _cache) => {
-        const _component_wd_overlay = resolveEasycom(vue.resolveDynamicComponent("wd-overlay"), __easycom_0$2);
-        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_1$1);
+        const _component_wd_overlay = resolveEasycom(vue.resolveDynamicComponent("wd-overlay"), __easycom_0$1);
+        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_1);
         return vue.openBlock(), vue.createElementBlock(
           vue.Fragment,
           null,
@@ -905,7 +1928,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-25a8a9f7"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-popup/wd-popup.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-25a8a9f7"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-popup/wd-popup.vue"]]);
   const _b64chars = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"];
   const _mkUriSafe = (src) => src.replace(/[+/]/g, (m0) => m0 === "+" ? "-" : "_").replace(/=+\$/m, "");
   const fromUint8Array = (src, rfc4648 = false) => {
@@ -1142,7 +2165,7 @@ if (uni.restoreGlobal) {
       }
       return (_ctx, _cache) => {
         const _component_wd_loading = resolveEasycom(vue.resolveDynamicComponent("wd-loading"), __easycom_0);
-        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_1$1);
+        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_1);
         return vue.openBlock(), vue.createElementBlock(
           "view",
           {
@@ -1385,7 +2408,7 @@ if (uni.restoreGlobal) {
         }
       };
       return (_ctx, _cache) => {
-        const _component_wd_popup = resolveEasycom(vue.resolveDynamicComponent("wd-popup"), __easycom_0$1);
+        const _component_wd_popup = resolveEasycom(vue.resolveDynamicComponent("wd-popup"), __easycom_5);
         return vue.openBlock(), vue.createBlock(_component_wd_popup, {
           modelValue: show.value,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => show.value = $event),
@@ -1482,7 +2505,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-b5945d7f"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-number-keyboard/wd-number-keyboard.vue"]]);
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-b5945d7f"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-number-keyboard/wd-number-keyboard.vue"]]);
   function parseFormat(format, timeData) {
     const { days } = timeData;
     let { hours, minutes, seconds, milliseconds } = timeData;
@@ -1700,15 +2723,16 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-dfe7461b"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-count-down/wd-count-down.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-dfe7461b"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-count-down/wd-count-down.vue"]]);
   const _sfc_main$1 = {
     data() {
       return {
-        optValue: "1",
+        optValue: "",
         showKeyboard: true,
         errorInfo: "",
         isCountDownVisible: false,
-        countDownTime: 60
+        countDownTime: 60,
+        isModalVisible: true
       };
     },
     onLoad() {
@@ -1725,74 +2749,88 @@ if (uni.restoreGlobal) {
     },
     methods: {
       onInput(value) {
-        formatAppLog("log", "at pages/optLoginPage.vue:48", value, this.optValue.length);
+        formatAppLog("log", "at pages/optLoginPage.vue:61", value, this.optValue.length);
       },
       onDelete() {
       },
       onCountDownClick() {
         this.$refs.countDownItem.start();
         this.isCountDownVisible = true;
-        formatAppLog("log", "at pages/optLoginPage.vue:56", this.isCountDownVisible);
+        this.isModalVisible = true;
       },
       onCountDownFinish() {
         this.$refs.countDownItem.reset();
         this.isCountDownVisible = false;
-        formatAppLog("log", "at pages/optLoginPage.vue:61", this.isCountDownVisible);
       },
       onCountDownChange(current) {
         this.countDownTime = current.seconds;
+      },
+      onClose() {
       }
     }
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_wd_password_input = resolveEasycom(vue.resolveDynamicComponent("wd-password-input"), __easycom_0$4);
-    const _component_wd_number_keyboard = resolveEasycom(vue.resolveDynamicComponent("wd-number-keyboard"), __easycom_1);
-    const _component_wd_count_down = resolveEasycom(vue.resolveDynamicComponent("wd-count-down"), __easycom_2);
-    return vue.openBlock(), vue.createElementBlock("view", { class: "main-container" }, [
-      vue.createElementVNode("view", { class: "column" }, [
-        vue.createElementVNode("text", { class: "title-text-24" }, "Enter the 6 digit code"),
-        vue.createVNode(_component_wd_password_input, {
-          modelValue: $data.optValue,
-          "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.optValue = $event),
-          mask: false,
-          focused: $data.showKeyboard,
-          gutter: "2.13vw",
-          "error-info": $data.errorInfo,
-          onFocus: _cache[1] || (_cache[1] = () => $data.showKeyboard = true),
-          class: "opt-input"
-        }, null, 8, ["modelValue", "focused", "error-info"]),
-        vue.createVNode(_component_wd_number_keyboard, {
-          modelValue: $data.optValue,
-          "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => $data.optValue = $event),
-          visible: $data.showKeyboard,
-          "onUpdate:visible": _cache[3] || (_cache[3] = ($event) => $data.showKeyboard = $event),
-          maxlength: 6,
-          onInput: $options.onInput,
-          onDelete: $options.onDelete
-        }, null, 8, ["modelValue", "visible", "onInput", "onDelete"]),
-        vue.createElementVNode("span", { class: "resend-code-text" }, [
-          vue.createElementVNode("text", { style: { "color": "#667085" } }, "Resend Code "),
-          vue.createElementVNode("span", null, [
-            vue.withDirectives(vue.createElementVNode(
-              "text",
-              {
-                onClick: _cache[4] || (_cache[4] = (...args) => $options.onCountDownClick && $options.onCountDownClick(...args))
-              },
-              "Here",
-              512
-              /* NEED_PATCH */
-            ), [
-              [vue.vShow, !$data.isCountDownVisible]
-            ]),
-            vue.withDirectives(vue.createElementVNode(
-              "text",
-              null,
-              [
-                vue.createTextVNode(
+    const _component_uni_nav_bar = resolveEasycom(vue.resolveDynamicComponent("uni-nav-bar"), __easycom_0$3);
+    const _component_wd_password_input = resolveEasycom(vue.resolveDynamicComponent("wd-password-input"), __easycom_1$1);
+    const _component_wd_number_keyboard = resolveEasycom(vue.resolveDynamicComponent("wd-number-keyboard"), __easycom_2);
+    const _component_wd_count_down = resolveEasycom(vue.resolveDynamicComponent("wd-count-down"), __easycom_3);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_4);
+    const _component_wd_popup = resolveEasycom(vue.resolveDynamicComponent("wd-popup"), __easycom_5);
+    return vue.openBlock(), vue.createElementBlock(
+      vue.Fragment,
+      null,
+      [
+        vue.createVNode(_component_uni_nav_bar, {
+          "left-icon": "left",
+          shadow: "",
+          statusBar: "",
+          class: "custom-nav-bar"
+        }),
+        vue.createElementVNode("view", { class: "main-container" }, [
+          vue.createElementVNode("view", { class: "column" }, [
+            vue.createElementVNode("text", { class: "title-text-24" }, "Enter the 6 digit code"),
+            vue.createVNode(_component_wd_password_input, {
+              modelValue: $data.optValue,
+              "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.optValue = $event),
+              mask: false,
+              focused: $data.showKeyboard,
+              gutter: "2.13vw",
+              "error-info": $data.errorInfo,
+              onFocus: _cache[1] || (_cache[1] = () => $data.showKeyboard = true),
+              class: "opt-input"
+            }, null, 8, ["modelValue", "focused", "error-info"]),
+            vue.createVNode(_component_wd_number_keyboard, {
+              modelValue: $data.optValue,
+              "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => $data.optValue = $event),
+              visible: $data.showKeyboard,
+              "onUpdate:visible": _cache[3] || (_cache[3] = ($event) => $data.showKeyboard = $event),
+              maxlength: 6,
+              onInput: $options.onInput,
+              onDelete: $options.onDelete
+            }, null, 8, ["modelValue", "visible", "onInput", "onDelete"]),
+            vue.createElementVNode("span", { class: "resend-code-text" }, [
+              vue.createElementVNode("text", { style: { "color": "#667085" } }, "Resend Code "),
+              vue.createElementVNode("span", null, [
+                vue.withDirectives(vue.createElementVNode(
+                  "text",
+                  {
+                    onClick: _cache[4] || (_cache[4] = (...args) => $options.onCountDownClick && $options.onCountDownClick(...args))
+                  },
+                  "Here",
+                  512
+                  /* NEED_PATCH */
+                ), [
+                  [vue.vShow, !$data.isCountDownVisible]
+                ]),
+                vue.withDirectives(vue.createElementVNode(
+                  "text",
+                  null,
                   vue.toDisplayString($data.countDownTime) + " Sec ",
-                  1
-                  /* TEXT */
-                ),
+                  513
+                  /* TEXT, NEED_PATCH */
+                ), [
+                  [vue.vShow, $data.isCountDownVisible]
+                ]),
                 vue.createVNode(_component_wd_count_down, {
                   ref: "countDownItem",
                   time: 6e4,
@@ -1803,16 +2841,39 @@ if (uni.restoreGlobal) {
                   onFinish: $options.onCountDownFinish,
                   style: { "display": "none" }
                 }, null, 8, ["onChange", "onFinish"])
-              ],
-              512
-              /* NEED_PATCH */
-            ), [
-              [vue.vShow, $data.isCountDownVisible]
-            ])
+              ])
+            ]),
+            vue.createVNode(_component_wd_popup, {
+              modelValue: $data.isModalVisible,
+              "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => $data.isModalVisible = $event),
+              "custom-class": "login-modal",
+              "custom-style": "",
+              onClose: $options.onClose
+            }, {
+              default: vue.withCtx(() => [
+                vue.createElementVNode("div", { class: "animation-container" }, [
+                  vue.createVNode(_component_uni_icons, {
+                    "custom-prefix": "iconfont",
+                    type: "icon-person",
+                    size: "37.5vw",
+                    color: "#161616",
+                    class: "login-modal-animation-icon"
+                  }),
+                  vue.createElementVNode("span", { class: "breathing-dot-1" }),
+                  vue.createElementVNode("span", { class: "breathing-dot-2" }),
+                  vue.createElementVNode("span", { class: "breathing-dot-3" }),
+                  vue.createCommentVNode(' <span class="breathing-dot" />\r\n					<span class="breathing-dot" /> ')
+                ])
+              ]),
+              _: 1
+              /* STABLE */
+            }, 8, ["modelValue", "onClose"])
           ])
         ])
-      ])
-    ]);
+      ],
+      64
+      /* STABLE_FRAGMENT */
+    );
   }
   const PagesOptLoginPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/pages/optLoginPage.vue"]]);
   __definePage("pages/optLoginPage", PagesOptLoginPage);

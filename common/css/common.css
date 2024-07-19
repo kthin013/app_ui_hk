@@ -18,6 +18,11 @@
 	src: url('~@/static/font/Avenir Regular.ttf');
 }
 
+.custom-nav-bar .uni-icons.uniui-left {
+	color: #161616 !important;
+	font-weight: 500 !important;
+	font-size: 28px !important;
+}
 
 .title-text-24 {
 	font-family: Avenir;

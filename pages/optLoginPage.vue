@@ -1,4 +1,5 @@
 <template>
+	<uni-nav-bar left-icon="left" shadow statusBar class="custom-nav-bar" />
 	<view class="main-container">
 		<view class="column">
 			<text class="title-text-24">Enter the 6 digit code</text>
@@ -12,11 +13,22 @@
 					<text v-show="!isCountDownVisible" @click="onCountDownClick">Here</text>
 					<text v-show="isCountDownVisible">
 						{{countDownTime}} Sec
-						<wd-count-down ref="countDownItem" :time="60000" millisecond :auto-start="false" format="ss"
-							@change="onCountDownChange" @finish="onCountDownFinish" style="display: none;" />
 					</text>
+					<wd-count-down ref="countDownItem" :time="60000" millisecond :auto-start="false" format="ss"
+						@change="onCountDownChange" @finish="onCountDownFinish" style="display: none;" />
 				</span>
 			</span>
+			<wd-popup v-model="isModalVisible" custom-class="login-modal" custom-style="" @close="onClose">
+				<div class="animation-container">
+					<uni-icons custom-prefix="iconfont" type="icon-person" size="37.5vw" color="#161616"
+						class="login-modal-animation-icon" />
+					<span class="breathing-dot-1" />
+					<span class="breathing-dot-2" />
+					<span class="breathing-dot-3" />
+					<!-- <span class="breathing-dot" />
+					<span class="breathing-dot" /> -->
+				</div>
+			</wd-popup>
 		</view>
 	</view>
 </template>
@@ -25,11 +37,12 @@
 	export default {
 		data() {
 			return {
-				optValue: "1",
+				optValue: "",
 				showKeyboard: true,
 				errorInfo: "",
 				isCountDownVisible: false,
-				countDownTime: 60
+				countDownTime: 60,
+				isModalVisible: true
 			}
 		},
 		onLoad() {},
@@ -53,15 +66,17 @@
 			onCountDownClick() {
 				this.$refs.countDownItem.start();
 				this.isCountDownVisible = true;
-				console.log(this.isCountDownVisible);
+				this.isModalVisible = true;
 			},
 			onCountDownFinish() {
 				this.$refs.countDownItem.reset();
 				this.isCountDownVisible = false;
-				console.log(this.isCountDownVisible);
 			},
 			onCountDownChange(current) {
 				this.countDownTime = current.seconds;
+			},
+			onClose() {
+
 			}
 		}
 	}
@@ -83,18 +98,23 @@
 		margin: 4.62vh 0vw 0vh 0vw !important;
 		height: fit-content;
 
+		.wd-password-input__security {
+			height: 7.8vh;
+		}
+
 		.wd-password-input__item {
 			width: calc(100% - 10.65vw);
-			height: 7.8vh;
+			height: auto;
 			border: 0.05em solid #D0D5DD !important;
 			border-radius: 0.4em;
+			padding: 10px 0;
 		}
 
 		.wd-password-input__value {
 			font-family: Avenir;
 			font-weight: 700;
 			font-size: 7.8vw;
-			line-height: 6.9vh;
+			// line-height: 6.9vh;
 		}
 	}
 
@@ -124,5 +144,67 @@
 				background-color: #e2e2e2;
 			}
 		}
+	}
+
+	.login-modal {
+		width: 87vw;
+		height: 67vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.animation-container {
+		border: 5px solid black;
+		width: 50vw;
+		height: 28vh;
+		position: relative;
+	}
+
+	.login-modal-animation-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	$random-size-1: (
+		random($limit: 5) + 5vw
+	);
+	$random-size-2: (
+		random($limit: 3) + 7vw
+	);
+	$random-size-3: (
+		random($limit: 3) + 3vw
+	);
+
+	.breathing-dot-1 {
+		position: absolute;
+		width: $random-size-1;
+		height: $random-size-1;
+		border-radius: 50%;
+		background: red;
+		top: random($limit: 10) + 0%;
+		left: random($limit: 10) + 0%;
+	}
+
+	.breathing-dot-2 {
+		position: absolute;
+		width: $random-size-2;
+		height: $random-size-2;
+		border-radius: 50%;
+		background: green;
+		top: random($limit: 8) + 0%;
+		right: random($limit: 8) + 0%;		
+	}
+
+	.breathing-dot-3 {
+		position: absolute;
+		width: $random-size-3;
+		height: $random-size-3;
+		border-radius: 50%;
+		background: red;
+		bottom: (random($limit: 5) + 0%);
+		left: (random($limit: 10) + 0%);
 	}
 </style>

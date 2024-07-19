@@ -19,24 +19,26 @@
 			// },
 			"path": "pages/optLoginPage",
 			"style": {
-				"app-plus": {
-					"titleNView": {
-						"autoBackButton": true,
-						"backButton": {
-							"color": "#161616",
-							"fontWeight": "bold",
-							"fontSize": "28px"
-						}
-					}
-				},
-				"navigationBarShadow": {
-					"colorType": "grey"
-				}
+				// "app-plus": {
+				// 	"titleNView": {
+				// 		"autoBackButton": true,
+				// 		"backButton": {
+				// 			"color": "#161616",
+				// 			"fontWeight": "500",
+				// 			"fontSize": "28px"
+				// 		}
+				// 	}
+				// },
+				// "navigationBarShadow": {
+				// 	"colorType": "grey"
+				// },
+				"navigationStyle": "custom"
+
 			}
 		}
 	],
 	"globalStyle": {
-		// "navigationBarBackgroundColor": "#ffffff",
+		"navigationBarBackgroundColor": "#ffffff",
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "",
 		"backgroundColor": "#ffffff"
