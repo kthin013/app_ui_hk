@@ -22,11 +22,14 @@
 				<div class="animation-container">
 					<uni-icons custom-prefix="iconfont" type="icon-person" size="37.5vw" color="#161616"
 						class="login-modal-animation-icon" />
-					<span class="breathing-dot-1" />
-					<span class="breathing-dot-2" />
-					<span class="breathing-dot-3" />
-					<!-- <span class="breathing-dot" />
-					<span class="breathing-dot" /> -->
+					<span class="breathing-dot breathing-dot-1" />
+					<span class="breathing-dot breathing-dot-2" />
+					<span class="breathing-dot breathing-dot-3" />
+					<span class="breathing-dot breathing-dot-4" />
+					<span class="breathing-dot breathing-dot-5" />
+					<span class="breathing-dot breathing-dot-6" />
+					<span class="breathing-dot breathing-dot-7" />
+					<span class="breathing-dot breathing-dot-8" />
 				</div>
 			</wd-popup>
 		</view>
@@ -169,42 +172,127 @@
 	}
 
 	$random-size-1: (
-		random($limit: 5) + 5vw
+		random($limit: 5) + 3vw
 	);
 	$random-size-2: (
-		random($limit: 3) + 7vw
+		random($limit: 3) + 4vw
 	);
 	$random-size-3: (
-		random($limit: 3) + 3vw
+		random($limit: 3) + 1vw
+	);
+	$random-size-4: (
+		random($limit: 5) + 2vw
+	);
+	$random-size-5: (
+		random($limit: 6) + 1vw
+	);
+	$random-size-6: (
+		random($limit: 3) + 1vw
 	);
 
-	.breathing-dot-1 {
+	.breathing-dot {
 		position: absolute;
+		border-radius: 50%;
+		background: #161616;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
+	@keyframes breathing {
+		0% {
+			transform: scale(.6);
+		}
+
+		50% {
+			transform: scale(1);
+		}
+
+		100% {
+			transform: scale(.6);
+		}
+	}
+
+	@keyframes breathing-2 {
+		0% {
+			transform: scale(.8);
+		}
+		70% {
+			transform: scale(1.1);
+		}
+		100% {
+			transform: scale(.8);
+		}
+	}
+
+	.breathing-dot-1 {
 		width: $random-size-1;
 		height: $random-size-1;
-		border-radius: 50%;
-		background: red;
-		top: random($limit: 10) + 0%;
-		left: random($limit: 10) + 0%;
+		top: random($limit: 10) + 15%;
+		left: random($limit: 3) + 0%;
+		animation-name: breathing;
+		animation-duration: random($limit: 3) + 5s;
 	}
 
 	.breathing-dot-2 {
-		position: absolute;
 		width: $random-size-2;
 		height: $random-size-2;
-		border-radius: 50%;
-		background: green;
 		top: random($limit: 8) + 0%;
-		right: random($limit: 8) + 0%;		
+		right: random($limit: 8) + 0%;
+		animation-name: breathing;
+		animation-duration: random($limit: 3) + 5s;
 	}
 
 	.breathing-dot-3 {
-		position: absolute;
 		width: $random-size-3;
 		height: $random-size-3;
-		border-radius: 50%;
-		background: red;
-		bottom: (random($limit: 5) + 0%);
+		bottom: (random($limit: 5) + 7%);
 		left: (random($limit: 10) + 0%);
+		animation-name: breathing-2;
+		animation-duration: random($limit: 3) + 2s;
+	}
+
+	.breathing-dot-4 {
+		width: $random-size-4;
+		height: $random-size-4;
+		bottom: (random($limit: 5) + 30%);
+		right: (random($limit: 5) + 0%);
+		animation-name: breathing;
+		animation-duration: random($limit: 2) + 5s;
+	}
+
+	.breathing-dot-5 {
+		width: $random-size-5;
+		height: $random-size-5;
+		bottom: (random($limit: 5) + 0%);
+		right: (random($limit: 5) + 5%);
+		animation-name: breathing-2;
+		animation-duration: random($limit: 3) + 2s;
+	}
+
+	.breathing-dot-6 {
+		width: $random-size-6;
+		height: $random-size-6;
+		top: (random($limit: 3) + 5%);
+		right: (random($limit: 1) + 40%);
+		animation-name: breathing-2;
+		animation-duration: random($limit: 2) + 2s;
+	}
+
+	.breathing-dot-7 {
+		width: $random-size-6;
+		height: $random-size-6;
+		top: (random($limit: 3) + 5%);
+		right: (random($limit: 1) + 60%);
+		animation-name: breathing-2;
+		animation-duration: random($limit: 2) + 1s;
+	}
+
+	.breathing-dot-8 {
+		width: $random-size-6;
+		height: $random-size-6;
+		bottom: (random($limit: 3) + 4%);
+		right: (random($limit: 1) + 50%);
+		animation-name: breathing-2;
+		animation-duration: random($limit: 2) + 1s;
 	}
 </style>
