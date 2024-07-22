@@ -20,7 +20,7 @@
 			</span>
 			<wd-popup v-model="isModalVisible" custom-class="login-modal" custom-style="" @close="onClose">
 				<div class="animation-container">
-					<uni-icons custom-prefix="iconfont" type="icon-person" size="37.5vw" color="#161616"
+					<uni-icons custom-prefix="iconfont" type="icon-person" size="37.5vw"
 						class="login-modal-animation-icon" />
 					<span class="breathing-dot breathing-dot-1" />
 					<span class="breathing-dot breathing-dot-2" />
@@ -31,6 +31,8 @@
 					<span class="breathing-dot breathing-dot-7" />
 					<span class="breathing-dot breathing-dot-8" />
 				</div>
+				<text class="title-text-24">Log in Successful!</text>
+				<wd-loading color="#161616" size="8.6vw" />
 			</wd-popup>
 		</view>
 	</view>
@@ -45,7 +47,7 @@
 				errorInfo: "",
 				isCountDownVisible: false,
 				countDownTime: 60,
-				isModalVisible: true
+				isModalVisible: false
 			}
 		},
 		onLoad() {},
@@ -54,6 +56,8 @@
 			optValue(newValue, oldValue) {
 				if (newValue.length === 6 && newValue !== '123456') {
 					this.errorInfo = '密码错误'
+				} else if (newValue.length === 6 && newValue == '123456') {
+					this.isModalVisible = true;
 				} else {
 					this.errorInfo = ''
 				}
@@ -69,7 +73,6 @@
 			onCountDownClick() {
 				this.$refs.countDownItem.start();
 				this.isCountDownVisible = true;
-				this.isModalVisible = true;
 			},
 			onCountDownFinish() {
 				this.$refs.countDownItem.reset();
@@ -86,6 +89,8 @@
 </script>
 
 <style lang="scss">
+	@import url("../uni.scss");
+
 	.column {
 		display: flex;
 		flex-direction: column;
@@ -152,8 +157,10 @@
 	.login-modal {
 		width: 87vw;
 		height: 67vh;
+		border-radius: 2.4em;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		justify-content: space-evenly;
 		align-items: center;
 	}
 
@@ -169,6 +176,7 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		color: $primary_color !important;
 	}
 
 	$random-size-1: (
@@ -193,7 +201,7 @@
 	.breathing-dot {
 		position: absolute;
 		border-radius: 50%;
-		background: #161616;
+		background: $primary-color;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 	}
@@ -216,9 +224,11 @@
 		0% {
 			transform: scale(.8);
 		}
+
 		70% {
 			transform: scale(1.1);
 		}
+
 		100% {
 			transform: scale(.8);
 		}

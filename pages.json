@@ -19,19 +19,6 @@
 			// },
 			"path": "pages/optLoginPage",
 			"style": {
-				// "app-plus": {
-				// 	"titleNView": {
-				// 		"autoBackButton": true,
-				// 		"backButton": {
-				// 			"color": "#161616",
-				// 			"fontWeight": "500",
-				// 			"fontSize": "28px"
-				// 		}
-				// 	}
-				// },
-				// "navigationBarShadow": {
-				// 	"colorType": "grey"
-				// },
 				"navigationStyle": "custom"
 
 			}
