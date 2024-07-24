@@ -89,8 +89,6 @@
 </script>
 
 <style lang="scss">
-	@import url("../../uni.scss");
-
 	.input-text {
 		font-family: Avenir;
 		color: black;
@@ -196,7 +194,7 @@
 	.breathing-dot {
 		position: absolute;
 		border-radius: 50%;
-		background: $primary-color;
+		background: #161616;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 	}

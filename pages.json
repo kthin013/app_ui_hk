@@ -19,11 +19,11 @@
 		// 	}
 		// },
 		// {
-		// "path": "pages/login/otpLoginPage",
-		// "style": {
-		// 	"navigationStyle": "custom"
+		// 	"path": "pages/login/otpLoginPage",
+		// 	"style": {
+		// 		"navigationStyle": "custom"
 
-		// }
+		// 	}
 		// },
 		{
 			"path": "pages/login/registerFormPage",

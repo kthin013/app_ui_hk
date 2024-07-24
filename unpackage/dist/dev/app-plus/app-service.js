@@ -143,7 +143,7 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent({
     ...__default__$1,
     props: iconProps,
     emits: ["click"],
@@ -203,7 +203,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
   const progressProps = {
     ...baseProps,
     /**
@@ -238,7 +238,7 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
     ...__default__,
     props: progressProps,
     setup(__props) {
@@ -408,7 +408,727 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
+  const fontData = [
+    {
+      "font_class": "arrow-down",
+      "unicode": ""
+    },
+    {
+      "font_class": "arrow-left",
+      "unicode": ""
+    },
+    {
+      "font_class": "arrow-right",
+      "unicode": ""
+    },
+    {
+      "font_class": "arrow-up",
+      "unicode": ""
+    },
+    {
+      "font_class": "auth",
+      "unicode": ""
+    },
+    {
+      "font_class": "auth-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "back",
+      "unicode": ""
+    },
+    {
+      "font_class": "bars",
+      "unicode": ""
+    },
+    {
+      "font_class": "calendar",
+      "unicode": ""
+    },
+    {
+      "font_class": "calendar-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "camera",
+      "unicode": ""
+    },
+    {
+      "font_class": "camera-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "cart",
+      "unicode": ""
+    },
+    {
+      "font_class": "cart-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "chat",
+      "unicode": ""
+    },
+    {
+      "font_class": "chat-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatboxes",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatboxes-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatbubble",
+      "unicode": ""
+    },
+    {
+      "font_class": "chatbubble-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "checkbox",
+      "unicode": ""
+    },
+    {
+      "font_class": "checkbox-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "checkmarkempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "circle",
+      "unicode": ""
+    },
+    {
+      "font_class": "circle-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "clear",
+      "unicode": ""
+    },
+    {
+      "font_class": "close",
+      "unicode": ""
+    },
+    {
+      "font_class": "closeempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-download",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-download-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-upload",
+      "unicode": ""
+    },
+    {
+      "font_class": "cloud-upload-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "color",
+      "unicode": ""
+    },
+    {
+      "font_class": "color-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "compose",
+      "unicode": ""
+    },
+    {
+      "font_class": "contact",
+      "unicode": ""
+    },
+    {
+      "font_class": "contact-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "down",
+      "unicode": ""
+    },
+    {
+      "font_class": "bottom",
+      "unicode": ""
+    },
+    {
+      "font_class": "download",
+      "unicode": ""
+    },
+    {
+      "font_class": "download-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "email",
+      "unicode": ""
+    },
+    {
+      "font_class": "email-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye-slash",
+      "unicode": ""
+    },
+    {
+      "font_class": "eye-slash-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "fire",
+      "unicode": ""
+    },
+    {
+      "font_class": "fire-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "flag",
+      "unicode": ""
+    },
+    {
+      "font_class": "flag-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "folder-add",
+      "unicode": ""
+    },
+    {
+      "font_class": "folder-add-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "font",
+      "unicode": ""
+    },
+    {
+      "font_class": "forward",
+      "unicode": ""
+    },
+    {
+      "font_class": "gear",
+      "unicode": ""
+    },
+    {
+      "font_class": "gear-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "gift",
+      "unicode": ""
+    },
+    {
+      "font_class": "gift-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-down",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-down-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-up",
+      "unicode": ""
+    },
+    {
+      "font_class": "hand-up-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "headphones",
+      "unicode": ""
+    },
+    {
+      "font_class": "heart",
+      "unicode": ""
+    },
+    {
+      "font_class": "heart-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "help",
+      "unicode": ""
+    },
+    {
+      "font_class": "help-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "home",
+      "unicode": ""
+    },
+    {
+      "font_class": "home-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "image",
+      "unicode": ""
+    },
+    {
+      "font_class": "image-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "images",
+      "unicode": ""
+    },
+    {
+      "font_class": "images-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "info",
+      "unicode": ""
+    },
+    {
+      "font_class": "info-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "left",
+      "unicode": ""
+    },
+    {
+      "font_class": "link",
+      "unicode": ""
+    },
+    {
+      "font_class": "list",
+      "unicode": ""
+    },
+    {
+      "font_class": "location",
+      "unicode": ""
+    },
+    {
+      "font_class": "location-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "locked",
+      "unicode": ""
+    },
+    {
+      "font_class": "locked-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "loop",
+      "unicode": ""
+    },
+    {
+      "font_class": "mail-open",
+      "unicode": ""
+    },
+    {
+      "font_class": "mail-open-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "map",
+      "unicode": ""
+    },
+    {
+      "font_class": "map-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "map-pin",
+      "unicode": ""
+    },
+    {
+      "font_class": "map-pin-ellipse",
+      "unicode": ""
+    },
+    {
+      "font_class": "medal",
+      "unicode": ""
+    },
+    {
+      "font_class": "medal-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "mic",
+      "unicode": ""
+    },
+    {
+      "font_class": "mic-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "micoff",
+      "unicode": ""
+    },
+    {
+      "font_class": "micoff-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "minus",
+      "unicode": ""
+    },
+    {
+      "font_class": "minus-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "more",
+      "unicode": ""
+    },
+    {
+      "font_class": "more-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "navigate",
+      "unicode": ""
+    },
+    {
+      "font_class": "navigate-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "notification",
+      "unicode": ""
+    },
+    {
+      "font_class": "notification-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "paperclip",
+      "unicode": ""
+    },
+    {
+      "font_class": "paperplane",
+      "unicode": ""
+    },
+    {
+      "font_class": "paperplane-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "person",
+      "unicode": ""
+    },
+    {
+      "font_class": "person-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "personadd",
+      "unicode": ""
+    },
+    {
+      "font_class": "personadd-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "personadd-filled-copy",
+      "unicode": ""
+    },
+    {
+      "font_class": "phone",
+      "unicode": ""
+    },
+    {
+      "font_class": "phone-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "plus",
+      "unicode": ""
+    },
+    {
+      "font_class": "plus-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "plusempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "pulldown",
+      "unicode": ""
+    },
+    {
+      "font_class": "pyq",
+      "unicode": ""
+    },
+    {
+      "font_class": "qq",
+      "unicode": ""
+    },
+    {
+      "font_class": "redo",
+      "unicode": ""
+    },
+    {
+      "font_class": "redo-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "refresh",
+      "unicode": ""
+    },
+    {
+      "font_class": "refresh-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "refreshempty",
+      "unicode": ""
+    },
+    {
+      "font_class": "reload",
+      "unicode": ""
+    },
+    {
+      "font_class": "right",
+      "unicode": ""
+    },
+    {
+      "font_class": "scan",
+      "unicode": ""
+    },
+    {
+      "font_class": "search",
+      "unicode": ""
+    },
+    {
+      "font_class": "settings",
+      "unicode": ""
+    },
+    {
+      "font_class": "settings-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "shop",
+      "unicode": ""
+    },
+    {
+      "font_class": "shop-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "smallcircle",
+      "unicode": ""
+    },
+    {
+      "font_class": "smallcircle-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "sound",
+      "unicode": ""
+    },
+    {
+      "font_class": "sound-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "spinner-cycle",
+      "unicode": ""
+    },
+    {
+      "font_class": "staff",
+      "unicode": ""
+    },
+    {
+      "font_class": "staff-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "star",
+      "unicode": ""
+    },
+    {
+      "font_class": "star-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "starhalf",
+      "unicode": ""
+    },
+    {
+      "font_class": "trash",
+      "unicode": ""
+    },
+    {
+      "font_class": "trash-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "tune",
+      "unicode": ""
+    },
+    {
+      "font_class": "tune-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "undo",
+      "unicode": ""
+    },
+    {
+      "font_class": "undo-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "up",
+      "unicode": ""
+    },
+    {
+      "font_class": "top",
+      "unicode": ""
+    },
+    {
+      "font_class": "upload",
+      "unicode": ""
+    },
+    {
+      "font_class": "upload-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "videocam",
+      "unicode": ""
+    },
+    {
+      "font_class": "videocam-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "vip",
+      "unicode": ""
+    },
+    {
+      "font_class": "vip-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "wallet",
+      "unicode": ""
+    },
+    {
+      "font_class": "wallet-filled",
+      "unicode": ""
+    },
+    {
+      "font_class": "weibo",
+      "unicode": ""
+    },
+    {
+      "font_class": "weixin",
+      "unicode": ""
+    }
+  ];
+  const getVal = (val) => {
+    const reg = /^[0-9]*$/g;
+    return typeof val === "number" || reg.test(val) ? val + "px" : val;
+  };
+  const _sfc_main$3 = {
+    name: "UniIcons",
+    emits: ["click"],
+    props: {
+      type: {
+        type: String,
+        default: ""
+      },
+      color: {
+        type: String,
+        default: "#333333"
+      },
+      size: {
+        type: [Number, String],
+        default: 16
+      },
+      customPrefix: {
+        type: String,
+        default: ""
+      },
+      fontFamily: {
+        type: String,
+        default: ""
+      }
+    },
+    data() {
+      return {
+        icons: fontData
+      };
+    },
+    computed: {
+      unicode() {
+        let code = this.icons.find((v) => v.font_class === this.type);
+        if (code) {
+          return code.unicode;
+        }
+        return "";
+      },
+      iconSize() {
+        return getVal(this.size);
+      },
+      styleObj() {
+        if (this.fontFamily !== "") {
+          return `color: ${this.color}; font-size: ${this.iconSize}; font-family: ${this.fontFamily};`;
+        }
+        return `color: ${this.color}; font-size: ${this.iconSize};`;
+      }
+    },
+    methods: {
+      _onClick() {
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "text",
+      {
+        style: vue.normalizeStyle($options.styleObj),
+        class: vue.normalizeClass(["uni-icons", ["uniui-" + $props.type, $props.customPrefix, $props.customPrefix ? $props.type : ""]]),
+        onClick: _cache[0] || (_cache[0] = (...args) => $options._onClick && $options._onClick(...args))
+      },
+      [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
   var pattern = {
     email: /^\S+?@\S+?\.\S+?$/,
     idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
@@ -1276,11 +1996,13 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
   const _sfc_main$1 = {
     data() {
       return {
         progressPercentage: 0,
+        genderValue: "",
+        isGenderListExpand: false,
         genderItems: [
           {
             value: "male",
@@ -1293,8 +2015,8 @@ if (uni.restoreGlobal) {
             icon: "👩‍"
           },
           {
-            value: "other",
-            name: "other",
+            value: "more",
+            name: "more",
             icon: "👩‍"
           }
         ],
@@ -1306,13 +2028,16 @@ if (uni.restoreGlobal) {
     components: {},
     methods: {
       onGenderRadioChange(value) {
-        formatAppLog("log", "at pages/login/registerFormPage.vue:56", value.detail.value);
+        this.genderValue = value.detail.value;
+        formatAppLog("log", "at pages/login/registerFormPage.vue:75", value.detail, this.genderValue);
+        formatAppLog("log", "at pages/login/registerFormPage.vue:76", this.genderItems);
       }
     }
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_wd_progress = resolveEasycom(vue.resolveDynamicComponent("wd-progress"), __easycom_0);
-    const _component_uni_forms = resolveEasycom(vue.resolveDynamicComponent("uni-forms"), __easycom_1);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_1);
+    const _component_uni_forms = resolveEasycom(vue.resolveDynamicComponent("uni-forms"), __easycom_2);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -1341,39 +2066,74 @@ if (uni.restoreGlobal) {
                 vue.createElementVNode(
                   "radio-group",
                   {
-                    onChange: _cache[0] || (_cache[0] = (...args) => $options.onGenderRadioChange && $options.onGenderRadioChange(...args)),
-                    class: "gender-radio-group"
+                    onChange: _cache[0] || (_cache[0] = (...args) => $options.onGenderRadioChange && $options.onGenderRadioChange(...args))
                   },
                   [
-                    (vue.openBlock(true), vue.createElementBlock(
-                      vue.Fragment,
-                      null,
-                      vue.renderList($data.genderItems, (item) => {
-                        return vue.openBlock(), vue.createElementBlock("span", null, [
-                          vue.createElementVNode("radio", {
-                            value: item.value,
-                            class: "gender-radio-select"
-                          }, [
-                            vue.createElementVNode(
-                              "span",
-                              { class: "gender-radio-icon" },
-                              vue.toDisplayString(item.icon),
-                              1
-                              /* TEXT */
-                            ),
-                            vue.createElementVNode(
-                              "text",
-                              { class: "gender-radio-text" },
-                              vue.toDisplayString(item.name),
-                              1
-                              /* TEXT */
-                            )
-                          ], 8, ["value"])
-                        ]);
-                      }),
-                      256
-                      /* UNKEYED_FRAGMENT */
-                    ))
+                    !$data.isGenderListExpand ? (vue.openBlock(), vue.createElementBlock("span", {
+                      key: 0,
+                      class: "gender-radio-group"
+                    }, [
+                      vue.createElementVNode("radio", {
+                        value: $data.genderItems[0].value,
+                        class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == $data.genderItems[0].value ? "gender-radio-checked" : ""])
+                      }, [
+                        vue.createElementVNode(
+                          "span",
+                          { class: "gender-radio-icon" },
+                          vue.toDisplayString($data.genderItems[0].icon),
+                          1
+                          /* TEXT */
+                        ),
+                        vue.createElementVNode(
+                          "text",
+                          { class: "title-text-24 gender-radio-text" },
+                          vue.toDisplayString($data.genderItems[0].name),
+                          1
+                          /* TEXT */
+                        )
+                      ], 10, ["value"]),
+                      vue.createElementVNode("radio", {
+                        value: $data.genderItems[1].value,
+                        class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == $data.genderItems[1].value ? "gender-radio-checked" : ""])
+                      }, [
+                        vue.createElementVNode(
+                          "span",
+                          { class: "gender-radio-icon" },
+                          vue.toDisplayString($data.genderItems[1].icon),
+                          1
+                          /* TEXT */
+                        ),
+                        vue.createElementVNode(
+                          "text",
+                          { class: "title-text-24 gender-radio-text" },
+                          vue.toDisplayString($data.genderItems[1].name),
+                          1
+                          /* TEXT */
+                        )
+                      ], 10, ["value"]),
+                      vue.createElementVNode("span", { class: "gender-radio-select-container gender-radio-select-container-other" }, [
+                        vue.createElementVNode("text", { class: "title-text-24 gender-radio-text gender-text-other" }, "other"),
+                        vue.createVNode(_component_uni_icons, {
+                          type: "right",
+                          size: "2em",
+                          class: "title-text-24 gender-icon-other"
+                        })
+                      ])
+                    ])) : (vue.openBlock(), vue.createElementBlock("span", { key: 1 }, [
+                      (vue.openBlock(true), vue.createElementBlock(
+                        vue.Fragment,
+                        null,
+                        vue.renderList($data.genderItems, (item) => {
+                          return vue.openBlock(), vue.createElementBlock("span", null, [
+                            vue.createElementVNode("radio", {
+                              value: item.value
+                            }, null, 8, ["value"])
+                          ]);
+                        }),
+                        256
+                        /* UNKEYED_FRAGMENT */
+                      ))
+                    ]))
                   ],
                   32
                   /* NEED_HYDRATION */
@@ -1389,7 +2149,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
+  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
   __definePage("pages/login/registerFormPage", PagesLoginRegisterFormPage);
   const _sfc_main = {
     onLaunch: function() {
@@ -1402,7 +2162,7 @@ if (uni.restoreGlobal) {
       formatAppLog("log", "at App.vue:10", "App Hide");
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
   function createApp() {
     const app = vue.createVueApp(App);
     return {
