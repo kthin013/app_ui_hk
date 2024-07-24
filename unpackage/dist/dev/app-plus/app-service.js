@@ -41,1039 +41,6 @@ if (uni.restoreGlobal) {
   function resolveEasycom(component, easycom) {
     return typeof component === "string" ? easycom : component;
   }
-  const fontData = [
-    {
-      "font_class": "arrow-down",
-      "unicode": ""
-    },
-    {
-      "font_class": "arrow-left",
-      "unicode": ""
-    },
-    {
-      "font_class": "arrow-right",
-      "unicode": ""
-    },
-    {
-      "font_class": "arrow-up",
-      "unicode": ""
-    },
-    {
-      "font_class": "auth",
-      "unicode": ""
-    },
-    {
-      "font_class": "auth-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "back",
-      "unicode": ""
-    },
-    {
-      "font_class": "bars",
-      "unicode": ""
-    },
-    {
-      "font_class": "calendar",
-      "unicode": ""
-    },
-    {
-      "font_class": "calendar-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "camera",
-      "unicode": ""
-    },
-    {
-      "font_class": "camera-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "cart",
-      "unicode": ""
-    },
-    {
-      "font_class": "cart-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "chat",
-      "unicode": ""
-    },
-    {
-      "font_class": "chat-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "chatboxes",
-      "unicode": ""
-    },
-    {
-      "font_class": "chatboxes-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "chatbubble",
-      "unicode": ""
-    },
-    {
-      "font_class": "chatbubble-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "checkbox",
-      "unicode": ""
-    },
-    {
-      "font_class": "checkbox-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "checkmarkempty",
-      "unicode": ""
-    },
-    {
-      "font_class": "circle",
-      "unicode": ""
-    },
-    {
-      "font_class": "circle-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "clear",
-      "unicode": ""
-    },
-    {
-      "font_class": "close",
-      "unicode": ""
-    },
-    {
-      "font_class": "closeempty",
-      "unicode": ""
-    },
-    {
-      "font_class": "cloud-download",
-      "unicode": ""
-    },
-    {
-      "font_class": "cloud-download-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "cloud-upload",
-      "unicode": ""
-    },
-    {
-      "font_class": "cloud-upload-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "color",
-      "unicode": ""
-    },
-    {
-      "font_class": "color-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "compose",
-      "unicode": ""
-    },
-    {
-      "font_class": "contact",
-      "unicode": ""
-    },
-    {
-      "font_class": "contact-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "down",
-      "unicode": ""
-    },
-    {
-      "font_class": "bottom",
-      "unicode": ""
-    },
-    {
-      "font_class": "download",
-      "unicode": ""
-    },
-    {
-      "font_class": "download-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "email",
-      "unicode": ""
-    },
-    {
-      "font_class": "email-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "eye",
-      "unicode": ""
-    },
-    {
-      "font_class": "eye-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "eye-slash",
-      "unicode": ""
-    },
-    {
-      "font_class": "eye-slash-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "fire",
-      "unicode": ""
-    },
-    {
-      "font_class": "fire-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "flag",
-      "unicode": ""
-    },
-    {
-      "font_class": "flag-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "folder-add",
-      "unicode": ""
-    },
-    {
-      "font_class": "folder-add-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "font",
-      "unicode": ""
-    },
-    {
-      "font_class": "forward",
-      "unicode": ""
-    },
-    {
-      "font_class": "gear",
-      "unicode": ""
-    },
-    {
-      "font_class": "gear-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "gift",
-      "unicode": ""
-    },
-    {
-      "font_class": "gift-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "hand-down",
-      "unicode": ""
-    },
-    {
-      "font_class": "hand-down-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "hand-up",
-      "unicode": ""
-    },
-    {
-      "font_class": "hand-up-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "headphones",
-      "unicode": ""
-    },
-    {
-      "font_class": "heart",
-      "unicode": ""
-    },
-    {
-      "font_class": "heart-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "help",
-      "unicode": ""
-    },
-    {
-      "font_class": "help-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "home",
-      "unicode": ""
-    },
-    {
-      "font_class": "home-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "image",
-      "unicode": ""
-    },
-    {
-      "font_class": "image-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "images",
-      "unicode": ""
-    },
-    {
-      "font_class": "images-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "info",
-      "unicode": ""
-    },
-    {
-      "font_class": "info-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "left",
-      "unicode": ""
-    },
-    {
-      "font_class": "link",
-      "unicode": ""
-    },
-    {
-      "font_class": "list",
-      "unicode": ""
-    },
-    {
-      "font_class": "location",
-      "unicode": ""
-    },
-    {
-      "font_class": "location-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "locked",
-      "unicode": ""
-    },
-    {
-      "font_class": "locked-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "loop",
-      "unicode": ""
-    },
-    {
-      "font_class": "mail-open",
-      "unicode": ""
-    },
-    {
-      "font_class": "mail-open-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "map",
-      "unicode": ""
-    },
-    {
-      "font_class": "map-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "map-pin",
-      "unicode": ""
-    },
-    {
-      "font_class": "map-pin-ellipse",
-      "unicode": ""
-    },
-    {
-      "font_class": "medal",
-      "unicode": ""
-    },
-    {
-      "font_class": "medal-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "mic",
-      "unicode": ""
-    },
-    {
-      "font_class": "mic-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "micoff",
-      "unicode": ""
-    },
-    {
-      "font_class": "micoff-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "minus",
-      "unicode": ""
-    },
-    {
-      "font_class": "minus-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "more",
-      "unicode": ""
-    },
-    {
-      "font_class": "more-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "navigate",
-      "unicode": ""
-    },
-    {
-      "font_class": "navigate-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "notification",
-      "unicode": ""
-    },
-    {
-      "font_class": "notification-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "paperclip",
-      "unicode": ""
-    },
-    {
-      "font_class": "paperplane",
-      "unicode": ""
-    },
-    {
-      "font_class": "paperplane-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "person",
-      "unicode": ""
-    },
-    {
-      "font_class": "person-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "personadd",
-      "unicode": ""
-    },
-    {
-      "font_class": "personadd-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "personadd-filled-copy",
-      "unicode": ""
-    },
-    {
-      "font_class": "phone",
-      "unicode": ""
-    },
-    {
-      "font_class": "phone-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "plus",
-      "unicode": ""
-    },
-    {
-      "font_class": "plus-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "plusempty",
-      "unicode": ""
-    },
-    {
-      "font_class": "pulldown",
-      "unicode": ""
-    },
-    {
-      "font_class": "pyq",
-      "unicode": ""
-    },
-    {
-      "font_class": "qq",
-      "unicode": ""
-    },
-    {
-      "font_class": "redo",
-      "unicode": ""
-    },
-    {
-      "font_class": "redo-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "refresh",
-      "unicode": ""
-    },
-    {
-      "font_class": "refresh-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "refreshempty",
-      "unicode": ""
-    },
-    {
-      "font_class": "reload",
-      "unicode": ""
-    },
-    {
-      "font_class": "right",
-      "unicode": ""
-    },
-    {
-      "font_class": "scan",
-      "unicode": ""
-    },
-    {
-      "font_class": "search",
-      "unicode": ""
-    },
-    {
-      "font_class": "settings",
-      "unicode": ""
-    },
-    {
-      "font_class": "settings-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "shop",
-      "unicode": ""
-    },
-    {
-      "font_class": "shop-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "smallcircle",
-      "unicode": ""
-    },
-    {
-      "font_class": "smallcircle-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "sound",
-      "unicode": ""
-    },
-    {
-      "font_class": "sound-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "spinner-cycle",
-      "unicode": ""
-    },
-    {
-      "font_class": "staff",
-      "unicode": ""
-    },
-    {
-      "font_class": "staff-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "star",
-      "unicode": ""
-    },
-    {
-      "font_class": "star-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "starhalf",
-      "unicode": ""
-    },
-    {
-      "font_class": "trash",
-      "unicode": ""
-    },
-    {
-      "font_class": "trash-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "tune",
-      "unicode": ""
-    },
-    {
-      "font_class": "tune-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "undo",
-      "unicode": ""
-    },
-    {
-      "font_class": "undo-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "up",
-      "unicode": ""
-    },
-    {
-      "font_class": "top",
-      "unicode": ""
-    },
-    {
-      "font_class": "upload",
-      "unicode": ""
-    },
-    {
-      "font_class": "upload-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "videocam",
-      "unicode": ""
-    },
-    {
-      "font_class": "videocam-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "vip",
-      "unicode": ""
-    },
-    {
-      "font_class": "vip-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "wallet",
-      "unicode": ""
-    },
-    {
-      "font_class": "wallet-filled",
-      "unicode": ""
-    },
-    {
-      "font_class": "weibo",
-      "unicode": ""
-    },
-    {
-      "font_class": "weixin",
-      "unicode": ""
-    }
-  ];
-  const _export_sfc = (sfc, props) => {
-    const target = sfc.__vccOpts || sfc;
-    for (const [key, val] of props) {
-      target[key] = val;
-    }
-    return target;
-  };
-  const getVal$1 = (val) => {
-    const reg = /^[0-9]*$/g;
-    return typeof val === "number" || reg.test(val) ? val + "px" : val;
-  };
-  const _sfc_main$d = {
-    name: "UniIcons",
-    emits: ["click"],
-    props: {
-      type: {
-        type: String,
-        default: ""
-      },
-      color: {
-        type: String,
-        default: "#333333"
-      },
-      size: {
-        type: [Number, String],
-        default: 16
-      },
-      customPrefix: {
-        type: String,
-        default: ""
-      },
-      fontFamily: {
-        type: String,
-        default: ""
-      }
-    },
-    data() {
-      return {
-        icons: fontData
-      };
-    },
-    computed: {
-      unicode() {
-        let code = this.icons.find((v) => v.font_class === this.type);
-        if (code) {
-          return code.unicode;
-        }
-        return "";
-      },
-      iconSize() {
-        return getVal$1(this.size);
-      },
-      styleObj() {
-        if (this.fontFamily !== "") {
-          return `color: ${this.color}; font-size: ${this.iconSize}; font-family: ${this.fontFamily};`;
-        }
-        return `color: ${this.color}; font-size: ${this.iconSize};`;
-      }
-    },
-    methods: {
-      _onClick() {
-        this.$emit("click");
-      }
-    }
-  };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "text",
-      {
-        style: vue.normalizeStyle($options.styleObj),
-        class: vue.normalizeClass(["uni-icons", ["uniui-" + $props.type, $props.customPrefix, $props.customPrefix ? $props.type : ""]]),
-        onClick: _cache[0] || (_cache[0] = (...args) => $options._onClick && $options._onClick(...args))
-      },
-      [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ],
-      6
-      /* CLASS, STYLE */
-    );
-  }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$3], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
-  const _sfc_main$c = {
-    name: "UniStatusBar",
-    data() {
-      return {
-        statusBarHeight: 20
-      };
-    },
-    mounted() {
-      this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight + "px";
-    }
-  };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        style: vue.normalizeStyle({ height: $data.statusBarHeight }),
-        class: "uni-status-bar"
-      },
-      [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ],
-      4
-      /* STYLE */
-    );
-  }
-  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$2], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
-  const getVal = (val) => typeof val === "number" ? val + "px" : val;
-  const _sfc_main$b = {
-    name: "UniNavBar",
-    components: {
-      statusBar
-    },
-    emits: ["clickLeft", "clickRight", "clickTitle"],
-    props: {
-      dark: {
-        type: Boolean,
-        default: false
-      },
-      title: {
-        type: String,
-        default: ""
-      },
-      leftText: {
-        type: String,
-        default: ""
-      },
-      rightText: {
-        type: String,
-        default: ""
-      },
-      leftIcon: {
-        type: String,
-        default: ""
-      },
-      rightIcon: {
-        type: String,
-        default: ""
-      },
-      fixed: {
-        type: [Boolean, String],
-        default: false
-      },
-      color: {
-        type: String,
-        default: ""
-      },
-      backgroundColor: {
-        type: String,
-        default: ""
-      },
-      statusBar: {
-        type: [Boolean, String],
-        default: false
-      },
-      shadow: {
-        type: [Boolean, String],
-        default: false
-      },
-      border: {
-        type: [Boolean, String],
-        default: true
-      },
-      height: {
-        type: [Number, String],
-        default: 44
-      },
-      leftWidth: {
-        type: [Number, String],
-        default: 60
-      },
-      rightWidth: {
-        type: [Number, String],
-        default: 60
-      },
-      stat: {
-        type: [Boolean, String],
-        default: ""
-      }
-    },
-    computed: {
-      themeBgColor() {
-        if (this.dark) {
-          if (this.backgroundColor) {
-            return this.backgroundColor;
-          } else {
-            return this.dark ? "#333" : "#FFF";
-          }
-        }
-        return this.backgroundColor || "#FFF";
-      },
-      themeColor() {
-        if (this.dark) {
-          if (this.color) {
-            return this.color;
-          } else {
-            return this.dark ? "#fff" : "#333";
-          }
-        }
-        return this.color || "#333";
-      },
-      navbarHeight() {
-        return getVal(this.height);
-      },
-      leftIconWidth() {
-        return getVal(this.leftWidth);
-      },
-      rightIconWidth() {
-        return getVal(this.rightWidth);
-      }
-    },
-    mounted() {
-      if (uni.report && this.stat && this.title !== "") {
-        uni.report("title", this.title);
-      }
-    },
-    methods: {
-      onClickLeft() {
-        this.$emit("clickLeft");
-      },
-      onClickRight() {
-        this.$emit("clickRight");
-      },
-      onClickTitle() {
-        this.$emit("clickTitle");
-      }
-    }
-  };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_status_bar = vue.resolveComponent("status-bar");
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_4);
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        class: vue.normalizeClass(["uni-navbar", { "uni-dark": $props.dark, "uni-nvue-fixed": $props.fixed }])
-      },
-      [
-        vue.createElementVNode(
-          "view",
-          {
-            class: vue.normalizeClass(["uni-navbar__content", { "uni-navbar--fixed": $props.fixed, "uni-navbar--shadow": $props.shadow, "uni-navbar--border": $props.border }]),
-            style: vue.normalizeStyle({ "background-color": $options.themeBgColor })
-          },
-          [
-            $props.statusBar ? (vue.openBlock(), vue.createBlock(_component_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
-            vue.createElementVNode(
-              "view",
-              {
-                style: vue.normalizeStyle({ color: $options.themeColor, backgroundColor: $options.themeBgColor, height: $options.navbarHeight }),
-                class: "uni-navbar__header"
-              },
-              [
-                vue.createElementVNode(
-                  "view",
-                  {
-                    onClick: _cache[0] || (_cache[0] = (...args) => $options.onClickLeft && $options.onClickLeft(...args)),
-                    class: "uni-navbar__header-btns uni-navbar__header-btns-left",
-                    style: vue.normalizeStyle({ width: $options.leftIconWidth })
-                  },
-                  [
-                    vue.renderSlot(_ctx.$slots, "left", {}, () => [
-                      $props.leftIcon.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 0,
-                        class: "uni-navbar__content_view"
-                      }, [
-                        vue.createVNode(_component_uni_icons, {
-                          color: $options.themeColor,
-                          type: $props.leftIcon,
-                          size: "20"
-                        }, null, 8, ["color", "type"])
-                      ])) : vue.createCommentVNode("v-if", true),
-                      $props.leftText.length ? (vue.openBlock(), vue.createElementBlock(
-                        "view",
-                        {
-                          key: 1,
-                          class: vue.normalizeClass([{ "uni-navbar-btn-icon-left": !$props.leftIcon.length > 0 }, "uni-navbar-btn-text"])
-                        },
-                        [
-                          vue.createElementVNode(
-                            "text",
-                            {
-                              style: vue.normalizeStyle({ color: $options.themeColor, fontSize: "12px" })
-                            },
-                            vue.toDisplayString($props.leftText),
-                            5
-                            /* TEXT, STYLE */
-                          )
-                        ],
-                        2
-                        /* CLASS */
-                      )) : vue.createCommentVNode("v-if", true)
-                    ], true)
-                  ],
-                  4
-                  /* STYLE */
-                ),
-                vue.createElementVNode("view", {
-                  class: "uni-navbar__header-container",
-                  onClick: _cache[1] || (_cache[1] = (...args) => $options.onClickTitle && $options.onClickTitle(...args))
-                }, [
-                  vue.renderSlot(_ctx.$slots, "default", {}, () => [
-                    $props.title.length > 0 ? (vue.openBlock(), vue.createElementBlock("view", {
-                      key: 0,
-                      class: "uni-navbar__header-container-inner"
-                    }, [
-                      vue.createElementVNode(
-                        "text",
-                        {
-                          class: "uni-nav-bar-text uni-ellipsis-1",
-                          style: vue.normalizeStyle({ color: $options.themeColor })
-                        },
-                        vue.toDisplayString($props.title),
-                        5
-                        /* TEXT, STYLE */
-                      )
-                    ])) : vue.createCommentVNode("v-if", true)
-                  ], true)
-                ]),
-                vue.createElementVNode(
-                  "view",
-                  {
-                    onClick: _cache[2] || (_cache[2] = (...args) => $options.onClickRight && $options.onClickRight(...args)),
-                    class: "uni-navbar__header-btns uni-navbar__header-btns-right",
-                    style: vue.normalizeStyle({ width: $options.rightIconWidth })
-                  },
-                  [
-                    vue.renderSlot(_ctx.$slots, "right", {}, () => [
-                      $props.rightIcon.length ? (vue.openBlock(), vue.createElementBlock("view", { key: 0 }, [
-                        vue.createVNode(_component_uni_icons, {
-                          color: $options.themeColor,
-                          type: $props.rightIcon,
-                          size: "22"
-                        }, null, 8, ["color", "type"])
-                      ])) : vue.createCommentVNode("v-if", true),
-                      $props.rightText.length && !$props.rightIcon.length ? (vue.openBlock(), vue.createElementBlock("view", {
-                        key: 1,
-                        class: "uni-navbar-btn-text"
-                      }, [
-                        vue.createElementVNode(
-                          "text",
-                          {
-                            class: "uni-nav-bar-right-text",
-                            style: vue.normalizeStyle({ color: $options.themeColor })
-                          },
-                          vue.toDisplayString($props.rightText),
-                          5
-                          /* TEXT, STYLE */
-                        )
-                      ])) : vue.createCommentVNode("v-if", true)
-                    ], true)
-                  ],
-                  4
-                  /* STYLE */
-                )
-              ],
-              4
-              /* STYLE */
-            )
-          ],
-          6
-          /* CLASS, STYLE */
-        ),
-        $props.fixed ? (vue.openBlock(), vue.createElementBlock("view", {
-          key: 0,
-          class: "uni-navbar__placeholder"
-        }, [
-          $props.statusBar ? (vue.openBlock(), vue.createBlock(_component_status_bar, { key: 0 })) : vue.createCommentVNode("v-if", true),
-          vue.createElementVNode(
-            "view",
-            {
-              class: "uni-navbar__placeholder-view",
-              style: vue.normalizeStyle({ height: $options.navbarHeight })
-            },
-            null,
-            4
-            /* STYLE */
-          )
-        ])) : vue.createCommentVNode("v-if", true)
-      ],
-      2
-      /* CLASS */
-    );
-  }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$1], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
-  function addUnit(num) {
-    return Number.isNaN(Number(num)) ? num : `${num}px`;
-  }
   function isObj(value) {
     return Object.prototype.toString.call(value) === "[object Object]" || typeof value === "object";
   }
@@ -1083,42 +50,10 @@ if (uni.restoreGlobal) {
     const type = match && match.length ? match[1].toLowerCase() : "";
     return type;
   }
-  const isDef = (value) => value !== void 0 && value !== null;
-  function rgbToHex(r, g, b) {
-    const hex = (r << 16 | g << 8 | b).toString(16);
-    const paddedHex = "#" + "0".repeat(Math.max(0, 6 - hex.length)) + hex;
-    return paddedHex;
-  }
-  function hexToRgb(hex) {
-    const rgb = [];
-    for (let i = 1; i < 7; i += 2) {
-      rgb.push(parseInt("0x" + hex.slice(i, i + 2), 16));
+  const checkNumRange = (num, label = "value") => {
+    if (num < 0) {
+      throw new Error(`${label} shouldn't be less than zero`);
     }
-    return rgb;
-  }
-  const gradient = (startColor, endColor, step = 2) => {
-    const sColor = hexToRgb(startColor);
-    const eColor = hexToRgb(endColor);
-    const rStep = (eColor[0] - sColor[0]) / step;
-    const gStep = (eColor[1] - sColor[1]) / step;
-    const bStep = (eColor[2] - sColor[2]) / step;
-    const gradientColorArr = [];
-    for (let i = 0; i < step; i++) {
-      gradientColorArr.push(
-        rgbToHex(parseInt(String(rStep * i + sColor[0])), parseInt(String(gStep * i + sColor[1])), parseInt(String(bStep * i + sColor[2])))
-      );
-    }
-    return gradientColorArr;
-  };
-  const padZero = (number, length = 2) => {
-    let numStr = number.toString();
-    while (numStr.length < length) {
-      numStr = "0" + numStr;
-    }
-    return numStr;
-  };
-  const context = {
-    id: 1e3
   };
   function kebabCase(word) {
     const newWord = word.replace(/[A-Z]/g, function(match) {
@@ -1155,17 +90,6 @@ if (uni.restoreGlobal) {
     }
     return "";
   }
-  const requestAnimationFrame = (cb = () => {
-  }) => {
-    return new Promise((resolve) => {
-      const timer = setInterval(() => {
-        clearInterval(timer);
-        resolve(true);
-        cb();
-      }, 1e3 / 30);
-    });
-  };
-  const numericProp = [Number, String];
   const makeRequiredProp = (type) => ({
     type,
     required: true
@@ -1176,10 +100,6 @@ if (uni.restoreGlobal) {
   });
   const makeNumberProp = (defaultVal) => ({
     type: Number,
-    default: defaultVal
-  });
-  const makeNumericProp = (defaultVal) => ({
-    type: numericProp,
     default: defaultVal
   });
   const makeStringProp = (defaultVal) => ({
@@ -1196,403 +116,6 @@ if (uni.restoreGlobal) {
      */
     customClass: makeStringProp("")
   };
-  const passwordInputProps = {
-    ...baseProps,
-    /**
-     * 绑定的值
-     */
-    modelValue: makeStringProp(""),
-    /**
-     * 是否隐藏密码内容
-     */
-    mask: makeBooleanProp(true),
-    /**
-     * 输入框下方文字提示
-     */
-    info: makeStringProp(""),
-    /**
-     * 输入框下方错误提示
-     */
-    errorInfo: makeStringProp(""),
-    /**
-     * 输入框格子之间的间距，如 20px 2em，默认单位为 px
-     */
-    gutter: makeNumericProp(0),
-    /**
-     * 密码最大长度
-     */
-    length: makeNumberProp(6),
-    /**
-     * 是否已聚焦，聚焦时会显示光标
-     */
-    focused: makeBooleanProp(true)
-  };
-  const __default__$8 = {
-    name: "wd-password-input",
-    options: {
-      virtualHost: true,
-      addGlobalClass: true,
-      styleIsolation: "shared"
-    }
-  };
-  const _sfc_main$a = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$8,
-    props: passwordInputProps,
-    emits: ["focus"],
-    setup(__props, { emit: __emit }) {
-      const emit = __emit;
-      function onTouchStart(event) {
-        emit("focus", event);
-      }
-      return (_ctx, _cache) => {
-        return vue.openBlock(), vue.createElementBlock(
-          "view",
-          {
-            class: vue.normalizeClass(`wd-password-input ${_ctx.customClass}`),
-            style: vue.normalizeStyle(_ctx.customStyle)
-          },
-          [
-            vue.createElementVNode(
-              "view",
-              {
-                onTouchstart: onTouchStart,
-                class: "wd-password-input__security"
-              },
-              [
-                (vue.openBlock(true), vue.createElementBlock(
-                  vue.Fragment,
-                  null,
-                  vue.renderList(_ctx.length, (_, index) => {
-                    return vue.openBlock(), vue.createElementBlock(
-                      "view",
-                      {
-                        key: index,
-                        class: vue.normalizeClass(`wd-password-input__item ${_ctx.gutter ? "" : "is-border"}`),
-                        style: vue.normalizeStyle({ marginLeft: index !== 0 && _ctx.gutter ? vue.unref(addUnit)(_ctx.gutter) : 0 })
-                      },
-                      [
-                        _ctx.focused && index === _ctx.modelValue.length ? (vue.openBlock(), vue.createElementBlock("view", {
-                          key: 0,
-                          class: "wd-password-input__cursor"
-                        })) : (vue.openBlock(), vue.createElementBlock("view", {
-                          key: 1,
-                          class: vue.normalizeClass(`wd-password-input__value`)
-                        }, [
-                          vue.createElementVNode(
-                            "view",
-                            {
-                              style: vue.normalizeStyle({ visibility: _ctx.mask && _ctx.modelValue[index] ? "visible" : "hidden" }),
-                              class: "wd-password-input__mask"
-                            },
-                            null,
-                            4
-                            /* STYLE */
-                          ),
-                          !_ctx.mask && _ctx.modelValue[index] ? (vue.openBlock(), vue.createElementBlock(
-                            "text",
-                            { key: 0 },
-                            vue.toDisplayString(_ctx.modelValue[index]),
-                            1
-                            /* TEXT */
-                          )) : vue.createCommentVNode("v-if", true)
-                        ]))
-                      ],
-                      6
-                      /* CLASS, STYLE */
-                    );
-                  }),
-                  128
-                  /* KEYED_FRAGMENT */
-                ))
-              ],
-              32
-              /* NEED_HYDRATION */
-            ),
-            _ctx.info || _ctx.errorInfo ? (vue.openBlock(), vue.createElementBlock(
-              "view",
-              {
-                key: 0,
-                class: vue.normalizeClass(`wd-password-input__info ${_ctx.errorInfo ? "is-error" : ""}`)
-              },
-              vue.toDisplayString(_ctx.errorInfo || _ctx.info),
-              3
-              /* TEXT, CLASS */
-            )) : vue.createCommentVNode("v-if", true)
-          ],
-          6
-          /* CLASS, STYLE */
-        );
-      };
-    }
-  });
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-fa6d4629"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-password-input/wd-password-input.vue"]]);
-  const transitionProps = {
-    ...baseProps,
-    /**
-     * 是否展示组件
-     * 类型：boolean
-     * 默认值：false
-     */
-    show: makeBooleanProp(false),
-    /**
-     * 动画执行时间
-     * 类型：number | boolean | Record<string, number>
-     * 默认值：300 (毫秒)
-     */
-    duration: {
-      type: [Object, Number, Boolean],
-      default: 300
-    },
-    /**
-     * 动画类型
-     * 类型：string
-     * 可选值：fade / fade-up / fade-down / fade-left / fade-right / slide-up / slide-down / slide-left / slide-right / zoom-in
-     * 默认值：'fade'
-     */
-    name: makeStringProp("fade"),
-    /**
-     * 是否延迟渲染子组件
-     * 类型：boolean
-     * 默认值：true
-     */
-    lazyRender: makeBooleanProp(true),
-    /**
-     * 进入过渡的开始状态
-     * 类型：string
-     */
-    enterClass: makeStringProp(""),
-    /**
-     * 进入过渡的激活状态
-     * 类型：string
-     */
-    enterActiveClass: makeStringProp(""),
-    /**
-     * 进入过渡的结束状态
-     * 类型：string
-     */
-    enterToClass: makeStringProp(""),
-    /**
-     * 离开过渡的开始状态
-     * 类型：string
-     */
-    leaveClass: makeStringProp(""),
-    /**
-     * 离开过渡的激活状态
-     * 类型：string
-     */
-    leaveActiveClass: makeStringProp(""),
-    /**
-     * 离开过渡的结束状态
-     * 类型：string
-     */
-    leaveToClass: makeStringProp("")
-  };
-  const __default__$7 = {
-    name: "wd-transition",
-    options: {
-      addGlobalClass: true,
-      virtualHost: true,
-      styleIsolation: "shared"
-    }
-  };
-  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$7,
-    props: transitionProps,
-    emits: ["click", "before-enter", "enter", "before-leave", "leave", "after-leave", "after-enter"],
-    setup(__props, { emit: __emit }) {
-      const getClassNames = (name) => {
-        if (!name) {
-          return {
-            enter: `${props.enterClass} ${props.enterActiveClass}`,
-            "enter-to": `${props.enterToClass} ${props.enterActiveClass}`,
-            leave: `${props.leaveClass} ${props.leaveActiveClass}`,
-            "leave-to": `${props.leaveToClass} ${props.leaveActiveClass}`
-          };
-        }
-        return {
-          enter: `wd-${name}-enter wd-${name}-enter-active`,
-          "enter-to": `wd-${name}-enter-to wd-${name}-enter-active`,
-          leave: `wd-${name}-leave wd-${name}-leave-active`,
-          "leave-to": `wd-${name}-leave-to wd-${name}-leave-active`
-        };
-      };
-      const props = __props;
-      const emit = __emit;
-      const inited = vue.ref(false);
-      const display = vue.ref(false);
-      const status = vue.ref("");
-      const transitionEnded = vue.ref(false);
-      const currentDuration = vue.ref(300);
-      const classes = vue.ref("");
-      const enterPromise = vue.ref(null);
-      const style = vue.computed(() => {
-        return `-webkit-transition-duration:${currentDuration.value}ms;transition-duration:${currentDuration.value}ms;${display.value ? "" : "display: none;"}${props.customStyle}`;
-      });
-      const rootClass = vue.computed(() => {
-        return `wd-transition ${props.customClass}  ${classes.value}`;
-      });
-      vue.onBeforeMount(() => {
-        if (props.show) {
-          enter();
-        }
-      });
-      vue.watch(
-        () => props.show,
-        (newVal) => {
-          observerShow(newVal);
-        },
-        { deep: true, immediate: true }
-      );
-      function handleClick() {
-        emit("click");
-      }
-      function observerShow(value) {
-        value ? enter() : leave();
-      }
-      function enter() {
-        if (enterPromise.value)
-          return;
-        enterPromise.value = new Promise((resolve) => {
-          const classNames = getClassNames(props.name);
-          const duration = isObj(props.duration) ? props.duration.enter : props.duration;
-          status.value = "enter";
-          emit("before-enter");
-          requestAnimationFrame(() => {
-            emit("enter");
-            classes.value = classNames.enter;
-            currentDuration.value = duration;
-            requestAnimationFrame(() => {
-              inited.value = true;
-              display.value = true;
-              requestAnimationFrame(() => {
-                transitionEnded.value = false;
-                classes.value = classNames["enter-to"];
-                resolve();
-              });
-            });
-          });
-        });
-      }
-      function leave() {
-        if (!enterPromise.value)
-          return;
-        enterPromise.value.then(() => {
-          if (!display.value)
-            return;
-          const classNames = getClassNames(props.name);
-          const duration = isObj(props.duration) ? props.duration.leave : props.duration;
-          status.value = "leave";
-          emit("before-leave");
-          requestAnimationFrame(() => {
-            emit("leave");
-            classes.value = classNames.leave;
-            currentDuration.value = duration;
-            requestAnimationFrame(() => {
-              transitionEnded.value = false;
-              setTimeout(() => {
-                onTransitionEnd();
-                enterPromise.value = null;
-              }, currentDuration.value);
-              classes.value = classNames["leave-to"];
-            });
-          });
-        });
-      }
-      function onTransitionEnd() {
-        if (transitionEnded.value)
-          return;
-        transitionEnded.value = true;
-        if (status.value === "leave") {
-          emit("after-leave");
-        } else if (status.value === "enter") {
-          emit("after-enter");
-        }
-        if (!props.show && display.value) {
-          display.value = false;
-        }
-      }
-      return (_ctx, _cache) => {
-        return inited.value ? (vue.openBlock(), vue.createElementBlock(
-          "view",
-          {
-            key: 0,
-            class: vue.normalizeClass(rootClass.value),
-            style: vue.normalizeStyle(style.value),
-            onTransitionend: onTransitionEnd,
-            onClick: handleClick
-          },
-          [
-            vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-          ],
-          38
-          /* CLASS, STYLE, NEED_HYDRATION */
-        )) : vue.createCommentVNode("v-if", true);
-      };
-    }
-  });
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-af59a128"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-transition/wd-transition.vue"]]);
-  const overlayProps = {
-    ...baseProps,
-    /**
-     * 是否展示遮罩层
-     */
-    show: makeBooleanProp(false),
-    /**
-     * 动画时长，单位毫秒
-     */
-    duration: {
-      type: [Object, Number, Boolean],
-      default: 300
-    },
-    /**
-     * 是否锁定滚动
-     */
-    lockScroll: makeBooleanProp(true),
-    /**
-     * 层级
-     */
-    zIndex: makeNumberProp(10)
-  };
-  const __default__$6 = {
-    name: "wd-overlay",
-    options: {
-      virtualHost: true,
-      addGlobalClass: true,
-      styleIsolation: "shared"
-    }
-  };
-  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$6,
-    props: overlayProps,
-    emits: ["click"],
-    setup(__props, { emit: __emit }) {
-      const emit = __emit;
-      function handleClick() {
-        emit("click");
-      }
-      function noop() {
-      }
-      return (_ctx, _cache) => {
-        const _component_wd_transition = resolveEasycom(vue.resolveDynamicComponent("wd-transition"), __easycom_0$2);
-        return vue.openBlock(), vue.createBlock(_component_wd_transition, {
-          show: _ctx.show,
-          name: "fade",
-          "custom-class": "wd-overlay",
-          duration: _ctx.duration,
-          "custom-style": `z-index: ${_ctx.zIndex}; ${_ctx.customStyle}`,
-          onClick: handleClick,
-          onTouchmove: _cache[0] || (_cache[0] = vue.withModifiers(($event) => _ctx.lockScroll ? noop : "", ["stop", "prevent"]))
-        }, {
-          default: vue.withCtx(() => [
-            vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-          ]),
-          _: 3
-          /* FORWARDED */
-        }, 8, ["show", "duration", "custom-style"]);
-      };
-    }
-  });
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-6e0d1141"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-overlay/wd-overlay.vue"]]);
   const iconProps = {
     ...baseProps,
     /**
@@ -1612,7 +135,7 @@ if (uni.restoreGlobal) {
      */
     classPrefix: makeStringProp("wd-icon")
   };
-  const __default__$5 = {
+  const __default__$1 = {
     name: "wd-icon",
     options: {
       virtualHost: true,
@@ -1620,8 +143,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$7 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$5,
+  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$1,
     props: iconProps,
     emits: ["click"],
     setup(__props, { emit: __emit }) {
@@ -1673,660 +196,42 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
-  const popupProps = {
+  const _export_sfc = (sfc, props) => {
+    const target = sfc.__vccOpts || sfc;
+    for (const [key, val] of props) {
+      target[key] = val;
+    }
+    return target;
+  };
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
+  const progressProps = {
     ...baseProps,
-    transition: String,
     /**
-     * 关闭按钮
+     * 进度数值，最大值100
      */
-    closable: makeBooleanProp(false),
+    percentage: makeNumberProp(0),
     /**
-     * 弹出框的位置
+     * 是否隐藏进度条上的文字，默认值为false
      */
-    position: makeStringProp("center"),
+    hideText: makeBooleanProp(false),
     /**
-     * 点击遮罩是否关闭
+     * 进度条颜色
      */
-    closeOnClickModal: makeBooleanProp(true),
-    /**
-     * 动画持续时间
-     */
-    duration: {
-      type: [Number, Boolean],
-      default: 300
+    color: {
+      type: [String, Array, Object],
+      default: "linear-gradient(315deg, rgba(81,124,240,1) 0%,rgba(118,158,245,1) 100%)"
     },
     /**
-     * 是否显示遮罩
+     * 进度增加1%所需毫秒数
      */
-    modal: makeBooleanProp(true),
+    duration: makeNumberProp(30),
     /**
-     * 设置层级
+     * 进度条状态
      */
-    zIndex: makeNumberProp(10),
-    /**
-     * 是否当关闭时将弹出层隐藏（display: none)
-     */
-    hideWhenClose: makeBooleanProp(true),
-    /**
-     * 遮罩样式
-     */
-    modalStyle: makeStringProp(""),
-    /**
-     * 弹出面板是否设置底部安全距离（iphone X 类型的机型）
-     */
-    safeAreaInsetBottom: makeBooleanProp(false),
-    /**
-     * 弹出层是否显示
-     */
-    modelValue: makeBooleanProp(false),
-    /**
-     * 弹层内容懒渲染，触发展示时才渲染内容
-     */
-    lazyRender: makeBooleanProp(true),
-    /**
-     * 是否锁定滚动
-     */
-    lockScroll: makeBooleanProp(true)
+    status: String
   };
-  const __default__$4 = {
-    name: "wd-popup",
-    options: {
-      virtualHost: true,
-      addGlobalClass: true,
-      styleIsolation: "shared"
-    }
-  };
-  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$4,
-    props: popupProps,
-    emits: [
-      "update:modelValue",
-      "before-enter",
-      "enter",
-      "before-leave",
-      "leave",
-      "after-leave",
-      "after-enter",
-      "click-modal",
-      "close"
-    ],
-    setup(__props, { emit: __emit }) {
-      const props = __props;
-      const emit = __emit;
-      const getClassNames = (name2) => {
-        if (!name2) {
-          return {
-            enter: "enter-class enter-active-class",
-            "enter-to": "enter-to-class enter-active-class",
-            leave: "leave-class leave-active-class",
-            "leave-to": "leave-to-class leave-active-class"
-          };
-        }
-        return {
-          enter: `wd-${name2}-enter wd-${name2}-enter-active`,
-          "enter-to": `wd-${name2}-enter-to wd-${name2}-enter-active`,
-          leave: `wd-${name2}-leave wd-${name2}-leave-active`,
-          "leave-to": `wd-${name2}-leave-to wd-${name2}-leave-active`
-        };
-      };
-      const inited = vue.ref(false);
-      const display = vue.ref(false);
-      const status = vue.ref("");
-      const transitionEnded = vue.ref(false);
-      const currentDuration = vue.ref(300);
-      const classes = vue.ref("");
-      const safeBottom = vue.ref(0);
-      const name = vue.ref("");
-      const style = vue.computed(() => {
-        return `z-index: ${props.zIndex}; padding-bottom: ${safeBottom.value}px; -webkit-transition-duration: ${currentDuration.value}ms; transition-duration: ${currentDuration.value}ms; ${display.value || !props.hideWhenClose ? "" : "display: none;"} ${props.customStyle}`;
-      });
-      const rootClass = vue.computed(() => {
-        return `wd-popup wd-popup--${props.position} ${props.customClass || ""} ${classes.value || ""}`;
-      });
-      vue.onBeforeMount(() => {
-        observerTransition();
-        if (props.safeAreaInsetBottom) {
-          const { safeArea, screenHeight, safeAreaInsets } = uni.getSystemInfoSync();
-          if (safeArea) {
-            safeBottom.value = safeAreaInsets ? safeAreaInsets.bottom : 0;
-          } else {
-            safeBottom.value = 0;
-          }
-        }
-        if (props.modelValue) {
-          enter();
-        }
-      });
-      vue.watch(
-        () => props.modelValue,
-        (newVal) => {
-          observermodelValue(newVal);
-        },
-        { deep: true, immediate: true }
-      );
-      vue.watch(
-        [() => props.position, () => props.transition],
-        () => {
-          observerTransition();
-        },
-        { deep: true, immediate: true }
-      );
-      function observermodelValue(value) {
-        value ? enter() : leave();
-      }
-      function enter() {
-        const classNames = getClassNames(props.transition || props.position);
-        const duration = props.transition === "none" ? 0 : isObj(props.duration) ? props.duration.enter : props.duration;
-        status.value = "enter";
-        emit("before-enter");
-        requestAnimationFrame(() => {
-          emit("enter");
-          classes.value = classNames.enter;
-          currentDuration.value = duration;
-          requestAnimationFrame(() => {
-            inited.value = true;
-            display.value = true;
-            requestAnimationFrame(() => {
-              transitionEnded.value = false;
-              classes.value = classNames["enter-to"];
-            });
-          });
-        });
-      }
-      function leave() {
-        if (!display.value)
-          return;
-        const classNames = getClassNames(props.transition || props.position);
-        const duration = props.transition === "none" ? 0 : isObj(props.duration) ? props.duration.leave : props.duration;
-        status.value = "leave";
-        emit("before-leave");
-        requestAnimationFrame(() => {
-          emit("leave");
-          classes.value = classNames.leave;
-          currentDuration.value = duration;
-          requestAnimationFrame(() => {
-            transitionEnded.value = false;
-            const timer = setTimeout(() => {
-              onTransitionEnd();
-              clearTimeout(timer);
-            }, currentDuration.value);
-            classes.value = classNames["leave-to"];
-          });
-        });
-      }
-      function onTransitionEnd() {
-        if (transitionEnded.value)
-          return;
-        transitionEnded.value = true;
-        if (status.value === "leave") {
-          emit("after-leave");
-        } else if (status.value === "enter") {
-          emit("after-enter");
-        }
-        if (!props.modelValue && display.value) {
-          display.value = false;
-        }
-      }
-      function observerTransition() {
-        const { transition, position } = props;
-        name.value = transition || position;
-      }
-      function handleClickModal() {
-        emit("click-modal");
-        if (props.closeOnClickModal) {
-          close();
-        }
-      }
-      function close() {
-        emit("close");
-        emit("update:modelValue", false);
-      }
-      function noop() {
-      }
-      return (_ctx, _cache) => {
-        const _component_wd_overlay = resolveEasycom(vue.resolveDynamicComponent("wd-overlay"), __easycom_0$1);
-        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_1);
-        return vue.openBlock(), vue.createElementBlock(
-          vue.Fragment,
-          null,
-          [
-            _ctx.modal ? (vue.openBlock(), vue.createBlock(_component_wd_overlay, {
-              key: 0,
-              show: _ctx.modelValue,
-              "z-index": _ctx.zIndex,
-              "lock-scroll": _ctx.lockScroll,
-              duration: _ctx.duration,
-              "custom-style": _ctx.modalStyle,
-              onClick: handleClickModal,
-              onTouchmove: noop
-            }, null, 8, ["show", "z-index", "lock-scroll", "duration", "custom-style"])) : vue.createCommentVNode("v-if", true),
-            !_ctx.lazyRender || inited.value ? (vue.openBlock(), vue.createElementBlock(
-              "view",
-              {
-                key: 1,
-                class: vue.normalizeClass(rootClass.value),
-                style: vue.normalizeStyle(style.value),
-                onTransitionend: onTransitionEnd
-              },
-              [
-                vue.renderSlot(_ctx.$slots, "default", {}, void 0, true),
-                _ctx.closable ? (vue.openBlock(), vue.createBlock(_component_wd_icon, {
-                  key: 0,
-                  "custom-class": "wd-popup__close",
-                  name: "add",
-                  onClick: close
-                })) : vue.createCommentVNode("v-if", true)
-              ],
-              38
-              /* CLASS, STYLE, NEED_HYDRATION */
-            )) : vue.createCommentVNode("v-if", true)
-          ],
-          64
-          /* STABLE_FRAGMENT */
-        );
-      };
-    }
-  });
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-25a8a9f7"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-popup/wd-popup.vue"]]);
-  const _b64chars = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"];
-  const _mkUriSafe = (src) => src.replace(/[+/]/g, (m0) => m0 === "+" ? "-" : "_").replace(/=+\$/m, "");
-  const fromUint8Array = (src, rfc4648 = false) => {
-    let b64 = "";
-    for (let i = 0, l = src.length; i < l; i += 3) {
-      const [a0, a1, a2] = [src[i], src[i + 1], src[i + 2]];
-      const ord = a0 << 16 | a1 << 8 | a2;
-      b64 += _b64chars[ord >>> 18];
-      b64 += _b64chars[ord >>> 12 & 63];
-      b64 += typeof a1 !== "undefined" ? _b64chars[ord >>> 6 & 63] : "=";
-      b64 += typeof a2 !== "undefined" ? _b64chars[ord & 63] : "=";
-    }
-    return rfc4648 ? _mkUriSafe(b64) : b64;
-  };
-  const _btoa = typeof btoa === "function" ? (s) => btoa(s) : (s) => {
-    if (s.charCodeAt(0) > 255) {
-      throw new RangeError("The string contains invalid characters.");
-    }
-    return fromUint8Array(Uint8Array.from(s, (c) => c.charCodeAt(0)));
-  };
-  const utob = (src) => unescape(encodeURIComponent(src));
-  function encode(src, rfc4648 = false) {
-    const b64 = _btoa(utob(src));
-    return rfc4648 ? _mkUriSafe(b64) : b64;
-  }
-  const loadingProps = {
-    ...baseProps,
-    /**
-     * 加载指示器类型，可选值：'outline' | 'ring'
-     */
-    type: makeStringProp("ring"),
-    /**
-     * 设置加载指示器颜色
-     */
-    color: makeStringProp("#4D80F0"),
-    /**
-     * 设置加载指示器大小
-     */
-    size: makeNumericProp("32px")
-  };
-  const __default__$3 = {
-    name: "wd-loading",
-    options: {
-      virtualHost: true,
-      addGlobalClass: true,
-      styleIsolation: "shared"
-    }
-  };
-  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$3,
-    props: loadingProps,
-    setup(__props) {
-      const svgDefineId = context.id++;
-      const svgDefineId1 = context.id++;
-      const svgDefineId2 = context.id++;
-      const icon = {
-        outline(color = "#4D80F0") {
-          return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><defs><linearGradient x1="100%" y1="0%" x2="0%" y2="0%" id="${svgDefineId}"><stop stop-color="#FFF" offset="0%" stop-opacity="0"/><stop stop-color="#FFF" offset="100%"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><path d="M21 1c11.046 0 20 8.954 20 20s-8.954 20-20 20S1 32.046 1 21 9.954 1 21 1zm0 7C13.82 8 8 13.82 8 21s5.82 13 13 13 13-5.82 13-13S28.18 8 21 8z" fill="${color}"/><path d="M4.599 21c0 9.044 7.332 16.376 16.376 16.376 9.045 0 16.376-7.332 16.376-16.376" stroke="url(#${svgDefineId}) " stroke-width="3.5" stroke-linecap="round"/></g></svg>`;
-        },
-        ring(color = "#4D80F0", intermediateColor2 = "#a6bff7") {
-          return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><linearGradient id="${svgDefineId1}" gradientUnits="userSpaceOnUse" x1="50" x2="50" y2="180"><stop offset="0" stop-color="${color}"></stop> <stop offset="1" stop-color="${intermediateColor2}"></stop></linearGradient> <path fill="url(#${svgDefineId1})" d="M20 100c0-44.1 35.9-80 80-80V0C44.8 0 0 44.8 0 100s44.8 100 100 100v-20c-44.1 0-80-35.9-80-80z"></path> <linearGradient id="${svgDefineId2}" gradientUnits="userSpaceOnUse" x1="150" y1="20" x2="150" y2="180"><stop offset="0" stop-color="#fff" stop-opacity="0"></stop> <stop offset="1" stop-color="${intermediateColor2}"></stop></linearGradient> <path fill="url(#${svgDefineId2})" d="M100 0v20c44.1 0 80 35.9 80 80s-35.9 80-80 80v20c55.2 0 100-44.8 100-100S155.2 0 100 0z"></path> <circle cx="100" cy="10" r="10" fill="${color}"></circle></svg>`;
-        }
-      };
-      const props = __props;
-      const svg = vue.ref("");
-      const intermediateColor = vue.ref("");
-      const iconSize = vue.ref("32px");
-      vue.watch(
-        () => props.size,
-        (newVal) => {
-          iconSize.value = addUnit(newVal);
-        },
-        {
-          deep: true,
-          immediate: true
-        }
-      );
-      vue.watch(
-        () => props.type,
-        () => {
-          buildSvg();
-        },
-        {
-          deep: true,
-          immediate: true
-        }
-      );
-      const rootStyle = vue.computed(() => {
-        const style = {
-          width: iconSize.value,
-          height: iconSize.value
-        };
-        return `${objToStyle(style)}; ${props.customStyle}`;
-      });
-      const rootClass = vue.computed(() => {
-        return `wd-loading  ${props.customClass}`;
-      });
-      vue.onBeforeMount(() => {
-        intermediateColor.value = gradient(props.color, "#ffffff", 2)[1];
-        buildSvg();
-      });
-      function buildSvg() {
-        const { type, color } = props;
-        let ringType = isDef(type) ? type : "ring";
-        const svgStr = `"data:image/svg+xml;base64,${encode(ringType === "ring" ? icon[ringType](color, intermediateColor.value) : icon[ringType](color))}"`;
-        svg.value = svgStr;
-      }
-      return (_ctx, _cache) => {
-        return vue.openBlock(), vue.createElementBlock(
-          "view",
-          {
-            class: vue.normalizeClass(rootClass.value),
-            style: vue.normalizeStyle(rootStyle.value)
-          },
-          [
-            !_ctx.type || _ctx.type === "ring" ? (vue.openBlock(), vue.createElementBlock("view", {
-              key: 0,
-              class: "wd-loading__body"
-            }, [
-              vue.createElementVNode(
-                "view",
-                {
-                  class: "wd-loading__svg",
-                  style: vue.normalizeStyle(`background-image: url(${svg.value});`)
-                },
-                null,
-                4
-                /* STYLE */
-              )
-            ])) : vue.createCommentVNode("v-if", true),
-            _ctx.type === "outline" ? (vue.openBlock(), vue.createElementBlock("view", {
-              key: 1,
-              class: "wd-loading__body"
-            }, [
-              vue.createElementVNode(
-                "view",
-                {
-                  class: "wd-loading__svg",
-                  style: vue.normalizeStyle(`background-image: url(${svg.value});`)
-                },
-                null,
-                4
-                /* STYLE */
-              )
-            ])) : vue.createCommentVNode("v-if", true)
-          ],
-          6
-          /* CLASS, STYLE */
-        );
-      };
-    }
-  });
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-f2b508ee"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-loading/wd-loading.vue"]]);
-  function useTouch() {
-    const direction = vue.ref("");
-    const deltaX = vue.ref(0);
-    const deltaY = vue.ref(0);
-    const offsetX = vue.ref(0);
-    const offsetY = vue.ref(0);
-    const startX = vue.ref(0);
-    const startY = vue.ref(0);
-    function touchStart(event) {
-      const touch = event.touches[0];
-      direction.value = "";
-      deltaX.value = 0;
-      deltaY.value = 0;
-      offsetX.value = 0;
-      offsetY.value = 0;
-      startX.value = touch.clientX;
-      startY.value = touch.clientY;
-    }
-    function touchMove(event) {
-      const touch = event.touches[0];
-      deltaX.value = touch.clientX - startX.value;
-      deltaY.value = touch.clientY - startY.value;
-      offsetX.value = Math.abs(deltaX.value);
-      offsetY.value = Math.abs(deltaY.value);
-      direction.value = offsetX.value > offsetY.value ? "horizontal" : offsetX.value < offsetY.value ? "vertical" : "";
-    }
-    return {
-      touchStart,
-      touchMove,
-      direction,
-      deltaX,
-      deltaY,
-      offsetX,
-      offsetY,
-      startX,
-      startY
-    };
-  }
-  const keyProps = {
-    type: makeStringProp(""),
-    text: makeNumericProp(""),
-    wider: makeBooleanProp(false),
-    large: makeBooleanProp(false),
-    loading: makeBooleanProp(false)
-  };
-  const __default__$2 = {
-    name: "wd-key",
-    options: {
-      virtualHost: true,
-      addGlobalClass: true,
-      styleIsolation: "shared"
-    }
-  };
-  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$2,
-    props: keyProps,
-    emits: ["press"],
-    setup(__props, { emit: __emit }) {
-      const props = __props;
-      const emit = __emit;
-      const touch = useTouch();
-      const active = vue.ref(false);
-      const keyClass = vue.computed(() => {
-        return `wd-key ${props.large ? "wd-key--large" : ""} ${props.type === "delete" ? "wd-key--delete" : ""} ${props.type === "close" ? "wd-key--close" : ""}`;
-      });
-      function onTouchStart(event) {
-        touch.touchStart(event);
-        active.value = true;
-      }
-      function onTouchMove(event) {
-        touch.touchMove(event);
-        if (touch.direction.value) {
-          active.value = false;
-        }
-      }
-      function onTouchEnd() {
-        if (active.value) {
-          active.value = false;
-          emit("press", props.text, props.type);
-        }
-      }
-      return (_ctx, _cache) => {
-        const _component_wd_loading = resolveEasycom(vue.resolveDynamicComponent("wd-loading"), __easycom_0);
-        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_1);
-        return vue.openBlock(), vue.createElementBlock(
-          "view",
-          {
-            class: vue.normalizeClass(`wd-key-wrapper ${_ctx.wider ? "wd-key-wrapper--wider" : ""}`),
-            onTouchstart: onTouchStart,
-            onTouchmove: onTouchMove,
-            onTouchend: onTouchEnd
-          },
-          [
-            vue.createElementVNode(
-              "view",
-              {
-                class: vue.normalizeClass(keyClass.value)
-              },
-              [
-                props.loading ? (vue.openBlock(), vue.createBlock(_component_wd_loading, {
-                  key: 0,
-                  "custom-class": "wd-key--loading-icon"
-                })) : vue.createCommentVNode("v-if", true),
-                _ctx.type === "delete" ? (vue.openBlock(), vue.createElementBlock(
-                  vue.Fragment,
-                  { key: 1 },
-                  [
-                    _ctx.text ? (vue.openBlock(), vue.createElementBlock(
-                      vue.Fragment,
-                      { key: 0 },
-                      [
-                        vue.createTextVNode(
-                          vue.toDisplayString(_ctx.text),
-                          1
-                          /* TEXT */
-                        )
-                      ],
-                      64
-                      /* STABLE_FRAGMENT */
-                    )) : (vue.openBlock(), vue.createBlock(_component_wd_icon, {
-                      key: 1,
-                      name: "keyboard-delete",
-                      size: "22px"
-                    }))
-                  ],
-                  64
-                  /* STABLE_FRAGMENT */
-                )) : _ctx.type === "extra" ? (vue.openBlock(), vue.createElementBlock(
-                  vue.Fragment,
-                  { key: 2 },
-                  [
-                    _ctx.text ? (vue.openBlock(), vue.createElementBlock(
-                      vue.Fragment,
-                      { key: 0 },
-                      [
-                        vue.createTextVNode(
-                          vue.toDisplayString(_ctx.text),
-                          1
-                          /* TEXT */
-                        )
-                      ],
-                      64
-                      /* STABLE_FRAGMENT */
-                    )) : (vue.openBlock(), vue.createBlock(_component_wd_icon, {
-                      key: 1,
-                      name: "keyboard-collapse",
-                      size: "22px"
-                    }))
-                  ],
-                  64
-                  /* STABLE_FRAGMENT */
-                )) : (vue.openBlock(), vue.createElementBlock(
-                  vue.Fragment,
-                  { key: 3 },
-                  [
-                    vue.createTextVNode(
-                      vue.toDisplayString(_ctx.text),
-                      1
-                      /* TEXT */
-                    )
-                  ],
-                  64
-                  /* STABLE_FRAGMENT */
-                ))
-              ],
-              2
-              /* CLASS */
-            )
-          ],
-          34
-          /* CLASS, NEED_HYDRATION */
-        );
-      };
-    }
-  });
-  const WdKey = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-13f6d252"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-number-keyboard/key/index.vue"]]);
-  const numberKeyboardProps = {
-    ...baseProps,
-    /**
-     * 是否可见
-     */
-    visible: makeBooleanProp(false),
-    /**
-     * 绑定的值
-     */
-    modelValue: makeStringProp(""),
-    /**
-     * 标题
-     */
-    title: String,
-    /**
-     * 键盘模式
-     */
-    mode: makeStringProp("default"),
-    /**
-     * 层级
-     */
-    zIndex: makeNumberProp(100),
-    /**
-     * 最大长度
-     */
-    maxlength: makeNumberProp(Infinity),
-    /**
-     * 是否显示删除键
-     */
-    showDeleteKey: makeBooleanProp(true),
-    /**
-     * 是否随机键盘按键顺序
-     */
-    randomKeyOrder: makeBooleanProp(false),
-    /**
-     * 确认按钮文本
-     */
-    closeText: String,
-    /**
-     * 删除按钮文本
-     */
-    deleteText: String,
-    /**
-     * 关闭按钮是否显示加载状态
-     */
-    closeButtonLoading: makeBooleanProp(false),
-    /**
-     * 是否显示蒙层
-     */
-    modal: makeBooleanProp(false),
-    /**
-     * 是否在点击外部时收起键盘
-     */
-    hideOnClickOutside: makeBooleanProp(true),
-    /**
-     * 是否锁定滚动
-     */
-    lockScroll: makeBooleanProp(true),
-    /**
-     * 是否在底部安全区域内
-     */
-    safeAreaInsetBottom: makeBooleanProp(true),
-    /**
-     * 额外按键
-     */
-    extraKey: [String, Array]
-  };
-  const __default__$1 = {
-    name: "wd-number-keyboard",
+  const __default__ = {
+    name: "wd-progress",
     options: {
       virtualHost: true,
       addGlobalClass: true,
@@ -2334,388 +239,168 @@ if (uni.restoreGlobal) {
     }
   };
   const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$1,
-    props: numberKeyboardProps,
-    emits: ["update:visible", "input", "close", "delete", "update:modelValue"],
-    setup(__props, { emit: __emit }) {
+    ...__default__,
+    props: progressProps,
+    setup(__props) {
       const props = __props;
-      const emit = __emit;
-      const show = vue.ref(props.visible);
+      const showColor = vue.ref("");
+      const showPercent = vue.ref(0);
+      const changeCount = vue.ref(0);
+      const progressClass = vue.ref("");
+      let timer = null;
+      const rootStyle = vue.computed(() => {
+        const style = {
+          background: showColor.value,
+          width: showPercent.value + "%",
+          "transition-duration": changeCount.value * props.duration * 1e-3 + "s"
+        };
+        return objToStyle(style);
+      });
       vue.watch(
-        () => props.visible,
+        () => props.percentage,
         (newValue) => {
-          show.value = newValue;
+          if (Number.isNaN(newValue) || newValue < 0 || newValue > 100) {
+            formatAppLog("error", "at uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue:59", "The value of percentage must be between 0 and 100");
+          }
+          controlProgress();
         }
       );
-      const keys = vue.computed(() => props.mode === "custom" ? genCustomKeys() : genDefaultKeys());
-      const showClose = vue.computed(() => {
-        return props.closeText && props.mode === "default";
-      });
-      const showTitle = vue.computed(() => {
-        return props.title || showClose.value;
-      });
-      function shuffleArray(arr) {
-        const newArr = [...arr];
-        for (let i = newArr.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+      vue.watch(
+        () => props.color,
+        () => {
+          controlProgress();
+        },
+        {
+          deep: true,
+          immediate: true
         }
-        return newArr;
-      }
-      function genBasicKeys() {
-        const keys2 = Array.from({ length: 9 }, (_, i) => ({ text: i + 1 }));
-        return props.randomKeyOrder ? shuffleArray(keys2) : keys2;
-      }
-      function genDefaultKeys() {
-        return [
-          ...genBasicKeys(),
-          { text: props.extraKey, type: "extra" },
-          { text: 0 },
-          {
-            // 根据条件是否显示删除键的文本和类型
-            text: props.showDeleteKey ? props.deleteText : "",
-            type: props.showDeleteKey ? "delete" : ""
-          }
-        ];
-      }
-      function genCustomKeys() {
-        const keys2 = genBasicKeys();
-        const extraKeys = Array.isArray(props.extraKey) ? props.extraKey : [props.extraKey];
-        if (extraKeys.length === 1) {
-          keys2.push({ text: 0, wider: true }, { text: extraKeys[0], type: "extra" });
-        } else if (extraKeys.length === 2) {
-          keys2.push({ text: extraKeys[0], type: "extra" }, { text: 0 }, { text: extraKeys[1], type: "extra" });
+      );
+      vue.watch(
+        () => props.status,
+        () => {
+          computeProgressClass();
+        },
+        {
+          deep: true,
+          immediate: true
         }
-        return keys2;
+      );
+      vue.watch(
+        () => props.duration,
+        (newValue) => {
+          checkNumRange(newValue);
+        },
+        {
+          deep: true,
+          immediate: true
+        }
+      );
+      function computeProgressClass() {
+        const { status } = props;
+        let progressClasses = [];
+        status && progressClasses.push(`is-${status}`);
+        progressClass.value = progressClasses.join(" ");
       }
-      const handleClose = () => {
-        emit("close");
-        emit("update:visible", false);
-      };
-      const handlePress = (text, type) => {
-        if (text === "" && type === "extra") {
-          return handleClose();
+      function update(targetPercent, color) {
+        if (timer)
+          return;
+        const { duration } = props;
+        changeCount.value = Math.abs(targetPercent - showPercent.value);
+        setTimeout(() => {
+          showPercent.value = targetPercent;
+          showColor.value = color;
+          timer = setTimeout(() => {
+            clearTimeout(timer);
+            timer = null;
+            controlProgress();
+          }, changeCount.value * duration);
+        }, 50);
+      }
+      function controlProgress() {
+        const {
+          // 目标百分比
+          percentage,
+          // 传入的color数组
+          color
+        } = props;
+        if (showPercent.value === percentage || !percentage)
+          return;
+        let colorArray = isArray(color) ? color : [color];
+        if (colorArray.length === 0)
+          throw Error("The colorArray is empty");
+        const isStrArray = colorArray.every((item) => typeof item === "string");
+        const isObjArray = colorArray.every((color2) => color2.hasOwnProperty("color") && color2.hasOwnProperty("percentage"));
+        if (!isStrArray && !isObjArray) {
+          throw Error("Color must be String or Object with color and percentage");
         }
-        const value = props.modelValue;
-        if (type === "delete") {
-          emit("delete");
-          emit("update:modelValue", value.slice(0, value.length - 1));
-        } else if (type === "close") {
-          handleClose();
-        } else if (value.length < +props.maxlength) {
-          emit("input", text);
-          emit("update:modelValue", value + text);
+        if (isObjArray && colorArray.some(({ percentage: percentage2 }) => Number.isNaN(parseInt(percentage2)))) {
+          throw Error("All the percentage must can be formatted to Number");
         }
-      };
+        const partNum = parseInt(`${100 / colorArray.length}`);
+        const partList = isObjArray ? colorArray.sort((a, b) => a.percentage - b.percentage) : colorArray.map((item, index) => {
+          return {
+            color: item,
+            percentage: (index + 1) * partNum
+          };
+        });
+        showPercent.value > percentage ? (
+          // 减小不加动画，找到第一个比target大的锚点，取锚点颜色并设置target值
+          partList.some((part) => {
+            if (percentage <= part.percentage) {
+              update(percentage, part.color);
+              return true;
+            }
+          })
+        ) : (
+          // 增加使用分段动画
+          partList.some((part, index) => {
+            if (showPercent.value < part.percentage && part.percentage <= percentage) {
+              update(part.percentage, part.color);
+              return true;
+            } else if (index === partList.length - 1) {
+              update(percentage, part.color);
+            }
+          })
+        );
+      }
       return (_ctx, _cache) => {
-        const _component_wd_popup = resolveEasycom(vue.resolveDynamicComponent("wd-popup"), __easycom_5);
-        return vue.openBlock(), vue.createBlock(_component_wd_popup, {
-          modelValue: show.value,
-          "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => show.value = $event),
-          position: "bottom",
-          "z-index": _ctx.zIndex,
-          "safe-area-inset-bottom": _ctx.safeAreaInsetBottom,
-          "modal-style": _ctx.modal ? "" : "opacity: 0;",
-          modal: _ctx.hideOnClickOutside,
-          lockScroll: _ctx.lockScroll,
-          onClickModal: handleClose
-        }, {
-          default: vue.withCtx(() => [
-            vue.createElementVNode(
-              "view",
-              {
-                class: vue.normalizeClass(`wd-number-keyboard ${_ctx.customClass}`),
-                style: vue.normalizeStyle(_ctx.customStyle)
-              },
-              [
-                showTitle.value ? (vue.openBlock(), vue.createElementBlock("view", {
-                  key: 0,
-                  class: "wd-number-keyboard__header"
-                }, [
-                  vue.renderSlot(_ctx.$slots, "title", {}, () => [
-                    vue.createElementVNode(
-                      "text",
-                      { class: "wd-number-keyboard__title" },
-                      vue.toDisplayString(_ctx.title),
-                      1
-                      /* TEXT */
-                    )
-                  ], true),
-                  showClose.value ? (vue.openBlock(), vue.createElementBlock("view", {
-                    key: 0,
-                    class: "wd-number-keyboard__close",
-                    "hover-class": "wd-number-keyboard__close--hover",
-                    onClick: handleClose
-                  }, [
-                    vue.createElementVNode(
-                      "text",
-                      null,
-                      vue.toDisplayString(_ctx.closeText),
-                      1
-                      /* TEXT */
-                    )
-                  ])) : vue.createCommentVNode("v-if", true)
-                ])) : vue.createCommentVNode("v-if", true),
-                vue.createElementVNode("view", { class: "wd-number-keyboard__body" }, [
-                  vue.createElementVNode("view", { class: "wd-number-keyboard__keys" }, [
-                    (vue.openBlock(true), vue.createElementBlock(
-                      vue.Fragment,
-                      null,
-                      vue.renderList(keys.value, (key) => {
-                        return vue.openBlock(), vue.createBlock(WdKey, {
-                          key: key.text,
-                          text: key.text,
-                          type: key.type,
-                          wider: key.wider,
-                          onPress: handlePress
-                        }, null, 8, ["text", "type", "wider"]);
-                      }),
-                      128
-                      /* KEYED_FRAGMENT */
-                    ))
-                  ]),
-                  _ctx.mode === "custom" ? (vue.openBlock(), vue.createElementBlock("view", {
-                    key: 0,
-                    class: "wd-number-keyboard__sidebar"
-                  }, [
-                    _ctx.showDeleteKey ? (vue.openBlock(), vue.createBlock(WdKey, {
-                      key: 0,
-                      large: "",
-                      text: _ctx.deleteText,
-                      type: "delete",
-                      onPress: handlePress
-                    }, null, 8, ["text"])) : vue.createCommentVNode("v-if", true),
-                    vue.createVNode(WdKey, {
-                      large: "",
-                      text: _ctx.closeText,
-                      type: "close",
-                      loading: _ctx.closeButtonLoading,
-                      onPress: handlePress
-                    }, null, 8, ["text", "loading"])
-                  ])) : vue.createCommentVNode("v-if", true)
-                ])
-              ],
-              6
-              /* CLASS, STYLE */
-            )
-          ]),
-          _: 3
-          /* FORWARDED */
-        }, 8, ["modelValue", "z-index", "safe-area-inset-bottom", "modal-style", "modal", "lockScroll"]);
-      };
-    }
-  });
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-b5945d7f"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-number-keyboard/wd-number-keyboard.vue"]]);
-  function parseFormat(format, timeData) {
-    const { days } = timeData;
-    let { hours, minutes, seconds, milliseconds } = timeData;
-    if (format.includes("DD")) {
-      format = format.replace("DD", padZero(days));
-    } else {
-      hours += days * 24;
-    }
-    if (format.includes("HH")) {
-      format = format.replace("HH", padZero(hours));
-    } else {
-      minutes += hours * 60;
-    }
-    if (format.includes("mm")) {
-      format = format.replace("mm", padZero(minutes));
-    } else {
-      seconds += minutes * 60;
-    }
-    if (format.includes("ss")) {
-      format = format.replace("ss", padZero(seconds));
-    } else {
-      milliseconds += seconds * 1e3;
-    }
-    if (format.includes("S")) {
-      const ms = padZero(milliseconds, 3);
-      if (format.includes("SSS")) {
-        format = format.replace("SSS", ms);
-      } else if (format.includes("SS")) {
-        format = format.replace("SS", ms.slice(0, 2));
-      } else {
-        format = format.replace("S", ms.charAt(0));
-      }
-    }
-    return format;
-  }
-  const SECOND = 1e3;
-  const MINUTE = 60 * SECOND;
-  const HOUR = 60 * MINUTE;
-  const DAY = 24 * HOUR;
-  function parseTime(time) {
-    const days = Math.floor(time / DAY);
-    const hours = Math.floor(time % DAY / HOUR);
-    const minutes = Math.floor(time % HOUR / MINUTE);
-    const seconds = Math.floor(time % MINUTE / SECOND);
-    const milliseconds = Math.floor(time % SECOND);
-    return {
-      total: time,
-      days,
-      hours,
-      minutes,
-      seconds,
-      milliseconds
-    };
-  }
-  function isSameSecond(time1, time2) {
-    return Math.floor(time1 / 1e3) === Math.floor(time2 / 1e3);
-  }
-  function raf(fn) {
-    return setTimeout(fn, 33);
-  }
-  function cancelRaf(id) {
-    {
-      clearTimeout(id);
-    }
-  }
-  function useCountDown(options) {
-    let timer = null;
-    let endTime;
-    let counting;
-    const remain = vue.ref(options.time);
-    const current = vue.computed(() => parseTime(remain.value));
-    const pause = () => {
-      counting = false;
-      cancelRaf(timer);
-    };
-    const getCurrentRemain = () => Math.max(endTime - Date.now(), 0);
-    const setRemain = (value) => {
-      remain.value = value;
-      isDef(options.onChange) && options.onChange(current.value);
-      if (value === 0) {
-        pause();
-        isDef(options.onFinish) && options.onFinish();
-      }
-    };
-    const microTick = () => {
-      timer = raf(() => {
-        if (counting) {
-          setRemain(getCurrentRemain());
-          if (remain.value > 0) {
-            microTick();
-          }
-        }
-      });
-    };
-    const macroTick = () => {
-      timer = raf(() => {
-        if (counting) {
-          const remainRemain = getCurrentRemain();
-          if (!isSameSecond(remainRemain, remain.value) || remainRemain === 0) {
-            setRemain(remainRemain);
-          }
-          if (remain.value > 0) {
-            macroTick();
-          }
-        }
-      });
-    };
-    const tick = () => {
-      if (options.millisecond) {
-        microTick();
-      } else {
-        macroTick();
-      }
-    };
-    const start = () => {
-      if (!counting) {
-        endTime = Date.now() + remain.value;
-        counting = true;
-        tick();
-      }
-    };
-    const reset = (totalTime = options.time) => {
-      pause();
-      remain.value = totalTime;
-    };
-    vue.onBeforeUnmount(pause);
-    return {
-      start,
-      pause,
-      reset,
-      current
-    };
-  }
-  const countDownProps = {
-    ...baseProps,
-    /**
-     * 倒计时时长，单位毫秒
-     */
-    time: makeRequiredProp(Number),
-    /**
-     * 是否开启毫秒
-     */
-    millisecond: makeBooleanProp(false),
-    /**
-     * 格式化时间
-     */
-    format: makeStringProp("HH:mm:ss"),
-    /**
-     * 是否自动开始
-     */
-    autoStart: makeBooleanProp(true)
-  };
-  const __default__ = {
-    name: "wd-count-down",
-    options: {
-      virtualHost: true,
-      addGlobalClass: true,
-      styleIsolation: "shared"
-    }
-  };
-  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__,
-    props: countDownProps,
-    emits: ["change", "finish"],
-    setup(__props, { expose: __expose, emit: __emit }) {
-      const props = __props;
-      const emit = __emit;
-      const { start, pause, reset, current } = useCountDown({
-        time: props.time,
-        millisecond: props.millisecond,
-        onChange: (current2) => emit("change", current2),
-        onFinish: () => emit("finish")
-      });
-      const timeText = vue.computed(() => parseFormat(props.format, current.value));
-      const resetTime = () => {
-        reset(props.time);
-        if (props.autoStart) {
-          start();
-        }
-      };
-      vue.watch(() => props.time, resetTime, { immediate: true });
-      __expose({
-        start,
-        pause,
-        reset: resetTime
-      });
-      return (_ctx, _cache) => {
+        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_0$1);
         return vue.openBlock(), vue.createElementBlock(
           "view",
           {
-            class: vue.normalizeClass(`wd-count-down ${_ctx.customClass}`),
+            class: vue.normalizeClass(`wd-progress ${_ctx.customClass}`),
             style: vue.normalizeStyle(_ctx.customStyle)
           },
           [
-            _ctx.$slots.default ? vue.renderSlot(_ctx.$slots, "default", {
-              key: 0,
-              current: vue.unref(current)
-            }, void 0, true) : (vue.openBlock(), vue.createElementBlock(
-              vue.Fragment,
-              { key: 1 },
-              [
-                vue.createTextVNode(
-                  vue.toDisplayString(timeText.value),
-                  1
-                  /* TEXT */
-                )
-              ],
-              64
-              /* STABLE_FRAGMENT */
-            ))
+            vue.createCommentVNode("进度条"),
+            vue.createElementVNode("view", { class: "wd-progress__outer" }, [
+              vue.createElementVNode(
+                "view",
+                {
+                  class: vue.normalizeClass(`wd-progress__inner ${progressClass.value}`),
+                  style: vue.normalizeStyle(rootStyle.value)
+                },
+                null,
+                6
+                /* CLASS, STYLE */
+              )
+            ]),
+            vue.createCommentVNode("文案、图标"),
+            !_ctx.hideText ? (vue.openBlock(), vue.createElementBlock(
+              "view",
+              {
+                key: 0,
+                class: "wd-progress__label"
+              },
+              vue.toDisplayString(_ctx.percentage) + "%",
+              1
+              /* TEXT */
+            )) : _ctx.status ? (vue.openBlock(), vue.createBlock(_component_wd_icon, {
+              key: 1,
+              "custom-class": `wd-progress__label wd-progress__icon ${progressClass.value}`,
+              name: _ctx.status == "danger" ? "close-outline" : "check-outline",
+              color: typeof _ctx.color === "string" ? _ctx.color : ""
+            }, null, 8, ["custom-class", "name", "color"])) : vue.createCommentVNode("v-if", true)
           ],
           6
           /* CLASS, STYLE */
@@ -2723,151 +408,980 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-dfe7461b"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-count-down/wd-count-down.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
+  var pattern = {
+    email: /^\S+?@\S+?\.\S+?$/,
+    idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
+    url: new RegExp(
+      "^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$",
+      "i"
+    )
+  };
+  const FORMAT_MAPPING = {
+    "int": "integer",
+    "bool": "boolean",
+    "double": "number",
+    "long": "number",
+    "password": "string"
+    // "fileurls": 'array'
+  };
+  function formatMessage(args, resources = "") {
+    var defaultMessage = ["label"];
+    defaultMessage.forEach((item) => {
+      if (args[item] === void 0) {
+        args[item] = "";
+      }
+    });
+    let str = resources;
+    for (let key in args) {
+      let reg = new RegExp("{" + key + "}");
+      str = str.replace(reg, args[key]);
+    }
+    return str;
+  }
+  function isEmptyValue(value, type) {
+    if (value === void 0 || value === null) {
+      return true;
+    }
+    if (typeof value === "string" && !value) {
+      return true;
+    }
+    if (Array.isArray(value) && !value.length) {
+      return true;
+    }
+    if (type === "object" && !Object.keys(value).length) {
+      return true;
+    }
+    return false;
+  }
+  const types = {
+    integer(value) {
+      return types.number(value) && parseInt(value, 10) === value;
+    },
+    string(value) {
+      return typeof value === "string";
+    },
+    number(value) {
+      if (isNaN(value)) {
+        return false;
+      }
+      return typeof value === "number";
+    },
+    "boolean": function(value) {
+      return typeof value === "boolean";
+    },
+    "float": function(value) {
+      return types.number(value) && !types.integer(value);
+    },
+    array(value) {
+      return Array.isArray(value);
+    },
+    object(value) {
+      return typeof value === "object" && !types.array(value);
+    },
+    date(value) {
+      return value instanceof Date;
+    },
+    timestamp(value) {
+      if (!this.integer(value) || Math.abs(value).toString().length > 16) {
+        return false;
+      }
+      return true;
+    },
+    file(value) {
+      return typeof value.url === "string";
+    },
+    email(value) {
+      return typeof value === "string" && !!value.match(pattern.email) && value.length < 255;
+    },
+    url(value) {
+      return typeof value === "string" && !!value.match(pattern.url);
+    },
+    pattern(reg, value) {
+      try {
+        return new RegExp(reg).test(value);
+      } catch (e) {
+        return false;
+      }
+    },
+    method(value) {
+      return typeof value === "function";
+    },
+    idcard(value) {
+      return typeof value === "string" && !!value.match(pattern.idcard);
+    },
+    "url-https"(value) {
+      return this.url(value) && value.startsWith("https://");
+    },
+    "url-scheme"(value) {
+      return value.startsWith("://");
+    },
+    "url-web"(value) {
+      return false;
+    }
+  };
+  class RuleValidator {
+    constructor(message) {
+      this._message = message;
+    }
+    async validateRule(fieldKey, fieldValue, value, data, allData) {
+      var result = null;
+      let rules = fieldValue.rules;
+      let hasRequired = rules.findIndex((item) => {
+        return item.required;
+      });
+      if (hasRequired < 0) {
+        if (value === null || value === void 0) {
+          return result;
+        }
+        if (typeof value === "string" && !value.length) {
+          return result;
+        }
+      }
+      var message = this._message;
+      if (rules === void 0) {
+        return message["default"];
+      }
+      for (var i = 0; i < rules.length; i++) {
+        let rule = rules[i];
+        let vt = this._getValidateType(rule);
+        Object.assign(rule, {
+          label: fieldValue.label || `["${fieldKey}"]`
+        });
+        if (RuleValidatorHelper[vt]) {
+          result = RuleValidatorHelper[vt](rule, value, message);
+          if (result != null) {
+            break;
+          }
+        }
+        if (rule.validateExpr) {
+          let now = Date.now();
+          let resultExpr = rule.validateExpr(value, allData, now);
+          if (resultExpr === false) {
+            result = this._getMessage(rule, rule.errorMessage || this._message["default"]);
+            break;
+          }
+        }
+        if (rule.validateFunction) {
+          result = await this.validateFunction(rule, value, data, allData, vt);
+          if (result !== null) {
+            break;
+          }
+        }
+      }
+      if (result !== null) {
+        result = message.TAG + result;
+      }
+      return result;
+    }
+    async validateFunction(rule, value, data, allData, vt) {
+      let result = null;
+      try {
+        let callbackMessage = null;
+        const res = await rule.validateFunction(rule, value, allData || data, (message) => {
+          callbackMessage = message;
+        });
+        if (callbackMessage || typeof res === "string" && res || res === false) {
+          result = this._getMessage(rule, callbackMessage || res, vt);
+        }
+      } catch (e) {
+        result = this._getMessage(rule, e.message, vt);
+      }
+      return result;
+    }
+    _getMessage(rule, message, vt) {
+      return formatMessage(rule, message || rule.errorMessage || this._message[vt] || message["default"]);
+    }
+    _getValidateType(rule) {
+      var result = "";
+      if (rule.required) {
+        result = "required";
+      } else if (rule.format) {
+        result = "format";
+      } else if (rule.arrayType) {
+        result = "arrayTypeFormat";
+      } else if (rule.range) {
+        result = "range";
+      } else if (rule.maximum !== void 0 || rule.minimum !== void 0) {
+        result = "rangeNumber";
+      } else if (rule.maxLength !== void 0 || rule.minLength !== void 0) {
+        result = "rangeLength";
+      } else if (rule.pattern) {
+        result = "pattern";
+      } else if (rule.validateFunction) {
+        result = "validateFunction";
+      }
+      return result;
+    }
+  }
+  const RuleValidatorHelper = {
+    required(rule, value, message) {
+      if (rule.required && isEmptyValue(value, rule.format || typeof value)) {
+        return formatMessage(rule, rule.errorMessage || message.required);
+      }
+      return null;
+    },
+    range(rule, value, message) {
+      const {
+        range,
+        errorMessage
+      } = rule;
+      let list = new Array(range.length);
+      for (let i = 0; i < range.length; i++) {
+        const item = range[i];
+        if (types.object(item) && item.value !== void 0) {
+          list[i] = item.value;
+        } else {
+          list[i] = item;
+        }
+      }
+      let result = false;
+      if (Array.isArray(value)) {
+        result = new Set(value.concat(list)).size === list.length;
+      } else {
+        if (list.indexOf(value) > -1) {
+          result = true;
+        }
+      }
+      if (!result) {
+        return formatMessage(rule, errorMessage || message["enum"]);
+      }
+      return null;
+    },
+    rangeNumber(rule, value, message) {
+      if (!types.number(value)) {
+        return formatMessage(rule, rule.errorMessage || message.pattern.mismatch);
+      }
+      let {
+        minimum,
+        maximum,
+        exclusiveMinimum,
+        exclusiveMaximum
+      } = rule;
+      let min = exclusiveMinimum ? value <= minimum : value < minimum;
+      let max = exclusiveMaximum ? value >= maximum : value > maximum;
+      if (minimum !== void 0 && min) {
+        return formatMessage(rule, rule.errorMessage || message["number"][exclusiveMinimum ? "exclusiveMinimum" : "minimum"]);
+      } else if (maximum !== void 0 && max) {
+        return formatMessage(rule, rule.errorMessage || message["number"][exclusiveMaximum ? "exclusiveMaximum" : "maximum"]);
+      } else if (minimum !== void 0 && maximum !== void 0 && (min || max)) {
+        return formatMessage(rule, rule.errorMessage || message["number"].range);
+      }
+      return null;
+    },
+    rangeLength(rule, value, message) {
+      if (!types.string(value) && !types.array(value)) {
+        return formatMessage(rule, rule.errorMessage || message.pattern.mismatch);
+      }
+      let min = rule.minLength;
+      let max = rule.maxLength;
+      let val = value.length;
+      if (min !== void 0 && val < min) {
+        return formatMessage(rule, rule.errorMessage || message["length"].minLength);
+      } else if (max !== void 0 && val > max) {
+        return formatMessage(rule, rule.errorMessage || message["length"].maxLength);
+      } else if (min !== void 0 && max !== void 0 && (val < min || val > max)) {
+        return formatMessage(rule, rule.errorMessage || message["length"].range);
+      }
+      return null;
+    },
+    pattern(rule, value, message) {
+      if (!types["pattern"](rule.pattern, value)) {
+        return formatMessage(rule, rule.errorMessage || message.pattern.mismatch);
+      }
+      return null;
+    },
+    format(rule, value, message) {
+      var customTypes = Object.keys(types);
+      var format = FORMAT_MAPPING[rule.format] ? FORMAT_MAPPING[rule.format] : rule.format || rule.arrayType;
+      if (customTypes.indexOf(format) > -1) {
+        if (!types[format](value)) {
+          return formatMessage(rule, rule.errorMessage || message.typeError);
+        }
+      }
+      return null;
+    },
+    arrayTypeFormat(rule, value, message) {
+      if (!Array.isArray(value)) {
+        return formatMessage(rule, rule.errorMessage || message.typeError);
+      }
+      for (let i = 0; i < value.length; i++) {
+        const element = value[i];
+        let formatResult = this.format(rule, element, message);
+        if (formatResult !== null) {
+          return formatResult;
+        }
+      }
+      return null;
+    }
+  };
+  class SchemaValidator extends RuleValidator {
+    constructor(schema, options) {
+      super(SchemaValidator.message);
+      this._schema = schema;
+      this._options = options || null;
+    }
+    updateSchema(schema) {
+      this._schema = schema;
+    }
+    async validate(data, allData) {
+      let result = this._checkFieldInSchema(data);
+      if (!result) {
+        result = await this.invokeValidate(data, false, allData);
+      }
+      return result.length ? result[0] : null;
+    }
+    async validateAll(data, allData) {
+      let result = this._checkFieldInSchema(data);
+      if (!result) {
+        result = await this.invokeValidate(data, true, allData);
+      }
+      return result;
+    }
+    async validateUpdate(data, allData) {
+      let result = this._checkFieldInSchema(data);
+      if (!result) {
+        result = await this.invokeValidateUpdate(data, false, allData);
+      }
+      return result.length ? result[0] : null;
+    }
+    async invokeValidate(data, all, allData) {
+      let result = [];
+      let schema = this._schema;
+      for (let key in schema) {
+        let value = schema[key];
+        let errorMessage = await this.validateRule(key, value, data[key], data, allData);
+        if (errorMessage != null) {
+          result.push({
+            key,
+            errorMessage
+          });
+          if (!all)
+            break;
+        }
+      }
+      return result;
+    }
+    async invokeValidateUpdate(data, all, allData) {
+      let result = [];
+      for (let key in data) {
+        let errorMessage = await this.validateRule(key, this._schema[key], data[key], data, allData);
+        if (errorMessage != null) {
+          result.push({
+            key,
+            errorMessage
+          });
+          if (!all)
+            break;
+        }
+      }
+      return result;
+    }
+    _checkFieldInSchema(data) {
+      var keys = Object.keys(data);
+      var keys2 = Object.keys(this._schema);
+      if (new Set(keys.concat(keys2)).size === keys2.length) {
+        return "";
+      }
+      var noExistFields = keys.filter((key) => {
+        return keys2.indexOf(key) < 0;
+      });
+      var errorMessage = formatMessage({
+        field: JSON.stringify(noExistFields)
+      }, SchemaValidator.message.TAG + SchemaValidator.message["defaultInvalid"]);
+      return [{
+        key: "invalid",
+        errorMessage
+      }];
+    }
+  }
+  function Message() {
+    return {
+      TAG: "",
+      default: "验证错误",
+      defaultInvalid: "提交的字段{field}在数据库中并不存在",
+      validateFunction: "验证无效",
+      required: "{label}必填",
+      "enum": "{label}超出范围",
+      timestamp: "{label}格式无效",
+      whitespace: "{label}不能为空",
+      typeError: "{label}类型无效",
+      date: {
+        format: "{label}日期{value}格式无效",
+        parse: "{label}日期无法解析,{value}无效",
+        invalid: "{label}日期{value}无效"
+      },
+      length: {
+        minLength: "{label}长度不能少于{minLength}",
+        maxLength: "{label}长度不能超过{maxLength}",
+        range: "{label}必须介于{minLength}和{maxLength}之间"
+      },
+      number: {
+        minimum: "{label}不能小于{minimum}",
+        maximum: "{label}不能大于{maximum}",
+        exclusiveMinimum: "{label}不能小于等于{minimum}",
+        exclusiveMaximum: "{label}不能大于等于{maximum}",
+        range: "{label}必须介于{minimum}and{maximum}之间"
+      },
+      pattern: {
+        mismatch: "{label}格式不匹配"
+      }
+    };
+  }
+  SchemaValidator.message = new Message();
+  const deepCopy = (val) => {
+    return JSON.parse(JSON.stringify(val));
+  };
+  const typeFilter = (format) => {
+    return format === "int" || format === "double" || format === "number" || format === "timestamp";
+  };
+  const getValue = (key, value, rules) => {
+    const isRuleNumType = rules.find((val) => val.format && typeFilter(val.format));
+    const isRuleBoolType = rules.find((val) => val.format && val.format === "boolean" || val.format === "bool");
+    if (!!isRuleNumType) {
+      if (!value && value !== 0) {
+        value = null;
+      } else {
+        value = isNumber(Number(value)) ? Number(value) : value;
+      }
+    }
+    if (!!isRuleBoolType) {
+      value = isBoolean(value) ? value : false;
+    }
+    return value;
+  };
+  const setDataValue = (field, formdata, value) => {
+    formdata[field] = value;
+    return value || "";
+  };
+  const getDataValue = (field, data) => {
+    return objGet(data, field);
+  };
+  const realName = (name, data = {}) => {
+    const base_name = _basePath(name);
+    if (typeof base_name === "object" && Array.isArray(base_name) && base_name.length > 1) {
+      const realname = base_name.reduce((a, b) => a += `#${b}`, "_formdata_");
+      return realname;
+    }
+    return base_name[0] || name;
+  };
+  const isRealName = (name) => {
+    const reg = /^_formdata_#*/;
+    return reg.test(name);
+  };
+  const rawData = (object = {}, name) => {
+    let newData = JSON.parse(JSON.stringify(object));
+    let formData = {};
+    for (let i in newData) {
+      let path = name2arr(i);
+      objSet(formData, path, newData[i]);
+    }
+    return formData;
+  };
+  const name2arr = (name) => {
+    let field = name.replace("_formdata_#", "");
+    field = field.split("#").map((v) => isNumber(v) ? Number(v) : v);
+    return field;
+  };
+  const objSet = (object, path, value) => {
+    if (typeof object !== "object")
+      return object;
+    _basePath(path).reduce((o, k, i, _) => {
+      if (i === _.length - 1) {
+        o[k] = value;
+        return null;
+      } else if (k in o) {
+        return o[k];
+      } else {
+        o[k] = /^[0-9]{1,}$/.test(_[i + 1]) ? [] : {};
+        return o[k];
+      }
+    }, object);
+    return object;
+  };
+  function _basePath(path) {
+    if (Array.isArray(path))
+      return path;
+    return path.replace(/\[/g, ".").replace(/\]/g, "").split(".");
+  }
+  const objGet = (object, path, defaultVal = "undefined") => {
+    let newPath = _basePath(path);
+    let val = newPath.reduce((o, k) => {
+      return (o || {})[k];
+    }, object);
+    return !val || val !== void 0 ? val : defaultVal;
+  };
+  const isNumber = (num) => {
+    return !isNaN(Number(num));
+  };
+  const isBoolean = (bool) => {
+    return typeof bool === "boolean";
+  };
+  const isRequiredField = (rules) => {
+    let isNoField = false;
+    for (let i = 0; i < rules.length; i++) {
+      const ruleData = rules[i];
+      if (ruleData.required) {
+        isNoField = true;
+        break;
+      }
+    }
+    return isNoField;
+  };
+  const isEqual = (a, b) => {
+    if (a === b) {
+      return a !== 0 || 1 / a === 1 / b;
+    }
+    if (a == null || b == null) {
+      return a === b;
+    }
+    var classNameA = toString.call(a), classNameB = toString.call(b);
+    if (classNameA !== classNameB) {
+      return false;
+    }
+    switch (classNameA) {
+      case "[object RegExp]":
+      case "[object String]":
+        return "" + a === "" + b;
+      case "[object Number]":
+        if (+a !== +a) {
+          return +b !== +b;
+        }
+        return +a === 0 ? 1 / +a === 1 / b : +a === +b;
+      case "[object Date]":
+      case "[object Boolean]":
+        return +a === +b;
+    }
+    if (classNameA == "[object Object]") {
+      var propsA = Object.getOwnPropertyNames(a), propsB = Object.getOwnPropertyNames(b);
+      if (propsA.length != propsB.length) {
+        return false;
+      }
+      for (var i = 0; i < propsA.length; i++) {
+        var propName = propsA[i];
+        if (a[propName] !== b[propName]) {
+          return false;
+        }
+      }
+      return true;
+    }
+    if (classNameA == "[object Array]") {
+      if (a.toString() == b.toString()) {
+        return true;
+      }
+      return false;
+    }
+  };
+  const _sfc_main$2 = {
+    name: "uniForms",
+    emits: ["validate", "submit"],
+    options: {
+      virtualHost: true
+    },
+    props: {
+      // 即将弃用
+      value: {
+        type: Object,
+        default() {
+          return null;
+        }
+      },
+      // vue3 替换 value 属性
+      modelValue: {
+        type: Object,
+        default() {
+          return null;
+        }
+      },
+      // 1.4.0 开始将不支持 v-model ，且废弃 value 和 modelValue
+      model: {
+        type: Object,
+        default() {
+          return null;
+        }
+      },
+      // 表单校验规则
+      rules: {
+        type: Object,
+        default() {
+          return {};
+        }
+      },
+      //校验错误信息提示方式 默认 undertext 取值 [undertext|toast|modal]
+      errShowType: {
+        type: String,
+        default: "undertext"
+      },
+      // 校验触发器方式 默认 bind 取值 [bind|submit]
+      validateTrigger: {
+        type: String,
+        default: "submit"
+      },
+      // label 位置，默认 left 取值  top/left
+      labelPosition: {
+        type: String,
+        default: "left"
+      },
+      // label 宽度
+      labelWidth: {
+        type: [String, Number],
+        default: ""
+      },
+      // label 居中方式，默认 left 取值 left/center/right
+      labelAlign: {
+        type: String,
+        default: "left"
+      },
+      border: {
+        type: Boolean,
+        default: false
+      }
+    },
+    provide() {
+      return {
+        uniForm: this
+      };
+    },
+    data() {
+      return {
+        // 表单本地值的记录，不应该与传如的值进行关联
+        formData: {},
+        formRules: {}
+      };
+    },
+    computed: {
+      // 计算数据源变化的
+      localData() {
+        const localVal = this.model || this.modelValue || this.value;
+        if (localVal) {
+          return deepCopy(localVal);
+        }
+        return {};
+      }
+    },
+    watch: {
+      // 监听数据变化 ,暂时不使用，需要单独赋值
+      // localData: {},
+      // 监听规则变化
+      rules: {
+        handler: function(val, oldVal) {
+          this.setRules(val);
+        },
+        deep: true,
+        immediate: true
+      }
+    },
+    created() {
+      let getbinddata = getApp().$vm.$.appContext.config.globalProperties.binddata;
+      if (!getbinddata) {
+        getApp().$vm.$.appContext.config.globalProperties.binddata = function(name, value, formName) {
+          if (formName) {
+            this.$refs[formName].setValue(name, value);
+          } else {
+            let formVm;
+            for (let i in this.$refs) {
+              const vm = this.$refs[i];
+              if (vm && vm.$options && vm.$options.name === "uniForms") {
+                formVm = vm;
+                break;
+              }
+            }
+            if (!formVm)
+              return formatAppLog("error", "at uni_modules/uni-forms/components/uni-forms/uni-forms.vue:182", "当前 uni-froms 组件缺少 ref 属性");
+            formVm.setValue(name, value);
+          }
+        };
+      }
+      this.childrens = [];
+      this.inputChildrens = [];
+      this.setRules(this.rules);
+    },
+    methods: {
+      /**
+       * 外部调用方法
+       * 设置规则 ，主要用于小程序自定义检验规则
+       * @param {Array} rules 规则源数据
+       */
+      setRules(rules) {
+        this.formRules = Object.assign({}, this.formRules, rules);
+        this.validator = new SchemaValidator(rules);
+      },
+      /**
+       * 外部调用方法
+       * 设置数据，用于设置表单数据，公开给用户使用 ， 不支持在动态表单中使用
+       * @param {Object} key
+       * @param {Object} value
+       */
+      setValue(key, value) {
+        let example = this.childrens.find((child) => child.name === key);
+        if (!example)
+          return null;
+        this.formData[key] = getValue(key, value, this.formRules[key] && this.formRules[key].rules || []);
+        return example.onFieldChange(this.formData[key]);
+      },
+      /**
+       * 外部调用方法
+       * 手动提交校验表单
+       * 对整个表单进行校验的方法，参数为一个回调函数。
+       * @param {Array} keepitem 保留不参与校验的字段
+       * @param {type} callback 方法回调
+       */
+      validate(keepitem, callback) {
+        return this.checkAll(this.formData, keepitem, callback);
+      },
+      /**
+       * 外部调用方法
+       * 部分表单校验
+       * @param {Array|String} props 需要校验的字段
+       * @param {Function} 回调函数
+       */
+      validateField(props = [], callback) {
+        props = [].concat(props);
+        let invalidFields = {};
+        this.childrens.forEach((item) => {
+          const name = realName(item.name);
+          if (props.indexOf(name) !== -1) {
+            invalidFields = Object.assign({}, invalidFields, {
+              [name]: this.formData[name]
+            });
+          }
+        });
+        return this.checkAll(invalidFields, [], callback);
+      },
+      /**
+       * 外部调用方法
+       * 移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果
+       * @param {Array|String} props 需要移除校验的字段 ，不填为所有
+       */
+      clearValidate(props = []) {
+        props = [].concat(props);
+        this.childrens.forEach((item) => {
+          if (props.length === 0) {
+            item.errMsg = "";
+          } else {
+            const name = realName(item.name);
+            if (props.indexOf(name) !== -1) {
+              item.errMsg = "";
+            }
+          }
+        });
+      },
+      /**
+       * 外部调用方法 ，即将废弃
+       * 手动提交校验表单
+       * 对整个表单进行校验的方法，参数为一个回调函数。
+       * @param {Array} keepitem 保留不参与校验的字段
+       * @param {type} callback 方法回调
+       */
+      submit(keepitem, callback, type) {
+        for (let i in this.dataValue) {
+          const itemData = this.childrens.find((v) => v.name === i);
+          if (itemData) {
+            if (this.formData[i] === void 0) {
+              this.formData[i] = this._getValue(i, this.dataValue[i]);
+            }
+          }
+        }
+        if (!type) {
+          formatAppLog("warn", "at uni_modules/uni-forms/components/uni-forms/uni-forms.vue:289", "submit 方法即将废弃，请使用validate方法代替！");
+        }
+        return this.checkAll(this.formData, keepitem, callback, "submit");
+      },
+      // 校验所有
+      async checkAll(invalidFields, keepitem, callback, type) {
+        if (!this.validator)
+          return;
+        let childrens = [];
+        for (let i in invalidFields) {
+          const item = this.childrens.find((v) => realName(v.name) === i);
+          if (item) {
+            childrens.push(item);
+          }
+        }
+        if (!callback && typeof keepitem === "function") {
+          callback = keepitem;
+        }
+        let promise;
+        if (!callback && typeof callback !== "function" && Promise) {
+          promise = new Promise((resolve, reject) => {
+            callback = function(valid, invalidFields2) {
+              !valid ? resolve(invalidFields2) : reject(valid);
+            };
+          });
+        }
+        let results = [];
+        let tempFormData = JSON.parse(JSON.stringify(invalidFields));
+        for (let i in childrens) {
+          const child = childrens[i];
+          let name = realName(child.name);
+          const result = await child.onFieldChange(tempFormData[name]);
+          if (result) {
+            results.push(result);
+            if (this.errShowType === "toast" || this.errShowType === "modal")
+              break;
+          }
+        }
+        if (Array.isArray(results)) {
+          if (results.length === 0)
+            results = null;
+        }
+        if (Array.isArray(keepitem)) {
+          keepitem.forEach((v) => {
+            let vName = realName(v);
+            let value = getDataValue(v, this.localData);
+            if (value !== void 0) {
+              tempFormData[vName] = value;
+            }
+          });
+        }
+        if (type === "submit") {
+          this.$emit("submit", {
+            detail: {
+              value: tempFormData,
+              errors: results
+            }
+          });
+        } else {
+          this.$emit("validate", results);
+        }
+        let resetFormData = {};
+        resetFormData = rawData(tempFormData, this.name);
+        callback && typeof callback === "function" && callback(results, resetFormData);
+        if (promise && callback) {
+          return promise;
+        } else {
+          return null;
+        }
+      },
+      /**
+       * 返回validate事件
+       * @param {Object} result
+       */
+      validateCheck(result) {
+        this.$emit("validate", result);
+      },
+      _getValue: getValue,
+      _isRequiredField: isRequiredField,
+      _setDataValue: setDataValue,
+      _getDataValue: getDataValue,
+      _realName: realName,
+      _isRealName: isRealName,
+      _isEqual: isEqual
+    }
+  };
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-forms" }, [
+      vue.createElementVNode("form", null, [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ])
+    ]);
+  }
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
   const _sfc_main$1 = {
     data() {
       return {
-        optValue: "",
-        showKeyboard: true,
-        errorInfo: "",
-        isCountDownVisible: false,
-        countDownTime: 60,
-        isModalVisible: true
+        progressPercentage: 0,
+        genderItems: [
+          {
+            value: "male",
+            name: "male",
+            icon: "👨"
+          },
+          {
+            value: "female",
+            name: "female",
+            icon: "👩‍"
+          },
+          {
+            value: "other",
+            name: "other",
+            icon: "👩‍"
+          }
+        ],
+        registerFormData: {}
       };
     },
     onLoad() {
     },
     components: {},
-    watch: {
-      optValue(newValue, oldValue) {
-        if (newValue.length === 6 && newValue !== "123456") {
-          this.errorInfo = "密码错误";
-        } else {
-          this.errorInfo = "";
-        }
-      }
-    },
     methods: {
-      onInput(value) {
-        formatAppLog("log", "at pages/optLoginPage.vue:61", value, this.optValue.length);
-      },
-      onDelete() {
-      },
-      onCountDownClick() {
-        this.$refs.countDownItem.start();
-        this.isCountDownVisible = true;
-        this.isModalVisible = true;
-      },
-      onCountDownFinish() {
-        this.$refs.countDownItem.reset();
-        this.isCountDownVisible = false;
-      },
-      onCountDownChange(current) {
-        this.countDownTime = current.seconds;
-      },
-      onClose() {
+      onGenderRadioChange(value) {
+        formatAppLog("log", "at pages/login/registerFormPage.vue:56", value.detail.value);
       }
     }
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_nav_bar = resolveEasycom(vue.resolveDynamicComponent("uni-nav-bar"), __easycom_0$3);
-    const _component_wd_password_input = resolveEasycom(vue.resolveDynamicComponent("wd-password-input"), __easycom_1$1);
-    const _component_wd_number_keyboard = resolveEasycom(vue.resolveDynamicComponent("wd-number-keyboard"), __easycom_2);
-    const _component_wd_count_down = resolveEasycom(vue.resolveDynamicComponent("wd-count-down"), __easycom_3);
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_4);
-    const _component_wd_popup = resolveEasycom(vue.resolveDynamicComponent("wd-popup"), __easycom_5);
+    const _component_wd_progress = resolveEasycom(vue.resolveDynamicComponent("wd-progress"), __easycom_0);
+    const _component_uni_forms = resolveEasycom(vue.resolveDynamicComponent("uni-forms"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
       [
-        vue.createVNode(_component_uni_nav_bar, {
-          "left-icon": "left",
-          shadow: "",
-          statusBar: "",
-          class: "custom-nav-bar"
-        }),
+        vue.createElementVNode("view", { class: "status_bar" }, [
+          vue.createCommentVNode(" 这里是状态栏 ")
+        ]),
         vue.createElementVNode("view", { class: "main-container" }, [
           vue.createElementVNode("view", { class: "column" }, [
-            vue.createElementVNode("text", { class: "title-text-24" }, "Enter the 6 digit code"),
-            vue.createVNode(_component_wd_password_input, {
-              modelValue: $data.optValue,
-              "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.optValue = $event),
-              mask: false,
-              focused: $data.showKeyboard,
-              gutter: "2.13vw",
-              "error-info": $data.errorInfo,
-              onFocus: _cache[1] || (_cache[1] = () => $data.showKeyboard = true),
-              class: "opt-input"
-            }, null, 8, ["modelValue", "focused", "error-info"]),
-            vue.createVNode(_component_wd_number_keyboard, {
-              modelValue: $data.optValue,
-              "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => $data.optValue = $event),
-              visible: $data.showKeyboard,
-              "onUpdate:visible": _cache[3] || (_cache[3] = ($event) => $data.showKeyboard = $event),
-              maxlength: 6,
-              onInput: $options.onInput,
-              onDelete: $options.onDelete
-            }, null, 8, ["modelValue", "visible", "onInput", "onDelete"]),
-            vue.createElementVNode("span", { class: "resend-code-text" }, [
-              vue.createElementVNode("text", { style: { "color": "#667085" } }, "Resend Code "),
-              vue.createElementVNode("span", null, [
-                vue.withDirectives(vue.createElementVNode(
-                  "text",
-                  {
-                    onClick: _cache[4] || (_cache[4] = (...args) => $options.onCountDownClick && $options.onCountDownClick(...args))
-                  },
-                  "Here",
-                  512
-                  /* NEED_PATCH */
-                ), [
-                  [vue.vShow, !$data.isCountDownVisible]
-                ]),
-                vue.withDirectives(vue.createElementVNode(
-                  "text",
-                  null,
-                  vue.toDisplayString($data.countDownTime) + " Sec ",
-                  513
-                  /* TEXT, NEED_PATCH */
-                ), [
-                  [vue.vShow, $data.isCountDownVisible]
-                ]),
-                vue.createVNode(_component_wd_count_down, {
-                  ref: "countDownItem",
-                  time: 6e4,
-                  millisecond: "",
-                  "auto-start": false,
-                  format: "ss",
-                  onChange: $options.onCountDownChange,
-                  onFinish: $options.onCountDownFinish,
-                  style: { "display": "none" }
-                }, null, 8, ["onChange", "onFinish"])
-              ])
+            vue.createElementVNode("div", { class: "progressBarContainer" }, [
+              vue.createVNode(_component_wd_progress, {
+                percentage: $data.progressPercentage,
+                "hide-text": "",
+                color: "#161616",
+                "custom-class": "register-progress-bar"
+              }, null, 8, ["percentage"])
             ]),
-            vue.createVNode(_component_wd_popup, {
-              modelValue: $data.isModalVisible,
-              "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => $data.isModalVisible = $event),
-              "custom-class": "login-modal",
-              "custom-style": "",
-              onClose: $options.onClose
+            vue.createVNode(_component_uni_forms, {
+              modelValue: $data.registerFormData,
+              class: "register-form"
             }, {
               default: vue.withCtx(() => [
-                vue.createElementVNode("div", { class: "animation-container" }, [
-                  vue.createVNode(_component_uni_icons, {
-                    "custom-prefix": "iconfont",
-                    type: "icon-person",
-                    size: "37.5vw",
-                    color: "#161616",
-                    class: "login-modal-animation-icon"
-                  }),
-                  vue.createElementVNode("span", { class: "breathing-dot-1" }),
-                  vue.createElementVNode("span", { class: "breathing-dot-2" }),
-                  vue.createElementVNode("span", { class: "breathing-dot-3" }),
-                  vue.createCommentVNode(' <span class="breathing-dot" />\r\n					<span class="breathing-dot" /> ')
-                ])
+                vue.createElementVNode("span", null, [
+                  vue.createElementVNode("text", { class: "title-text-24" }, "Please select an option below your identification 🌟")
+                ]),
+                vue.createElementVNode(
+                  "radio-group",
+                  {
+                    onChange: _cache[0] || (_cache[0] = (...args) => $options.onGenderRadioChange && $options.onGenderRadioChange(...args)),
+                    class: "gender-radio-group"
+                  },
+                  [
+                    (vue.openBlock(true), vue.createElementBlock(
+                      vue.Fragment,
+                      null,
+                      vue.renderList($data.genderItems, (item) => {
+                        return vue.openBlock(), vue.createElementBlock("span", null, [
+                          vue.createElementVNode("radio", {
+                            value: item.value,
+                            class: "gender-radio-select"
+                          }, [
+                            vue.createElementVNode(
+                              "span",
+                              { class: "gender-radio-icon" },
+                              vue.toDisplayString(item.icon),
+                              1
+                              /* TEXT */
+                            ),
+                            vue.createElementVNode(
+                              "text",
+                              { class: "gender-radio-text" },
+                              vue.toDisplayString(item.name),
+                              1
+                              /* TEXT */
+                            )
+                          ], 8, ["value"])
+                        ]);
+                      }),
+                      256
+                      /* UNKEYED_FRAGMENT */
+                    ))
+                  ],
+                  32
+                  /* NEED_HYDRATION */
+                )
               ]),
               _: 1
               /* STABLE */
-            }, 8, ["modelValue", "onClose"])
+            }, 8, ["modelValue"])
           ])
         ])
       ],
@@ -2875,8 +1389,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesOptLoginPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/pages/optLoginPage.vue"]]);
-  __definePage("pages/optLoginPage", PagesOptLoginPage);
+  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
+  __definePage("pages/login/registerFormPage", PagesLoginRegisterFormPage);
   const _sfc_main = {
     onLaunch: function() {
       formatAppLog("log", "at App.vue:4", "App Launch");
@@ -2888,7 +1402,7 @@ if (uni.restoreGlobal) {
       formatAppLog("log", "at App.vue:10", "App Hide");
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
   function createApp() {
     const app = vue.createVueApp(App);
     return {

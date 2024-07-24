@@ -89,12 +89,7 @@
 </script>
 
 <style lang="scss">
-	@import url("../uni.scss");
-
-	.column {
-		display: flex;
-		flex-direction: column;
-	}
+	@import url("../../uni.scss");
 
 	.input-text {
 		font-family: Avenir;

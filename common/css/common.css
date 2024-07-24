@@ -18,6 +18,11 @@
 	src: url('~@/static/font/Avenir Regular.ttf');
 }
 
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
 .custom-nav-bar .uni-icons.uniui-left {
 	color: #161616 !important;
 	font-weight: 500 !important;

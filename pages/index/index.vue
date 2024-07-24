@@ -49,11 +49,6 @@
 </script>
 
 <style>
-	.column {
-		display: flex;
-		flex-direction: column;
-	}
-
 	.input-container {
 		display: flex;
 		flex-direction: row;
