@@ -1,13 +1,12 @@
 <template>
-	<view class="status_bar">
-		<!-- 这里是状态栏 -->
-	</view>
+	<uni-nav-bar statusBar border="false" leftWidth="0px" rightWidth="0px" class="progress-nav-bar">
+		<div class="progressBarContainer">
+			<wd-progress :percentage="progressPercentage" hide-text color="#161616"
+				custom-class="register-progress-bar" />
+		</div>
+	</uni-nav-bar>
 	<view class="main-container">
 		<view class="column">
-			<div class="progressBarContainer">
-				<wd-progress :percentage="progressPercentage" hide-text color="#161616"
-					custom-class="register-progress-bar" />
-			</div>
 			<uni-forms :modelValue="registerFormData" class="register-form">
 				<span><text class="title-text-24">Please select an option below your identification 🌟</text></span>
 				<radio-group @change="onGenderRadioChange">
@@ -22,14 +21,18 @@
 							<span class="gender-radio-icon">{{genderItems[1].icon}}</span>
 							<text class="title-text-24 gender-radio-text">{{genderItems[1].name}}</text>
 						</radio>
-						<span class="gender-radio-select-container gender-radio-select-container-other">
+						<span class="gender-radio-select-container gender-radio-select-container-other"
+							@click="onGenderOtherClick">
 							<text class="title-text-24 gender-radio-text gender-text-other">other</text>
 							<uni-icons type="right" size="2em" class="title-text-24 gender-icon-other" />
 						</span>
 					</span>
 					<span v-else>
-						<span v-for="item in genderItems">
-							<radio :value="item.value">
+						<span class="gender-radio-group">
+							<radio v-for="item in genderItems" :value="item.value" class="gender-radio-select-container"
+								:class="genderValue == item.value ? 'gender-radio-checked': ''">
+								<span class="gender-radio-icon">{{item.icon}}</span>
+								<text class="title-text-24 gender-radio-text">{{item.name}}</text>
 							</radio>
 						</span>
 					</span>
@@ -37,6 +40,10 @@
 			</uni-forms>
 		</view>
 	</view>
+	<wd-tabbar fixed safeAreaInsetBottom placeholder class="next-page-tabbar">
+		<div>a</div>
+		<div>a</div>
+	</wd-tabbar>
 </template>
 
 <script>
@@ -61,6 +68,26 @@
 						name: 'more',
 						icon: '👩‍',
 					},
+					{
+						value: '1',
+						name: '1',
+						icon: '👩‍',
+					},
+					{
+						value: '2',
+						name: '2',
+						icon: '👩‍',
+					},
+					{
+						value: '3',
+						name: '3',
+						icon: '👩‍',
+					},
+					{
+						value: '4',
+						name: '4',
+						icon: '👩‍',
+					},
 				],
 				registerFormData: {
 
@@ -74,22 +101,28 @@
 				this.genderValue = value.detail.value;
 				console.log(value.detail, this.genderValue);
 				console.log(this.genderItems);
+			},
+			onGenderOtherClick() {
+				this.isGenderListExpand = true;
 			}
 		}
 	}
 </script>
 
-<style lang="scss">
-	.status_bar {
-		height: var(--status-bar-height);
-		width: 100%;
+<style lang="scss">	
+	.progress-nav-bar {
+		.uni-navbar--border {
+			border-bottom-width: 0;
+			border-bottom-style: none;
+			border-bottom-color: transparent;
+		}
 	}
 
 	.progressBarContainer {
 		display: flex !important;
 		width: 100%;
 		justify-content: center;
-		margin-bottom: 8vh;
+		align-items: center;
 
 		.wd-progress {
 			width: 30vw;
@@ -157,7 +190,20 @@
 			margin: auto;
 			font-size: 4.2vw;
 		}
-
-		.gender-icon-other {}
 	}
+
+	.gender-radio-select-container-other:active {
+		border: 0.2em #161616 solid;
+	}
+	
+	.next-page-tabbar {
+		height: 7.73vh;
+		margin: 0vh 3.27vh;
+		
+		.wd-tabbar--default::after {
+			background: none !important;
+			border: #161616 1px solid;
+		}
+	}
+
 </style>
