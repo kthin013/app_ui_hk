@@ -41,8 +41,8 @@
 		</view>
 	</view>
 	<wd-tabbar fixed safeAreaInsetBottom placeholder class="next-page-tabbar">
-		<div>a</div>
-		<div>a</div>
+		<wd-button class="back-button"><uni-icons type="left" size="2em" /></wd-button>
+		<wd-button class="next-button next-button-text-20">Next</wd-button>
 	</wd-tabbar>
 </template>
 
@@ -109,7 +109,7 @@
 	}
 </script>
 
-<style lang="scss">	
+<style lang="scss">
 	.progress-nav-bar {
 		.uni-navbar--border {
 			border-bottom-width: 0;
@@ -195,15 +195,52 @@
 	.gender-radio-select-container-other:active {
 		border: 0.2em #161616 solid;
 	}
-	
+
 	.next-page-tabbar {
 		height: 7.73vh;
-		margin: 0vh 3.27vh;
-		
-		.wd-tabbar--default::after {
+		// margin: 0vh 3.27vh;
+
+		.wd-tabbar--default {
+			height: 10.7vh;
+			padding: 0vh 6.4vw;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
+
+		::after {
 			background: none !important;
 			border: #161616 1px solid;
 		}
 	}
 
+	.back-button {
+		margin: 0px;
+		width: 12.7vw !important;
+		height: 12.7vw !important;
+		min-width: unset !important;
+		border-radius: 50% !important;
+		background-color: white !important;
+		border: 0.2em #D0D5DD solid !important;
+
+		.uni-icons {
+			color: #161616 !important;
+		}
+	}
+
+	.back-button.wd-button--active:active::before {
+		opacity: 0;
+	}
+
+	.back-button.wd-button--active {
+		border: 0.2em #161616 solid !important;
+	}
+
+	.next-button {
+		width: 61vw !important;
+		height: 12.7vw !important;
+		background-color: #161616 !important;
+		margin: 0px;
+		font-size: 1.5em !important;
+		padding: auto;
+	}
 </style>

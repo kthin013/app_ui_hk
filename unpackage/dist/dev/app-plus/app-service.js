@@ -163,7 +163,7 @@ if (uni.restoreGlobal) {
      */
     classPrefix: makeStringProp("wd-icon")
   };
-  const __default__$2 = {
+  const __default__$3 = {
     name: "wd-icon",
     options: {
       virtualHost: true,
@@ -171,8 +171,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$2,
+  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$3,
     props: iconProps,
     emits: ["click"],
     setup(__props, { emit: __emit }) {
@@ -231,7 +231,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
   const progressProps = {
     ...baseProps,
     /**
@@ -258,7 +258,7 @@ if (uni.restoreGlobal) {
      */
     status: String
   };
-  const __default__$1 = {
+  const __default__$2 = {
     name: "wd-progress",
     options: {
       virtualHost: true,
@@ -266,8 +266,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$7 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$1,
+  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$2,
     props: progressProps,
     setup(__props) {
       const props = __props;
@@ -436,7 +436,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
   const fontData = [
     {
       "font_class": "arrow-down",
@@ -1087,7 +1087,7 @@ if (uni.restoreGlobal) {
     const reg = /^[0-9]*$/g;
     return typeof val === "number" || reg.test(val) ? val + "px" : val;
   };
-  const _sfc_main$6 = {
+  const _sfc_main$7 = {
     name: "UniIcons",
     emits: ["click"],
     props: {
@@ -1156,8 +1156,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$4], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
-  const _sfc_main$5 = {
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$4], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const _sfc_main$6 = {
     name: "UniStatusBar",
     data() {
       return {
@@ -1182,9 +1182,9 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$3], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$3], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
   const getVal = (val) => typeof val === "number" ? val + "px" : val;
-  const _sfc_main$4 = {
+  const _sfc_main$5 = {
     name: "UniNavBar",
     components: {
       statusBar
@@ -1459,7 +1459,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$2], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$2], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
   var pattern = {
     email: /^\S+?@\S+?\.\S+?$/,
     idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
@@ -2023,7 +2023,7 @@ if (uni.restoreGlobal) {
       return false;
     }
   };
-  const _sfc_main$3 = {
+  const _sfc_main$4 = {
     name: "uniForms",
     emits: ["validate", "submit"],
     options: {
@@ -2327,7 +2327,276 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$1], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$1], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
+  const _b64chars = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"];
+  const _mkUriSafe = (src) => src.replace(/[+/]/g, (m0) => m0 === "+" ? "-" : "_").replace(/=+\$/m, "");
+  const fromUint8Array = (src, rfc4648 = false) => {
+    let b64 = "";
+    for (let i = 0, l = src.length; i < l; i += 3) {
+      const [a0, a1, a2] = [src[i], src[i + 1], src[i + 2]];
+      const ord = a0 << 16 | a1 << 8 | a2;
+      b64 += _b64chars[ord >>> 18];
+      b64 += _b64chars[ord >>> 12 & 63];
+      b64 += typeof a1 !== "undefined" ? _b64chars[ord >>> 6 & 63] : "=";
+      b64 += typeof a2 !== "undefined" ? _b64chars[ord & 63] : "=";
+    }
+    return rfc4648 ? _mkUriSafe(b64) : b64;
+  };
+  const _btoa = typeof btoa === "function" ? (s) => btoa(s) : (s) => {
+    if (s.charCodeAt(0) > 255) {
+      throw new RangeError("The string contains invalid characters.");
+    }
+    return fromUint8Array(Uint8Array.from(s, (c) => c.charCodeAt(0)));
+  };
+  const utob = (src) => unescape(encodeURIComponent(src));
+  function encode(src, rfc4648 = false) {
+    const b64 = _btoa(utob(src));
+    return rfc4648 ? _mkUriSafe(b64) : b64;
+  }
+  const buttonProps = {
+    ...baseProps,
+    /**
+     * 幽灵按钮
+     */
+    plain: makeBooleanProp(false),
+    /**
+     * 圆角按钮
+     */
+    round: makeBooleanProp(true),
+    /**
+     * 禁用按钮
+     */
+    disabled: makeBooleanProp(false),
+    /**
+     * 是否细边框
+     */
+    hairline: makeBooleanProp(false),
+    /**
+     * 块状按钮
+     */
+    block: makeBooleanProp(false),
+    /**
+     * 按钮类型，可选值：primary / success / info / warning / error / text / icon
+     */
+    type: makeStringProp("primary"),
+    /**
+     * 按钮尺寸，可选值：small / medium / large
+     */
+    size: makeStringProp("medium"),
+    /**
+     * 图标类名
+     */
+    icon: String,
+    /**
+     * 加载中按钮
+     */
+    loading: makeBooleanProp(false),
+    /**
+     * 加载图标颜色
+     */
+    loadingColor: String,
+    /**
+     * 开放能力
+     */
+    openType: String,
+    formType: String,
+    /**
+     * 指定是否阻止本节点的祖先节点出现点击态
+     */
+    hoverStopPropagation: Boolean,
+    /**
+     * 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文
+     */
+    lang: String,
+    /**
+     * 会话来源，open-type="contact"时有效
+     */
+    sessionFrom: String,
+    /**
+     * 会话内消息卡片标题，open-type="contact"时有效
+     */
+    sendMessageTitle: String,
+    /**
+     * 会话内消息卡片点击跳转小程序路径，open-type="contact"时有效
+     */
+    sendMessagePath: String,
+    /**
+     * 会话内消息卡片图片，open-type="contact"时有效
+     */
+    sendMessageImg: String,
+    /**
+     * 打开 APP 时，向 APP 传递的参数，open-type=launchApp时有效
+     */
+    appParameter: String,
+    /**
+     * 是否显示会话内消息卡片，设置此参数为 true，用户进入客服会话会在右下角显示"可能要发送的小程序"提示，用户点击后可以快速发送小程序消息，open-type="contact"时有效
+     */
+    showMessageCard: Boolean
+  };
+  const __default__$1 = {
+    name: "wd-button",
+    options: {
+      addGlobalClass: true,
+      virtualHost: true,
+      styleIsolation: "shared"
+    }
+  };
+  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$1,
+    props: buttonProps,
+    emits: [
+      "click",
+      "getuserinfo",
+      "contact",
+      "getphonenumber",
+      "error",
+      "launchapp",
+      "opensetting",
+      "chooseavatar",
+      "agreeprivacyauthorization"
+    ],
+    setup(__props, { emit: __emit }) {
+      const loadingIcon = (color = "#4D80F0", reverse = true) => {
+        return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><defs><linearGradient x1="100%" y1="0%" x2="0%" y2="0%" id="a"><stop stop-color="${reverse ? color : "#fff"}" offset="0%" stop-opacity="0"/><stop stop-color="${reverse ? color : "#fff"}" offset="100%"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><path d="M21 1c11.046 0 20 8.954 20 20s-8.954 20-20 20S1 32.046 1 21 9.954 1 21 1zm0 7C13.82 8 8 13.82 8 21s5.82 13 13 13 13-5.82 13-13S28.18 8 21 8z" fill="${reverse ? "#fff" : color}"/><path d="M4.599 21c0 9.044 7.332 16.376 16.376 16.376 9.045 0 16.376-7.332 16.376-16.376" stroke="url(#a)" stroke-width="3.5" stroke-linecap="round"/></g></svg>`;
+      };
+      const props = __props;
+      const emit = __emit;
+      const hoverStartTime = vue.ref(20);
+      const hoverStayTime = vue.ref(70);
+      const loadingIconSvg = vue.ref("");
+      const loadingStyle = vue.computed(() => {
+        return `background-image: url(${loadingIconSvg.value});`;
+      });
+      vue.watch(
+        () => props.loading,
+        () => {
+          buildLoadingSvg();
+        },
+        { deep: true, immediate: true }
+      );
+      function handleClick(event) {
+        if (!props.disabled && !props.loading) {
+          emit("click", event.detail);
+        }
+      }
+      function handleGetuserinfo(event) {
+        emit("getuserinfo", event.detail);
+      }
+      function handleConcat(event) {
+        emit("contact", event.detail);
+      }
+      function handleGetphonenumber(event) {
+        emit("getphonenumber", event.detail);
+      }
+      function handleError(event) {
+        emit("error", event.detail);
+      }
+      function handleLaunchapp(event) {
+        emit("launchapp", event.detail);
+      }
+      function handleOpensetting(event) {
+        emit("opensetting", event.detail);
+      }
+      function handleChooseavatar(event) {
+        emit("chooseavatar", event.detail);
+      }
+      function handleAgreePrivacyAuthorization(event) {
+        emit("agreeprivacyauthorization", event.detail);
+      }
+      function buildLoadingSvg() {
+        const { loadingColor, type, plain } = props;
+        let color = loadingColor;
+        if (!color) {
+          switch (type) {
+            case "primary":
+              color = "#4D80F0";
+              break;
+            case "success":
+              color = "#34d19d";
+              break;
+            case "info":
+              color = "#333";
+              break;
+            case "warning":
+              color = "#f0883a";
+              break;
+            case "error":
+              color = "#fa4350";
+              break;
+            case "default":
+              color = "#333";
+              break;
+          }
+        }
+        const svg = loadingIcon(color, !plain);
+        loadingIconSvg.value = `"data:image/svg+xml;base64,${encode(svg)}"`;
+      }
+      return (_ctx, _cache) => {
+        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_0$1);
+        return vue.openBlock(), vue.createElementBlock("button", {
+          "hover-class": `${_ctx.disabled || _ctx.loading ? "" : "wd-button--active"}`,
+          style: vue.normalizeStyle(_ctx.customStyle),
+          class: vue.normalizeClass([
+            "wd-button",
+            "is-" + _ctx.type,
+            "is-" + _ctx.size,
+            _ctx.plain ? "is-plain" : "",
+            _ctx.disabled ? "is-disabled" : "",
+            _ctx.round ? "is-round" : "",
+            _ctx.hairline ? "is-hairline" : "",
+            _ctx.block ? "is-block" : "",
+            _ctx.loading ? "is-loading" : "",
+            _ctx.customClass
+          ]),
+          "hover-start-time": hoverStartTime.value,
+          "hover-stay-time": hoverStayTime.value,
+          "open-type": _ctx.openType,
+          "send-message-title": _ctx.sendMessageTitle,
+          "send-message-path": _ctx.sendMessagePath,
+          "send-message-img": _ctx.sendMessageImg,
+          "app-parameter": _ctx.appParameter,
+          "show-message-card": _ctx.showMessageCard,
+          "session-from": _ctx.sessionFrom,
+          lang: _ctx.lang,
+          "hover-stop-propagation": _ctx.hoverStopPropagation,
+          "form-type": _ctx.formType,
+          onClick: handleClick,
+          onGetuserinfo: handleGetuserinfo,
+          onContact: handleConcat,
+          onGetphonenumber: handleGetphonenumber,
+          onError: handleError,
+          onLaunchapp: handleLaunchapp,
+          onOpensetting: handleOpensetting,
+          onChooseavatar: handleChooseavatar,
+          onAgreeprivacyauthorization: handleAgreePrivacyAuthorization
+        }, [
+          _ctx.loading ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 0,
+            class: "wd-button__loading"
+          }, [
+            vue.createElementVNode(
+              "view",
+              {
+                class: "wd-button__loading-svg",
+                style: vue.normalizeStyle(loadingStyle.value)
+              },
+              null,
+              4
+              /* STYLE */
+            )
+          ])) : _ctx.icon ? (vue.openBlock(), vue.createBlock(_component_wd_icon, {
+            key: 1,
+            "custom-class": "wd-button__icon",
+            name: _ctx.icon
+          }, null, 8, ["name"])) : vue.createCommentVNode("v-if", true),
+          vue.createElementVNode("view", { class: "wd-button__text" }, [
+            vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+          ])
+        ], 46, ["hover-class", "hover-start-time", "hover-stay-time", "open-type", "send-message-title", "send-message-path", "send-message-img", "app-parameter", "show-message-card", "session-from", "lang", "hover-stop-propagation", "form-type"]);
+      };
+    }
+  });
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-d858c170"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
   function isVNode(value) {
     return value ? value.__v_isVNode === true : false;
   }
@@ -2530,7 +2799,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-70467ab8"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-70467ab8"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
   const _sfc_main$1 = {
     data() {
       return {
@@ -2596,7 +2865,8 @@ if (uni.restoreGlobal) {
     const _component_uni_nav_bar = resolveEasycom(vue.resolveDynamicComponent("uni-nav-bar"), __easycom_1);
     const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2);
     const _component_uni_forms = resolveEasycom(vue.resolveDynamicComponent("uni-forms"), __easycom_3);
-    const _component_wd_tabbar = resolveEasycom(vue.resolveDynamicComponent("wd-tabbar"), __easycom_4);
+    const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_4);
+    const _component_wd_tabbar = resolveEasycom(vue.resolveDynamicComponent("wd-tabbar"), __easycom_5);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -2738,8 +3008,23 @@ if (uni.restoreGlobal) {
           class: "next-page-tabbar"
         }, {
           default: vue.withCtx(() => [
-            vue.createElementVNode("div", null, "a"),
-            vue.createElementVNode("div", null, "a")
+            vue.createVNode(_component_wd_button, { class: "back-button" }, {
+              default: vue.withCtx(() => [
+                vue.createVNode(_component_uni_icons, {
+                  type: "left",
+                  size: "2em"
+                })
+              ]),
+              _: 1
+              /* STABLE */
+            }),
+            vue.createVNode(_component_wd_button, { class: "next-button" }, {
+              default: vue.withCtx(() => [
+                vue.createTextVNode("b")
+              ]),
+              _: 1
+              /* STABLE */
+            })
           ]),
           _: 1
           /* STABLE */
@@ -2749,7 +3034,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
+  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
   __definePage("pages/login/registerFormPage", PagesLoginRegisterFormPage);
   const _sfc_main = {
     onLaunch: function() {
@@ -2762,7 +3047,7 @@ if (uni.restoreGlobal) {
       formatAppLog("log", "at App.vue:10", "App Hide");
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
   function createApp() {
     const app = vue.createVueApp(App);
     return {
