@@ -2824,7 +2824,6 @@ to {
 }
 .next-page-tabbar ::after {
   background: none !important;
-  border: #161616 1px solid;
 }
 .back-button {
   margin: 0px;
@@ -2847,5 +2846,8 @@ to {
 .next-button {
   width: 61vw !important;
   height: 12.7vw !important;
+  background-color: #161616 !important;
   margin: 0px;
+  font-size: 1.5em !important;
+  padding: auto;
 }

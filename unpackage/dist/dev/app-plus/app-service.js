@@ -231,7 +231,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
   const progressProps = {
     ...baseProps,
     /**
@@ -436,7 +436,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
   const fontData = [
     {
       "font_class": "arrow-down",
@@ -1156,7 +1156,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$4], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$4], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
   const _sfc_main$6 = {
     name: "UniStatusBar",
     data() {
@@ -1182,7 +1182,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$3], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$3], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
   const getVal = (val) => typeof val === "number" ? val + "px" : val;
   const _sfc_main$5 = {
     name: "UniNavBar",
@@ -1459,7 +1459,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$2], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$2], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
   var pattern = {
     email: /^\S+?@\S+?\.\S+?$/,
     idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
@@ -2327,7 +2327,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$1], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$1], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
   const _b64chars = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"];
   const _mkUriSafe = (src) => src.replace(/[+/]/g, (m0) => m0 === "+" ? "-" : "_").replace(/=+\$/m, "");
   const fromUint8Array = (src, rfc4648 = false) => {
@@ -2596,7 +2596,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-d858c170"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-d858c170"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
   function isVNode(value) {
     return value ? value.__v_isVNode === true : false;
   }
@@ -2799,13 +2799,16 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-70467ab8"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-70467ab8"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
   const _sfc_main$1 = {
     data() {
       return {
-        progressPercentage: 0,
+        progressPercentage: 1,
         genderValue: "",
+        userName: "",
         isGenderListExpand: false,
+        isBackButtonDisable: true,
+        isNextButtonDisable: true,
         genderItems: [
           {
             value: "male",
@@ -2852,11 +2855,38 @@ if (uni.restoreGlobal) {
     methods: {
       onGenderRadioChange(value) {
         this.genderValue = value.detail.value;
-        formatAppLog("log", "at pages/login/registerFormPage.vue:102", value.detail, this.genderValue);
-        formatAppLog("log", "at pages/login/registerFormPage.vue:103", this.genderItems);
+        this.onCheckPageTurn();
+        formatAppLog("log", "at pages/login/registerFormPage.vue:112", value.detail, this.genderValue);
       },
       onGenderOtherClick() {
         this.isGenderListExpand = true;
+      },
+      onCheckPageTurn() {
+        if (this.progressPercentage == 1) {
+          this.isBackButtonDisable = true;
+          if (this.genderValue != "") {
+            this.isNextButtonDisable = false;
+            return true;
+          }
+        }
+        if (this.progressPercentage == 11) {
+          this.isBackButtonDisable = false;
+          if (this.userName != "" && false) {
+            this.isNextButtonDisable = false;
+            return true;
+          }
+        }
+        return false;
+      },
+      onPageTurn(action) {
+        if (action == "next") {
+          this.progressPercentage += 10;
+          this.isNextButtonDisable = true;
+        } else if (action == "back") {
+          this.progressPercentage -= 10;
+          formatAppLog("log", "at pages/login/registerFormPage.vue:142", this.progressPercentage);
+        }
+        this.onCheckPageTurn();
       }
     }
   };
@@ -2898,103 +2928,114 @@ if (uni.restoreGlobal) {
               class: "register-form"
             }, {
               default: vue.withCtx(() => [
-                vue.createElementVNode("span", null, [
-                  vue.createElementVNode("text", { class: "title-text-24" }, "Please select an option below your identification 🌟")
-                ]),
-                vue.createElementVNode(
-                  "radio-group",
-                  {
-                    onChange: _cache[1] || (_cache[1] = (...args) => $options.onGenderRadioChange && $options.onGenderRadioChange(...args))
-                  },
+                vue.withDirectives(vue.createElementVNode(
+                  "div",
+                  null,
                   [
-                    !$data.isGenderListExpand ? (vue.openBlock(), vue.createElementBlock("span", {
-                      key: 0,
-                      class: "gender-radio-group"
-                    }, [
-                      vue.createElementVNode("radio", {
-                        value: $data.genderItems[0].value,
-                        class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == $data.genderItems[0].value ? "gender-radio-checked" : ""])
-                      }, [
-                        vue.createElementVNode(
-                          "span",
-                          { class: "gender-radio-icon" },
-                          vue.toDisplayString($data.genderItems[0].icon),
-                          1
-                          /* TEXT */
-                        ),
-                        vue.createElementVNode(
-                          "text",
-                          { class: "title-text-24 gender-radio-text" },
-                          vue.toDisplayString($data.genderItems[0].name),
-                          1
-                          /* TEXT */
-                        )
-                      ], 10, ["value"]),
-                      vue.createElementVNode("radio", {
-                        value: $data.genderItems[1].value,
-                        class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == $data.genderItems[1].value ? "gender-radio-checked" : ""])
-                      }, [
-                        vue.createElementVNode(
-                          "span",
-                          { class: "gender-radio-icon" },
-                          vue.toDisplayString($data.genderItems[1].icon),
-                          1
-                          /* TEXT */
-                        ),
-                        vue.createElementVNode(
-                          "text",
-                          { class: "title-text-24 gender-radio-text" },
-                          vue.toDisplayString($data.genderItems[1].name),
-                          1
-                          /* TEXT */
-                        )
-                      ], 10, ["value"]),
-                      vue.createElementVNode("span", {
-                        class: "gender-radio-select-container gender-radio-select-container-other",
-                        onClick: _cache[0] || (_cache[0] = (...args) => $options.onGenderOtherClick && $options.onGenderOtherClick(...args))
-                      }, [
-                        vue.createElementVNode("text", { class: "title-text-24 gender-radio-text gender-text-other" }, "other"),
-                        vue.createVNode(_component_uni_icons, {
-                          type: "right",
-                          size: "2em",
-                          class: "title-text-24 gender-icon-other"
-                        })
-                      ])
-                    ])) : (vue.openBlock(), vue.createElementBlock("span", { key: 1 }, [
-                      vue.createElementVNode("span", { class: "gender-radio-group" }, [
-                        (vue.openBlock(true), vue.createElementBlock(
-                          vue.Fragment,
-                          null,
-                          vue.renderList($data.genderItems, (item) => {
-                            return vue.openBlock(), vue.createElementBlock("radio", {
-                              value: item.value,
-                              class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == item.value ? "gender-radio-checked" : ""])
-                            }, [
-                              vue.createElementVNode(
-                                "span",
-                                { class: "gender-radio-icon" },
-                                vue.toDisplayString(item.icon),
-                                1
-                                /* TEXT */
-                              ),
-                              vue.createElementVNode(
-                                "text",
-                                { class: "title-text-24 gender-radio-text" },
-                                vue.toDisplayString(item.name),
-                                1
-                                /* TEXT */
-                              )
-                            ], 10, ["value"]);
-                          }),
-                          256
-                          /* UNKEYED_FRAGMENT */
-                        ))
-                      ])
-                    ]))
+                    vue.createCommentVNode(" page 0 "),
+                    vue.createElementVNode("span", null, [
+                      vue.createElementVNode("text", { class: "title-text-24" }, "Please select an option below your identification 🌟")
+                    ]),
+                    vue.createElementVNode(
+                      "radio-group",
+                      {
+                        onChange: _cache[1] || (_cache[1] = (...args) => $options.onGenderRadioChange && $options.onGenderRadioChange(...args))
+                      },
+                      [
+                        !$data.isGenderListExpand ? (vue.openBlock(), vue.createElementBlock("span", {
+                          key: 0,
+                          class: "gender-radio-group"
+                        }, [
+                          vue.createElementVNode("radio", {
+                            value: $data.genderItems[0].value,
+                            class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == $data.genderItems[0].value ? "gender-radio-checked" : ""])
+                          }, [
+                            vue.createElementVNode(
+                              "span",
+                              { class: "gender-radio-icon" },
+                              vue.toDisplayString($data.genderItems[0].icon),
+                              1
+                              /* TEXT */
+                            ),
+                            vue.createElementVNode(
+                              "text",
+                              { class: "title-text-24 gender-radio-text" },
+                              vue.toDisplayString($data.genderItems[0].name),
+                              1
+                              /* TEXT */
+                            )
+                          ], 10, ["value"]),
+                          vue.createElementVNode("radio", {
+                            value: $data.genderItems[1].value,
+                            class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == $data.genderItems[1].value ? "gender-radio-checked" : ""])
+                          }, [
+                            vue.createElementVNode(
+                              "span",
+                              { class: "gender-radio-icon" },
+                              vue.toDisplayString($data.genderItems[1].icon),
+                              1
+                              /* TEXT */
+                            ),
+                            vue.createElementVNode(
+                              "text",
+                              { class: "title-text-24 gender-radio-text" },
+                              vue.toDisplayString($data.genderItems[1].name),
+                              1
+                              /* TEXT */
+                            )
+                          ], 10, ["value"]),
+                          vue.createElementVNode("span", {
+                            class: "gender-radio-select-container gender-radio-select-container-other",
+                            onClick: _cache[0] || (_cache[0] = (...args) => $options.onGenderOtherClick && $options.onGenderOtherClick(...args))
+                          }, [
+                            vue.createElementVNode("text", { class: "title-text-24 gender-radio-text gender-text-other" }, "other"),
+                            vue.createVNode(_component_uni_icons, {
+                              type: "right",
+                              size: "2em",
+                              class: "title-text-24 gender-icon-other"
+                            })
+                          ])
+                        ])) : (vue.openBlock(), vue.createElementBlock("span", { key: 1 }, [
+                          vue.createElementVNode("span", { class: "gender-radio-group" }, [
+                            (vue.openBlock(true), vue.createElementBlock(
+                              vue.Fragment,
+                              null,
+                              vue.renderList($data.genderItems, (item) => {
+                                return vue.openBlock(), vue.createElementBlock("radio", {
+                                  value: item.value,
+                                  class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == item.value ? "gender-radio-checked" : ""])
+                                }, [
+                                  vue.createElementVNode(
+                                    "span",
+                                    { class: "gender-radio-icon" },
+                                    vue.toDisplayString(item.icon),
+                                    1
+                                    /* TEXT */
+                                  ),
+                                  vue.createElementVNode(
+                                    "text",
+                                    { class: "title-text-24 gender-radio-text" },
+                                    vue.toDisplayString(item.name),
+                                    1
+                                    /* TEXT */
+                                  )
+                                ], 10, ["value"]);
+                              }),
+                              256
+                              /* UNKEYED_FRAGMENT */
+                            ))
+                          ])
+                        ]))
+                      ],
+                      32
+                      /* NEED_HYDRATION */
+                    )
                   ],
-                  32
-                  /* NEED_HYDRATION */
-                )
+                  512
+                  /* NEED_PATCH */
+                ), [
+                  [vue.vShow, $data.progressPercentage == 1]
+                ])
               ]),
               _: 1
               /* STABLE */
@@ -3008,7 +3049,11 @@ if (uni.restoreGlobal) {
           class: "next-page-tabbar"
         }, {
           default: vue.withCtx(() => [
-            vue.createVNode(_component_wd_button, { class: "back-button" }, {
+            vue.createVNode(_component_wd_button, {
+              disabled: $data.isBackButtonDisable,
+              class: "back-button",
+              onClick: _cache[2] || (_cache[2] = ($event) => $options.onPageTurn("back"))
+            }, {
               default: vue.withCtx(() => [
                 vue.createVNode(_component_uni_icons, {
                   type: "left",
@@ -3017,14 +3062,18 @@ if (uni.restoreGlobal) {
               ]),
               _: 1
               /* STABLE */
-            }),
-            vue.createVNode(_component_wd_button, { class: "next-button" }, {
+            }, 8, ["disabled"]),
+            vue.createVNode(_component_wd_button, {
+              disabled: $data.isNextButtonDisable,
+              class: "next-button next-button-text-20",
+              onClick: _cache[3] || (_cache[3] = ($event) => $options.onPageTurn("next"))
+            }, {
               default: vue.withCtx(() => [
-                vue.createTextVNode("b")
+                vue.createTextVNode("Next")
               ]),
               _: 1
               /* STABLE */
-            })
+            }, 8, ["disabled"])
           ]),
           _: 1
           /* STABLE */
@@ -3034,7 +3083,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
+  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
   __definePage("pages/login/registerFormPage", PagesLoginRegisterFormPage);
   const _sfc_main = {
     onLaunch: function() {
@@ -3047,7 +3096,7 @@ if (uni.restoreGlobal) {
       formatAppLog("log", "at App.vue:10", "App Hide");
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
   function createApp() {
     const app = vue.createVueApp(App);
     return {

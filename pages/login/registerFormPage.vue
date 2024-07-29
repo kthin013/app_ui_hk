@@ -8,41 +8,47 @@
 	<view class="main-container">
 		<view class="column">
 			<uni-forms :modelValue="registerFormData" class="register-form">
-				<span><text class="title-text-24">Please select an option below your identification 🌟</text></span>
-				<radio-group @change="onGenderRadioChange">
-					<span v-if="!isGenderListExpand" class="gender-radio-group">
-						<radio :value="genderItems[0].value" class="gender-radio-select-container"
-							:class="genderValue == genderItems[0].value ? 'gender-radio-checked': ''">
-							<span class="gender-radio-icon">{{genderItems[0].icon}}</span>
-							<text class="title-text-24 gender-radio-text">{{genderItems[0].name}}</text>
-						</radio>
-						<radio :value="genderItems[1].value" class="gender-radio-select-container"
-							:class="genderValue == genderItems[1].value ? 'gender-radio-checked': ''">
-							<span class="gender-radio-icon">{{genderItems[1].icon}}</span>
-							<text class="title-text-24 gender-radio-text">{{genderItems[1].name}}</text>
-						</radio>
-						<span class="gender-radio-select-container gender-radio-select-container-other"
-							@click="onGenderOtherClick">
-							<text class="title-text-24 gender-radio-text gender-text-other">other</text>
-							<uni-icons type="right" size="2em" class="title-text-24 gender-icon-other" />
-						</span>
-					</span>
-					<span v-else>
-						<span class="gender-radio-group">
-							<radio v-for="item in genderItems" :value="item.value" class="gender-radio-select-container"
-								:class="genderValue == item.value ? 'gender-radio-checked': ''">
-								<span class="gender-radio-icon">{{item.icon}}</span>
-								<text class="title-text-24 gender-radio-text">{{item.name}}</text>
+				<div v-show="progressPercentage == 1">
+					<!-- page 0 -->
+					<span><text class="title-text-24">Please select an option below your identification 🌟</text></span>
+					<radio-group @change="onGenderRadioChange">
+						<span v-if="!isGenderListExpand" class="gender-radio-group">
+							<radio :value="genderItems[0].value" class="gender-radio-select-container"
+								:class="genderValue == genderItems[0].value ? 'gender-radio-checked': ''">
+								<span class="gender-radio-icon">{{genderItems[0].icon}}</span>
+								<text class="title-text-24 gender-radio-text">{{genderItems[0].name}}</text>
 							</radio>
+							<radio :value="genderItems[1].value" class="gender-radio-select-container"
+								:class="genderValue == genderItems[1].value ? 'gender-radio-checked': ''">
+								<span class="gender-radio-icon">{{genderItems[1].icon}}</span>
+								<text class="title-text-24 gender-radio-text">{{genderItems[1].name}}</text>
+							</radio>
+							<span class="gender-radio-select-container gender-radio-select-container-other"
+								@click="onGenderOtherClick">
+								<text class="title-text-24 gender-radio-text gender-text-other">other</text>
+								<uni-icons type="right" size="2em" class="title-text-24 gender-icon-other" />
+							</span>
 						</span>
-					</span>
-				</radio-group>
+						<span v-else>
+							<span class="gender-radio-group">
+								<radio v-for="item in genderItems" :value="item.value"
+									class="gender-radio-select-container"
+									:class="genderValue == item.value ? 'gender-radio-checked': ''">
+									<span class="gender-radio-icon">{{item.icon}}</span>
+									<text class="title-text-24 gender-radio-text">{{item.name}}</text>
+								</radio>
+							</span>
+						</span>
+					</radio-group>
+				</div>
 			</uni-forms>
 		</view>
 	</view>
 	<wd-tabbar fixed safeAreaInsetBottom placeholder class="next-page-tabbar">
-		<wd-button class="back-button"><uni-icons type="left" size="2em" /></wd-button>
-		<wd-button class="next-button next-button-text-20">Next</wd-button>
+		<wd-button :disabled="isBackButtonDisable" class="back-button" @click="onPageTurn('back')"><uni-icons
+				type="left" size="2em" /></wd-button>
+		<wd-button :disabled="isNextButtonDisable" class="next-button next-button-text-20"
+			@click="onPageTurn('next')">Next</wd-button>
 	</wd-tabbar>
 </template>
 
@@ -50,9 +56,12 @@
 	export default {
 		data() {
 			return {
-				progressPercentage: 0,
+				progressPercentage: 1,
 				genderValue: "",
+				userName: "",
 				isGenderListExpand: false,
+				isBackButtonDisable: true,
+				isNextButtonDisable: true,
 				genderItems: [{
 						value: 'male',
 						name: 'male',
@@ -99,11 +108,40 @@
 		methods: {
 			onGenderRadioChange(value) {
 				this.genderValue = value.detail.value;
+				this.onCheckPageTurn();
 				console.log(value.detail, this.genderValue);
-				console.log(this.genderItems);
 			},
 			onGenderOtherClick() {
 				this.isGenderListExpand = true;
+			},
+			onCheckPageTurn() {
+				if (this.progressPercentage == 1) {
+					// page 0
+					this.isBackButtonDisable = true;
+					if (this.genderValue != '') {
+						this.isNextButtonDisable = false;
+						return true;
+					}
+				}
+				if (this.progressPercentage == 11) {
+					this.isBackButtonDisable = false;
+					if (this.userName != "" && false) {
+						this.isNextButtonDisable = false;
+						return true;
+					}
+				}
+				return false;
+			},
+			onPageTurn(action) {
+				if (action == "next") {
+					// next page
+					this.progressPercentage += 10;
+					this.isNextButtonDisable = true;
+				} else if (action == "back") {
+					this.progressPercentage -= 10;
+					console.log(this.progressPercentage);
+				}
+				this.onCheckPageTurn();
 			}
 		}
 	}
@@ -209,7 +247,6 @@
 
 		::after {
 			background: none !important;
-			border: #161616 1px solid;
 		}
 	}
 
