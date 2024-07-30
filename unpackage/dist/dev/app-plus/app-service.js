@@ -2803,7 +2803,8 @@ if (uni.restoreGlobal) {
   const _sfc_main$1 = {
     data() {
       return {
-        progressPercentage: 0,
+        // progressPercentage: 0,				
+        progressPercentage: 3,
         progressPercentageArray: [1e-7, 10, 20, 30],
         genderValue: "",
         nickname: "",
@@ -2811,41 +2812,86 @@ if (uni.restoreGlobal) {
         isGenderListExpand: false,
         isBackButtonDisable: true,
         isNextButtonDisable: true,
+        relationshipGoal: 0,
         genderItems: [
           {
             value: "male",
             name: "male",
-            icon: "👨"
+            icon: "👨",
+            id: 0
           },
           {
             value: "female",
             name: "female",
-            icon: "👩‍"
+            icon: "👩‍",
+            id: 0
           },
           {
             value: "more",
             name: "more",
-            icon: "👩‍"
+            icon: "👩‍",
+            id: 0
           },
           {
             value: "1",
             name: "1",
-            icon: "👩‍"
+            icon: "👩‍",
+            id: 0
           },
           {
             value: "2",
             name: "2",
-            icon: "👩‍"
+            icon: "👩‍",
+            id: 0
           },
           {
             value: "3",
             name: "3",
-            icon: "👩‍"
+            icon: "👩‍",
+            id: 0
           },
           {
             value: "4",
             name: "4",
-            icon: "👩‍"
+            icon: "👩‍",
+            id: 0
+          }
+        ],
+        relationshipGoalList: [
+          {
+            id: 1,
+            name: "dating",
+            icon: "👩‍❤️‍👨‍"
+          },
+          {
+            id: 2,
+            name: "Friendship",
+            icon: "🙌"
+          },
+          {
+            id: 3,
+            name: "Casual",
+            icon: "😄‍"
+          },
+          {
+            id: 4,
+            name: "Serious Relationship",
+            icon: "💍‍"
+          },
+          {
+            id: 5,
+            name: "Open to Options",
+            icon: "🌟‍"
+          },
+          {
+            id: 6,
+            name: "Learning English",
+            icon: "🤝"
+          },
+          {
+            id: 7,
+            name: "Exploration",
+            icon: "🌍"
           }
         ],
         registerFormData: {}
@@ -2867,6 +2913,10 @@ if (uni.restoreGlobal) {
         this.birthday = birthdayString.split("-");
         this.onCheckPageTurn();
       },
+      onRelationshipRadioChange(value) {
+        this.relationshipGoal = value.detail.value;
+        this.onCheckPageTurn();
+      },
       onCheckPageTurn() {
         if (this.progressPercentage == 0) {
           this.isBackButtonDisable = true;
@@ -2877,8 +2927,16 @@ if (uni.restoreGlobal) {
         }
         if (this.progressPercentage == 1) {
           this.isBackButtonDisable = false;
-          formatAppLog("log", "at pages/login/registerFormPage.vue:159", this.nickname, this.birthday);
+          formatAppLog("log", "at pages/login/registerFormPage.vue:231", this.nickname, this.birthday);
           if (this.nickname != "" && !this.birthday.includes(0)) {
+            this.isNextButtonDisable = false;
+            return true;
+          }
+        }
+        if (this.progressPercentage == 2) {
+          this.isBackButtonDisable = false;
+          formatAppLog("log", "at pages/login/registerFormPage.vue:240", this.relationshipGoal);
+          if (this.relationshipGoal != 0) {
             this.isNextButtonDisable = false;
             return true;
           }
@@ -2891,7 +2949,7 @@ if (uni.restoreGlobal) {
           this.isNextButtonDisable = true;
         } else if (action == "back") {
           this.progressPercentage -= 1;
-          formatAppLog("log", "at pages/login/registerFormPage.vue:174", this.progressPercentage);
+          formatAppLog("log", "at pages/login/registerFormPage.vue:255", this.progressPercentage);
         }
         this.onCheckPageTurn();
       }
@@ -3115,7 +3173,79 @@ if (uni.restoreGlobal) {
                 ), [
                   [vue.vShow, $data.progressPercentage == 1]
                 ]),
-                vue.createCommentVNode(" page 2 ")
+                vue.createCommentVNode(" page 2 "),
+                vue.withDirectives(vue.createElementVNode(
+                  "div",
+                  null,
+                  [
+                    vue.createElementVNode("span", null, [
+                      vue.createElementVNode("text", { class: "title-text-24" }, "Your relationship goals 💘")
+                    ]),
+                    vue.createElementVNode(
+                      "radio-group",
+                      {
+                        onChange: _cache[5] || (_cache[5] = (...args) => $options.onRelationshipRadioChange && $options.onRelationshipRadioChange(...args)),
+                        class: "relationship-radio-group"
+                      },
+                      [
+                        (vue.openBlock(true), vue.createElementBlock(
+                          vue.Fragment,
+                          null,
+                          vue.renderList($data.relationshipGoalList, (item) => {
+                            return vue.openBlock(), vue.createElementBlock("radio", {
+                              value: item.id,
+                              class: vue.normalizeClass(["title-text-24 relationship-item-container", $data.relationshipGoal == item.id ? "relationship-radio-checked" : ""])
+                            }, [
+                              vue.createElementVNode(
+                                "span",
+                                { class: "relationship-item-text" },
+                                vue.toDisplayString(item.name),
+                                1
+                                /* TEXT */
+                              ),
+                              vue.createElementVNode(
+                                "text",
+                                { class: "relationship-item-icon" },
+                                vue.toDisplayString(item.icon),
+                                1
+                                /* TEXT */
+                              )
+                            ], 10, ["value"]);
+                          }),
+                          256
+                          /* UNKEYED_FRAGMENT */
+                        ))
+                      ],
+                      32
+                      /* NEED_HYDRATION */
+                    )
+                  ],
+                  512
+                  /* NEED_PATCH */
+                ), [
+                  [vue.vShow, $data.progressPercentage == 2]
+                ]),
+                vue.createCommentVNode(" page 2 "),
+                vue.withDirectives(vue.createElementVNode(
+                  "div",
+                  null,
+                  [
+                    vue.createElementVNode("div", { class: "nationality-container" }, [
+                      vue.createElementVNode("span", null, [
+                        vue.createElementVNode("text", { class: "title-text-24 .nationality-question-text" }, "Where are you from")
+                      ]),
+                      vue.createElementVNode("button", { class: "next-button-text-20 nationality-question-button" }, "Choose Country"),
+                      vue.createElementVNode("span", null, [
+                        vue.createElementVNode("text", { class: "title-text-24 nationality-question-text" }, "What is your national language")
+                      ]),
+                      vue.createElementVNode("button", { class: "next-button-text-20 nationality-question-button" }, "Choose Country")
+                    ])
+                  ],
+                  512
+                  /* NEED_PATCH */
+                ), [
+                  [vue.vShow, $data.progressPercentage == 3]
+                ])
               ]),
               _: 1
               /* STABLE */
@@ -3132,7 +3262,7 @@ if (uni.restoreGlobal) {
             vue.createVNode(_component_wd_button, {
               disabled: $data.isBackButtonDisable,
               class: "back-button",
-              onClick: _cache[5] || (_cache[5] = ($event) => $options.onPageTurn("back"))
+              onClick: _cache[6] || (_cache[6] = ($event) => $options.onPageTurn("back"))
             }, {
               default: vue.withCtx(() => [
                 vue.createVNode(_component_uni_icons, {
@@ -3146,7 +3276,7 @@ if (uni.restoreGlobal) {
             vue.createVNode(_component_wd_button, {
               disabled: $data.isNextButtonDisable,
               class: "next-button next-button-text-20",
-              onClick: _cache[6] || (_cache[6] = ($event) => $options.onPageTurn("next"))
+              onClick: _cache[7] || (_cache[7] = ($event) => $options.onPageTurn("next"))
             }, {
               default: vue.withCtx(() => [
                 vue.createTextVNode("Next")

@@ -45,8 +45,8 @@
 				<div v-show="progressPercentage == 1">
 					<span><text class="title-text-24">What is your nickname and birthday?</text></span>
 					<span class="nick-name-birthday-container">
-						<input type="nickname" v-model="nickname" placeholder="" class="nick-name-input"
-							maxlength="20" @input="onCheckPageTurn"/>
+						<input type="nickname" v-model="nickname" placeholder="" class="nick-name-input" maxlength="20"
+							@input="onCheckPageTurn" />
 						<picker mode="date" :value="birthday" @change="onBirthdayChange" fields="year month day">
 							<div v-if="birthday.includes(0)"
 								class=" date-placeholder birthday-picker next-button-text-20">
@@ -64,6 +64,30 @@
 					</span>
 				</div>
 				<!-- page 2 -->
+				<div v-show="progressPercentage == 2">
+					<span><text class="title-text-24">Your relationship goals 💘</text></span>
+					<radio-group @change="onRelationshipRadioChange" class="relationship-radio-group">
+						<radio v-for="item in relationshipGoalList" :value="item.id"
+							class="title-text-24 relationship-item-container"
+							:class="relationshipGoal == item.id ? 'relationship-radio-checked': ''">
+							<span class="relationship-item-text">{{item.name}}</span>
+							<text class="relationship-item-icon">{{item.icon}}</text>
+						</radio>
+					</radio-group>
+				</div>
+				<!-- page 2 -->
+				<div v-show="progressPercentage == 3">
+					<div class="nationality-container">
+						<span>
+							<text class="title-text-24 .nationality-question-text">Where are you from</text>
+						</span>
+						<button class="next-button-text-20 nationality-question-button">Choose Country</button>
+						<span>
+							<text class="title-text-24 nationality-question-text">What is your national language</text>
+						</span>
+						<button class="next-button-text-20 nationality-question-button">Choose Country</button>
+					</div>
+				</div>
 			</uni-forms>
 		</view>
 	</view>
@@ -79,7 +103,8 @@
 	export default {
 		data() {
 			return {
-				progressPercentage: 0,				
+				// progressPercentage: 0,				
+				progressPercentage: 3,
 				progressPercentageArray: [0.0000001, 10, 20, 30],
 				genderValue: "",
 				nickname: "",
@@ -87,41 +112,84 @@
 				isGenderListExpand: false,
 				isBackButtonDisable: true,
 				isNextButtonDisable: true,
+				relationshipGoal: 0,
 				genderItems: [{
 						value: 'male',
 						name: 'male',
 						icon: '👨',
+						id: 0
 					},
 					{
 						value: 'female',
 						name: 'female',
 						icon: '👩‍',
+						id: 0
 					},
 					{
 						value: 'more',
 						name: 'more',
 						icon: '👩‍',
+						id: 0
 					},
 					{
 						value: '1',
 						name: '1',
 						icon: '👩‍',
+						id: 0
 					},
 					{
 						value: '2',
 						name: '2',
 						icon: '👩‍',
+						id: 0
 					},
 					{
 						value: '3',
 						name: '3',
 						icon: '👩‍',
+						id: 0
 					},
 					{
 						value: '4',
 						name: '4',
 						icon: '👩‍',
+						id: 0
 					},
+				],
+				relationshipGoalList: [{
+						id: 1,
+						name: 'dating',
+						icon: '👩‍❤️‍👨‍',
+					}, {
+						id: 2,
+						name: 'Friendship',
+						icon: '🙌',
+					},
+					{
+						id: 3,
+						name: 'Casual',
+						icon: '😄‍',
+					},
+					{
+						id: 4,
+						name: 'Serious Relationship',
+						icon: '💍‍',
+					},
+					{
+						id: 5,
+						name: 'Open to Options',
+						icon: '🌟‍',
+					},
+					{
+						id: 6,
+						name: 'Learning English',
+						icon: '🤝',
+					},
+					{
+						id: 7,
+						name: 'Exploration',
+						icon: '🌍',
+					}
 				],
 				registerFormData: {
 
@@ -144,6 +212,10 @@
 				this.birthday = birthdayString.split('-');
 				this.onCheckPageTurn();
 			},
+			onRelationshipRadioChange(value) {
+				this.relationshipGoal = value.detail.value;
+				this.onCheckPageTurn();
+			},
 			onCheckPageTurn() {
 				if (this.progressPercentage == 0) {
 					// page 0
@@ -158,6 +230,15 @@
 					this.isBackButtonDisable = false;
 					console.log(this.nickname, this.birthday)
 					if (this.nickname != "" && !this.birthday.includes(0)) {
+						this.isNextButtonDisable = false;
+						return true;
+					}
+				}
+				if (this.progressPercentage == 2) {
+					// page 2
+					this.isBackButtonDisable = false;
+					console.log(this.relationshipGoal)
+					if (this.relationshipGoal != 0) {
 						this.isNextButtonDisable = false;
 						return true;
 					}
@@ -266,6 +347,8 @@
 		border: 0.2em #161616 solid;
 	}
 
+
+	// page 1
 	.nick-name-birthday-container {
 		display: flex;
 		flex-direction: column;
@@ -313,6 +396,57 @@
 		font-weight: 700;
 		color: black;
 	}
+
+	// page 2
+	.relationship-radio-group {
+		display: flex;
+		flex-direction: column;
+		margin-top: 2.5vh;
+
+		.relationship-item-container {
+			padding: 1.6vh 4vw;
+			font-size: 5.3vw;
+			display: flex;
+			align-items: center;
+			border: 2px #EEEEEE solid;
+			border-radius: 2.6vw;
+			margin-bottom: 2.9vh;
+
+			.uni-radio-input {
+				display: none;
+			}
+		}
+
+		.relationship-radio-checked {
+			border: 2px #161616 solid;
+		}
+	}
+
+	// page 2
+	.nationality-container {
+		display: flex;
+		flex-direction: column;
+
+		.nationality-question-text {
+			font-size: 2.4em;
+			letter-spacing: -0.02em;
+			color: black;
+		}
+
+		.nationality-question-button {
+			width: 100%;
+			background-color: #FFFFFF;
+			border: 2px #161616 solid;
+			padding: 1.6vh 4vw;
+			margin-top: 3.4vh;
+			margin-bottom: 7.9vh;
+			font-size: 2em;
+			font-family: Avenir;
+			font-weight: 800;
+			color: black;
+		}
+	}
+
 
 	//tabbar
 	.next-page-tabbar {

@@ -28,7 +28,10 @@
 		{
 			"path": "pages/login/registerFormPage",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"app-plus": {
+					"scrollIndicator": "none"
+				}
 			}
 		}
 	],

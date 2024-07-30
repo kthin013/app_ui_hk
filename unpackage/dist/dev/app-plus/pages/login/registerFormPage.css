@@ -2854,6 +2854,47 @@ to {
   font-weight: 700;
   color: black;
 }
+.relationship-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5vh;
+}
+.relationship-radio-group .relationship-item-container {
+  padding: 1.6vh 4vw;
+  font-size: 5.3vw;
+  display: flex;
+  align-items: center;
+  border: 2px #EEEEEE solid;
+  border-radius: 2.6vw;
+  margin-bottom: 2.9vh;
+}
+.relationship-radio-group .relationship-item-container .uni-radio-input {
+  display: none;
+}
+.relationship-radio-group .relationship-radio-checked {
+  border: 2px #161616 solid;
+}
+.nationality-container {
+  display: flex;
+  flex-direction: column;
+}
+.nationality-container .nationality-question-text {
+  font-size: 2.4em;
+  letter-spacing: -0.02em;
+  color: black;
+}
+.nationality-container .nationality-question-button {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 2px #161616 solid;
+  padding: 1.6vh 4vw;
+  margin-top: 3.4vh;
+  margin-bottom: 7.9vh;
+  font-size: 2em;
+  font-family: Avenir;
+  font-weight: 800;
+  color: black;
+}
 .next-page-tabbar {
   height: 7.73vh;
 }
