@@ -1,15 +1,15 @@
 <template>
 	<uni-nav-bar statusBar border="false" leftWidth="0px" rightWidth="0px" class="progress-nav-bar">
 		<div class="progressBarContainer">
-			<wd-progress :percentage="progressPercentage" hide-text color="#161616"
+			<wd-progress :percentage="progressPercentageArray[progressPercentage]" hide-text color="#161616"
 				custom-class="register-progress-bar" />
 		</div>
 	</uni-nav-bar>
 	<view class="main-container">
 		<view class="column">
 			<uni-forms :modelValue="registerFormData" class="register-form">
-				<div v-show="progressPercentage == 1">
-					<!-- page 0 -->
+				<!-- page 0 -->
+				<div v-show="progressPercentage == 0">
 					<span><text class="title-text-24">Please select an option below your identification 🌟</text></span>
 					<radio-group @change="onGenderRadioChange">
 						<span v-if="!isGenderListExpand" class="gender-radio-group">
@@ -41,6 +41,36 @@
 						</span>
 					</radio-group>
 				</div>
+				<!-- page 1 -->
+				<div v-show="progressPercentage == 1">
+					<span><text class="title-text-24">What is your nickname and birthday?</text></span>
+					<span v-if="!isGenderListExpand" class="gender-radio-group">
+						<radio :value="genderItems[0].value" class="gender-radio-select-container"
+							:class="genderValue == genderItems[0].value ? 'gender-radio-checked': ''">
+							<span class="gender-radio-icon">{{genderItems[0].icon}}</span>
+							<text class="title-text-24 gender-radio-text">{{genderItems[0].name}}</text>
+						</radio>
+						<radio :value="genderItems[1].value" class="gender-radio-select-container"
+							:class="genderValue == genderItems[1].value ? 'gender-radio-checked': ''">
+							<span class="gender-radio-icon">{{genderItems[1].icon}}</span>
+							<text class="title-text-24 gender-radio-text">{{genderItems[1].name}}</text>
+						</radio>
+						<span class="gender-radio-select-container gender-radio-select-container-other"
+							@click="onGenderOtherClick">
+							<text class="title-text-24 gender-radio-text gender-text-other">other</text>
+							<uni-icons type="right" size="2em" class="title-text-24 gender-icon-other" />
+						</span>
+					</span>
+					<span v-else>
+						<span class="gender-radio-group">
+							<radio v-for="item in genderItems" :value="item.value" class="gender-radio-select-container"
+								:class="genderValue == item.value ? 'gender-radio-checked': ''">
+								<span class="gender-radio-icon">{{item.icon}}</span>
+								<text class="title-text-24 gender-radio-text">{{item.name}}</text>
+							</radio>
+						</span>
+					</span>
+				</div>
 			</uni-forms>
 		</view>
 	</view>
@@ -56,7 +86,9 @@
 	export default {
 		data() {
 			return {
+				// progressPercentage: 0,				
 				progressPercentage: 1,
+				progressPercentageArray: [0.0000001, 10, 20, 30],
 				genderValue: "",
 				userName: "",
 				isGenderListExpand: false,
@@ -115,7 +147,7 @@
 				this.isGenderListExpand = true;
 			},
 			onCheckPageTurn() {
-				if (this.progressPercentage == 1) {
+				if (this.progressPercentage == 0) {
 					// page 0
 					this.isBackButtonDisable = true;
 					if (this.genderValue != '') {
@@ -123,7 +155,8 @@
 						return true;
 					}
 				}
-				if (this.progressPercentage == 11) {
+				if (this.progressPercentage == 1) {
+					// page 1
 					this.isBackButtonDisable = false;
 					if (this.userName != "" && false) {
 						this.isNextButtonDisable = false;
@@ -135,14 +168,14 @@
 			onPageTurn(action) {
 				if (action == "next") {
 					// next page
-					this.progressPercentage += 10;
+					this.progressPercentage += 1;
 					this.isNextButtonDisable = true;
 				} else if (action == "back") {
-					this.progressPercentage -= 10;
+					this.progressPercentage -= 1;
 					console.log(this.progressPercentage);
 				}
 				this.onCheckPageTurn();
-			}
+			},
 		}
 	}
 </script>
