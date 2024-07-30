@@ -2803,11 +2803,11 @@ if (uni.restoreGlobal) {
   const _sfc_main$1 = {
     data() {
       return {
-        // progressPercentage: 0,				
-        progressPercentage: 1,
+        progressPercentage: 0,
         progressPercentageArray: [1e-7, 10, 20, 30],
         genderValue: "",
-        userName: "",
+        nickname: "",
+        birthday: [0, 0, 0],
         isGenderListExpand: false,
         isBackButtonDisable: true,
         isNextButtonDisable: true,
@@ -2858,10 +2858,14 @@ if (uni.restoreGlobal) {
       onGenderRadioChange(value) {
         this.genderValue = value.detail.value;
         this.onCheckPageTurn();
-        formatAppLog("log", "at pages/login/registerFormPage.vue:144", value.detail, this.genderValue);
       },
       onGenderOtherClick() {
         this.isGenderListExpand = true;
+      },
+      onBirthdayChange(item) {
+        let birthdayString = item.detail.value;
+        this.birthday = birthdayString.split("-");
+        this.onCheckPageTurn();
       },
       onCheckPageTurn() {
         if (this.progressPercentage == 0) {
@@ -2873,7 +2877,8 @@ if (uni.restoreGlobal) {
         }
         if (this.progressPercentage == 1) {
           this.isBackButtonDisable = false;
-          if (this.userName != "" && false) {
+          formatAppLog("log", "at pages/login/registerFormPage.vue:159", this.nickname, this.birthday);
+          if (this.nickname != "" && !this.birthday.includes(0)) {
             this.isNextButtonDisable = false;
             return true;
           }
@@ -2886,7 +2891,7 @@ if (uni.restoreGlobal) {
           this.isNextButtonDisable = true;
         } else if (action == "back") {
           this.progressPercentage -= 1;
-          formatAppLog("log", "at pages/login/registerFormPage.vue:175", this.progressPercentage);
+          formatAppLog("log", "at pages/login/registerFormPage.vue:174", this.progressPercentage);
         }
         this.onCheckPageTurn();
       }
@@ -3046,96 +3051,71 @@ if (uni.restoreGlobal) {
                     vue.createElementVNode("span", null, [
                       vue.createElementVNode("text", { class: "title-text-24" }, "What is your nickname and birthday?")
                     ]),
-                    !$data.isGenderListExpand ? (vue.openBlock(), vue.createElementBlock("span", {
-                      key: 0,
-                      class: "gender-radio-group"
-                    }, [
-                      vue.createElementVNode("radio", {
-                        value: $data.genderItems[0].value,
-                        class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == $data.genderItems[0].value ? "gender-radio-checked" : ""])
+                    vue.createElementVNode("span", { class: "nick-name-birthday-container" }, [
+                      vue.withDirectives(vue.createElementVNode(
+                        "input",
+                        {
+                          type: "nickname",
+                          "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => $data.nickname = $event),
+                          placeholder: "",
+                          class: "nick-name-input",
+                          maxlength: "20",
+                          onInput: _cache[3] || (_cache[3] = (...args) => $options.onCheckPageTurn && $options.onCheckPageTurn(...args))
+                        },
+                        null,
+                        544
+                        /* NEED_HYDRATION, NEED_PATCH */
+                      ), [
+                        [vue.vModelText, $data.nickname]
+                      ]),
+                      vue.createElementVNode("picker", {
+                        mode: "date",
+                        value: $data.birthday,
+                        onChange: _cache[4] || (_cache[4] = (...args) => $options.onBirthdayChange && $options.onBirthdayChange(...args)),
+                        fields: "year month day"
                       }, [
-                        vue.createElementVNode(
-                          "span",
-                          { class: "gender-radio-icon" },
-                          vue.toDisplayString($data.genderItems[0].icon),
-                          1
-                          /* TEXT */
-                        ),
-                        vue.createElementVNode(
-                          "text",
-                          { class: "title-text-24 gender-radio-text" },
-                          vue.toDisplayString($data.genderItems[0].name),
-                          1
-                          /* TEXT */
-                        )
-                      ], 10, ["value"]),
-                      vue.createElementVNode("radio", {
-                        value: $data.genderItems[1].value,
-                        class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == $data.genderItems[1].value ? "gender-radio-checked" : ""])
-                      }, [
-                        vue.createElementVNode(
-                          "span",
-                          { class: "gender-radio-icon" },
-                          vue.toDisplayString($data.genderItems[1].icon),
-                          1
-                          /* TEXT */
-                        ),
-                        vue.createElementVNode(
-                          "text",
-                          { class: "title-text-24 gender-radio-text" },
-                          vue.toDisplayString($data.genderItems[1].name),
-                          1
-                          /* TEXT */
-                        )
-                      ], 10, ["value"]),
-                      vue.createElementVNode("span", {
-                        class: "gender-radio-select-container gender-radio-select-container-other",
-                        onClick: _cache[2] || (_cache[2] = (...args) => $options.onGenderOtherClick && $options.onGenderOtherClick(...args))
-                      }, [
-                        vue.createElementVNode("text", { class: "title-text-24 gender-radio-text gender-text-other" }, "other"),
-                        vue.createVNode(_component_uni_icons, {
-                          type: "right",
-                          size: "2em",
-                          class: "title-text-24 gender-icon-other"
-                        })
-                      ])
-                    ])) : (vue.openBlock(), vue.createElementBlock("span", { key: 1 }, [
-                      vue.createElementVNode("span", { class: "gender-radio-group" }, [
-                        (vue.openBlock(true), vue.createElementBlock(
-                          vue.Fragment,
-                          null,
-                          vue.renderList($data.genderItems, (item) => {
-                            return vue.openBlock(), vue.createElementBlock("radio", {
-                              value: item.value,
-                              class: vue.normalizeClass(["gender-radio-select-container", $data.genderValue == item.value ? "gender-radio-checked" : ""])
-                            }, [
-                              vue.createElementVNode(
-                                "span",
-                                { class: "gender-radio-icon" },
-                                vue.toDisplayString(item.icon),
-                                1
-                                /* TEXT */
-                              ),
-                              vue.createElementVNode(
-                                "text",
-                                { class: "title-text-24 gender-radio-text" },
-                                vue.toDisplayString(item.name),
-                                1
-                                /* TEXT */
-                              )
-                            ], 10, ["value"]);
-                          }),
-                          256
-                          /* UNKEYED_FRAGMENT */
-                        ))
-                      ])
-                    ]))
+                        $data.birthday.includes(0) ? (vue.openBlock(), vue.createElementBlock("div", {
+                          key: 0,
+                          class: "date-placeholder birthday-picker next-button-text-20"
+                        }, [
+                          vue.createElementVNode("view", { class: "date-container" }, "YY"),
+                          vue.createElementVNode("view", { class: "date-container date-middle-container" }, "MM"),
+                          vue.createElementVNode("view", { class: "date-container" }, "DD")
+                        ])) : (vue.openBlock(), vue.createElementBlock("div", {
+                          key: 1,
+                          class: "date-input-text birthday-picker next-button-text-20"
+                        }, [
+                          vue.createElementVNode(
+                            "view",
+                            { class: "date-container" },
+                            vue.toDisplayString($data.birthday[0]),
+                            1
+                            /* TEXT */
+                          ),
+                          vue.createElementVNode(
+                            "view",
+                            { class: "date-container date-middle-container" },
+                            vue.toDisplayString($data.birthday[1]),
+                            1
+                            /* TEXT */
+                          ),
+                          vue.createElementVNode(
+                            "view",
+                            { class: "date-container" },
+                            vue.toDisplayString($data.birthday[2]),
+                            1
+                            /* TEXT */
+                          )
+                        ]))
+                      ], 40, ["value"])
+                    ])
                   ],
                   512
                   /* NEED_PATCH */
                 ), [
                   [vue.vShow, $data.progressPercentage == 1]
-                ])
+                ]),
+                vue.createCommentVNode(" page 2 ")
               ]),
               _: 1
               /* STABLE */
@@ -3152,7 +3132,7 @@ if (uni.restoreGlobal) {
             vue.createVNode(_component_wd_button, {
               disabled: $data.isBackButtonDisable,
               class: "back-button",
-              onClick: _cache[3] || (_cache[3] = ($event) => $options.onPageTurn("back"))
+              onClick: _cache[5] || (_cache[5] = ($event) => $options.onPageTurn("back"))
             }, {
               default: vue.withCtx(() => [
                 vue.createVNode(_component_uni_icons, {
@@ -3166,7 +3146,7 @@ if (uni.restoreGlobal) {
             vue.createVNode(_component_wd_button, {
               disabled: $data.isNextButtonDisable,
               class: "next-button next-button-text-20",
-              onClick: _cache[4] || (_cache[4] = ($event) => $options.onPageTurn("next"))
+              onClick: _cache[6] || (_cache[6] = ($event) => $options.onPageTurn("next"))
             }, {
               default: vue.withCtx(() => [
                 vue.createTextVNode("Next")

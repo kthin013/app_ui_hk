@@ -2813,6 +2813,47 @@ to {
 .gender-radio-select-container-other:active {
   border: 0.2em #161616 solid;
 }
+.nick-name-birthday-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+.nick-name-birthday-container .nick-name-input {
+  height: 9.2vh;
+  border: 0.1em #D0D5DD solid;
+  border-radius: 0.4em;
+  font-size: 3.2em;
+  line-height: 5.1em;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 7.5vh;
+}
+.birthday-picker {
+  height: 4.8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.birthday-picker .date-container {
+  flex: 1;
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+}
+.birthday-picker .date-middle-container {
+  border-left: 0.1em #D0D5DD solid;
+  border-right: 0.1em #D0D5DD solid;
+}
+.date-placeholder {
+  font-size: 2em;
+  font-weight: 700;
+  color: #9E9E9E;
+}
+.date-input-text {
+  font-size: 2em;
+  font-weight: 700;
+  color: black;
+}
 .next-page-tabbar {
   height: 7.73vh;
 }

@@ -44,33 +44,26 @@
 				<!-- page 1 -->
 				<div v-show="progressPercentage == 1">
 					<span><text class="title-text-24">What is your nickname and birthday?</text></span>
-					<span v-if="!isGenderListExpand" class="gender-radio-group">
-						<radio :value="genderItems[0].value" class="gender-radio-select-container"
-							:class="genderValue == genderItems[0].value ? 'gender-radio-checked': ''">
-							<span class="gender-radio-icon">{{genderItems[0].icon}}</span>
-							<text class="title-text-24 gender-radio-text">{{genderItems[0].name}}</text>
-						</radio>
-						<radio :value="genderItems[1].value" class="gender-radio-select-container"
-							:class="genderValue == genderItems[1].value ? 'gender-radio-checked': ''">
-							<span class="gender-radio-icon">{{genderItems[1].icon}}</span>
-							<text class="title-text-24 gender-radio-text">{{genderItems[1].name}}</text>
-						</radio>
-						<span class="gender-radio-select-container gender-radio-select-container-other"
-							@click="onGenderOtherClick">
-							<text class="title-text-24 gender-radio-text gender-text-other">other</text>
-							<uni-icons type="right" size="2em" class="title-text-24 gender-icon-other" />
-						</span>
-					</span>
-					<span v-else>
-						<span class="gender-radio-group">
-							<radio v-for="item in genderItems" :value="item.value" class="gender-radio-select-container"
-								:class="genderValue == item.value ? 'gender-radio-checked': ''">
-								<span class="gender-radio-icon">{{item.icon}}</span>
-								<text class="title-text-24 gender-radio-text">{{item.name}}</text>
-							</radio>
-						</span>
+					<span class="nick-name-birthday-container">
+						<input type="nickname" v-model="nickname" placeholder="" class="nick-name-input"
+							maxlength="20" @input="onCheckPageTurn"/>
+						<picker mode="date" :value="birthday" @change="onBirthdayChange" fields="year month day">
+							<div v-if="birthday.includes(0)"
+								class=" date-placeholder birthday-picker next-button-text-20">
+								<view class="date-container">YY</view>
+								<view class="date-container date-middle-container">MM</view>
+								<view class="date-container">DD</view>
+							</div>
+							<div v-else class="date-input-text birthday-picker next-button-text-20">
+								<view class="date-container">{{birthday[0]}}</view>
+								<view class="date-container date-middle-container">{{birthday[1]}}</view>
+								<view class="date-container">{{birthday[2]}}</view>
+							</div>
+						</picker>
+
 					</span>
 				</div>
+				<!-- page 2 -->
 			</uni-forms>
 		</view>
 	</view>
@@ -86,11 +79,11 @@
 	export default {
 		data() {
 			return {
-				// progressPercentage: 0,				
-				progressPercentage: 1,
+				progressPercentage: 0,				
 				progressPercentageArray: [0.0000001, 10, 20, 30],
 				genderValue: "",
-				userName: "",
+				nickname: "",
+				birthday: [0, 0, 0],
 				isGenderListExpand: false,
 				isBackButtonDisable: true,
 				isNextButtonDisable: true,
@@ -141,10 +134,15 @@
 			onGenderRadioChange(value) {
 				this.genderValue = value.detail.value;
 				this.onCheckPageTurn();
-				console.log(value.detail, this.genderValue);
 			},
 			onGenderOtherClick() {
 				this.isGenderListExpand = true;
+			},
+			onBirthdayChange(item) {
+				//yy-mm-dd
+				let birthdayString = item.detail.value;
+				this.birthday = birthdayString.split('-');
+				this.onCheckPageTurn();
 			},
 			onCheckPageTurn() {
 				if (this.progressPercentage == 0) {
@@ -158,7 +156,8 @@
 				if (this.progressPercentage == 1) {
 					// page 1
 					this.isBackButtonDisable = false;
-					if (this.userName != "" && false) {
+					console.log(this.nickname, this.birthday)
+					if (this.nickname != "" && !this.birthday.includes(0)) {
 						this.isNextButtonDisable = false;
 						return true;
 					}
@@ -267,6 +266,55 @@
 		border: 0.2em #161616 solid;
 	}
 
+	.nick-name-birthday-container {
+		display: flex;
+		flex-direction: column;
+		margin-top: 10vh;
+
+		.nick-name-input {
+			height: 9.2vh;
+			border: 0.1em #D0D5DD solid;
+			border-radius: 0.4em;
+			font-size: 3.2em;
+			line-height: 5.1em;
+			font-weight: 900;
+			text-align: center;
+			margin-bottom: 7.5vh;
+		}
+	}
+
+	.birthday-picker {
+		height: 4.8vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+		.date-container {
+			flex: 1;
+			display: inherit;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.date-middle-container {
+			border-left: 0.1em #D0D5DD solid;
+			border-right: 0.1em #D0D5DD solid;
+		}
+	}
+
+	.date-placeholder {
+		font-size: 2em;
+		font-weight: 700;
+		color: #9E9E9E;
+	}
+
+	.date-input-text {
+		font-size: 2em;
+		font-weight: 700;
+		color: black;
+	}
+
+	//tabbar
 	.next-page-tabbar {
 		height: 7.73vh;
 		// margin: 0vh 3.27vh;
