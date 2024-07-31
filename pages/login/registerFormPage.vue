@@ -87,10 +87,15 @@
 						</span>
 						<button class="next-button-text-20 nationality-question-button">Choose Country</button>
 					</div>
+					<view style="height: 100px; width: 100px; border: 1px solid black;" @tap="chooseMenu"></view>
+					<countryActionModal :tips="showActionSheet.tips" :itemList="showActionSheet.itemList" :show="true"
+						:maskClosable="showActionSheet.maskClosable" :isCancel="showActionSheet.isCancel"
+						@chooseCancel="chooseCancel" />
 				</div>
 			</uni-forms>
 		</view>
 	</view>
+
 	<wd-tabbar fixed safeAreaInsetBottom placeholder class="next-page-tabbar">
 		<wd-button :disabled="isBackButtonDisable" class="back-button" @click="onPageTurn('back')"><uni-icons
 				type="left" size="2em" /></wd-button>
@@ -100,6 +105,7 @@
 </template>
 
 <script>
+	import countryActionModal from '../../components/countryActionModal.vue';
 	export default {
 		data() {
 			return {
@@ -193,11 +199,31 @@
 				],
 				registerFormData: {
 
+				},
+
+				showActionSheet: {
+					show: false,
+					maskClosable: true,
+					tips: "请选择申请节点身份，不同的节点消耗福卡不同",
+					itemList: [{
+							text: "红包节点",
+							color: "#333"
+						},
+						{
+							text: "广告节点",
+							color: "#333"
+						},
+					],
+					color: "#9a9a9a",
+					size: 26,
+					isCancel: true,
 				}
 			}
 		},
 		onLoad() {},
-		components: {},
+		components: {
+			countryActionModal
+		},
 		methods: {
 			onGenderRadioChange(value) {
 				this.genderValue = value.detail.value;
@@ -256,6 +282,14 @@
 				}
 				this.onCheckPageTurn();
 			},
+			chooseMenu() {
+				this.showActionSheet.show = true;
+			},
+
+			// 弹窗关闭
+			chooseCancel() {
+				this.showActionSheet.show = false;
+			}
 		}
 	}
 </script>
@@ -422,7 +456,7 @@
 		}
 	}
 
-	// page 2
+	// page 3
 	.nationality-container {
 		display: flex;
 		flex-direction: column;
@@ -435,9 +469,10 @@
 
 		.nationality-question-button {
 			width: 100%;
+			padding: 1.62vh 4.1vw;
 			background-color: #FFFFFF;
-			border: 2px #161616 solid;
-			padding: 1.6vh 4vw;
+			border: 0.1em #161616 solid;
+			border-radius: 0.5em;
 			margin-top: 3.4vh;
 			margin-bottom: 7.9vh;
 			font-size: 2em;
@@ -446,7 +481,6 @@
 			color: black;
 		}
 	}
-
 
 	//tabbar
 	.next-page-tabbar {

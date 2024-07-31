@@ -11,19 +11,19 @@ if (typeof Promise !== "undefined" && !Promise.prototype.finally) {
 }
 ;
 if (typeof uni !== "undefined" && uni && uni.requireGlobal) {
-  const global = uni.requireGlobal();
-  ArrayBuffer = global.ArrayBuffer;
-  Int8Array = global.Int8Array;
-  Uint8Array = global.Uint8Array;
-  Uint8ClampedArray = global.Uint8ClampedArray;
-  Int16Array = global.Int16Array;
-  Uint16Array = global.Uint16Array;
-  Int32Array = global.Int32Array;
-  Uint32Array = global.Uint32Array;
-  Float32Array = global.Float32Array;
-  Float64Array = global.Float64Array;
-  BigInt64Array = global.BigInt64Array;
-  BigUint64Array = global.BigUint64Array;
+  const global2 = uni.requireGlobal();
+  ArrayBuffer = global2.ArrayBuffer;
+  Int8Array = global2.Int8Array;
+  Uint8Array = global2.Uint8Array;
+  Uint8ClampedArray = global2.Uint8ClampedArray;
+  Int16Array = global2.Int16Array;
+  Uint16Array = global2.Uint16Array;
+  Int32Array = global2.Int32Array;
+  Uint32Array = global2.Uint32Array;
+  Float32Array = global2.Float32Array;
+  Float64Array = global2.Float64Array;
+  BigInt64Array = global2.BigInt64Array;
+  BigUint64Array = global2.BigUint64Array;
 }
 ;
 if (uni.restoreGlobal) {
@@ -84,11 +84,17 @@ if (uni.restoreGlobal) {
     }).toLowerCase();
     return newWord;
   }
+  function camelCase(word) {
+    return word.replace(/-(\w)/g, (_, c) => c.toUpperCase());
+  }
   function isArray(value) {
     if (typeof Array.isArray === "function") {
       return Array.isArray(value);
     }
     return Object.prototype.toString.call(value) === "[object Array]";
+  }
+  function isFunction(value) {
+    return getType(value) === "function";
   }
   function isString(value) {
     return getType(value) === "string";
@@ -113,6 +119,36 @@ if (uni.restoreGlobal) {
     }
     return "";
   }
+  const requestAnimationFrame = (cb = () => {
+  }) => {
+    return new Promise((resolve) => {
+      const timer = setInterval(() => {
+        clearInterval(timer);
+        resolve(true);
+        cb();
+      }, 1e3 / 30);
+    });
+  };
+  function deepAssign(target, source) {
+    Object.keys(source).forEach((key) => {
+      const targetValue = target[key];
+      const newObjValue = source[key];
+      if (isObj(targetValue) && isObj(newObjValue)) {
+        deepAssign(targetValue, newObjValue);
+      } else {
+        target[key] = newObjValue;
+      }
+    });
+    return target;
+  }
+  const getPropByPath = (obj, path) => {
+    const keys = path.split(".");
+    try {
+      return keys.reduce((acc, key) => acc !== void 0 && acc !== null ? acc[key] : void 0, obj);
+    } catch (error) {
+      return void 0;
+    }
+  };
   const numericProp = [Number, String];
   const makeRequiredProp = (type) => ({
     type,
@@ -163,7 +199,7 @@ if (uni.restoreGlobal) {
      */
     classPrefix: makeStringProp("wd-icon")
   };
-  const __default__$3 = {
+  const __default__$4 = {
     name: "wd-icon",
     options: {
       virtualHost: true,
@@ -171,8 +207,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$3,
+  const _sfc_main$c = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$4,
     props: iconProps,
     emits: ["click"],
     setup(__props, { emit: __emit }) {
@@ -231,7 +267,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
   const progressProps = {
     ...baseProps,
     /**
@@ -258,7 +294,7 @@ if (uni.restoreGlobal) {
      */
     status: String
   };
-  const __default__$2 = {
+  const __default__$3 = {
     name: "wd-progress",
     options: {
       virtualHost: true,
@@ -266,8 +302,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$2,
+  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$3,
     props: progressProps,
     setup(__props) {
       const props = __props;
@@ -436,7 +472,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
   const fontData = [
     {
       "font_class": "arrow-down",
@@ -1087,7 +1123,7 @@ if (uni.restoreGlobal) {
     const reg = /^[0-9]*$/g;
     return typeof val === "number" || reg.test(val) ? val + "px" : val;
   };
-  const _sfc_main$7 = {
+  const _sfc_main$a = {
     name: "UniIcons",
     emits: ["click"],
     props: {
@@ -1141,7 +1177,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -1156,8 +1192,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$4], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
-  const _sfc_main$6 = {
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$6], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const _sfc_main$9 = {
     name: "UniStatusBar",
     data() {
       return {
@@ -1168,7 +1204,7 @@ if (uni.restoreGlobal) {
       this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight + "px";
     }
   };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1182,9 +1218,9 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$3], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$5], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
   const getVal = (val) => typeof val === "number" ? val + "px" : val;
-  const _sfc_main$5 = {
+  const _sfc_main$8 = {
     name: "UniNavBar",
     components: {
       statusBar
@@ -1304,9 +1340,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_status_bar = vue.resolveComponent("status-bar");
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2$1);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1459,7 +1495,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$2], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$4], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
   var pattern = {
     email: /^\S+?@\S+?\.\S+?$/,
     idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
@@ -2023,7 +2059,7 @@ if (uni.restoreGlobal) {
       return false;
     }
   };
-  const _sfc_main$4 = {
+  const _sfc_main$7 = {
     name: "uniForms",
     emits: ["validate", "submit"],
     options: {
@@ -2320,14 +2356,14 @@ if (uni.restoreGlobal) {
       _isEqual: isEqual
     }
   };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "uni-forms" }, [
       vue.createElementVNode("form", null, [
         vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
       ])
     ]);
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$1], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$3], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
   const _b64chars = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"];
   const _mkUriSafe = (src) => src.replace(/[+/]/g, (m0) => m0 === "+" ? "-" : "_").replace(/=+\$/m, "");
   const fromUint8Array = (src, rfc4648 = false) => {
@@ -2433,7 +2469,7 @@ if (uni.restoreGlobal) {
      */
     showMessageCard: Boolean
   };
-  const __default__$1 = {
+  const __default__$2 = {
     name: "wd-button",
     options: {
       addGlobalClass: true,
@@ -2441,8 +2477,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$1,
+  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$2,
     props: buttonProps,
     emits: [
       "click",
@@ -2596,7 +2632,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-d858c170"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-d858c170"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
   function isVNode(value) {
     return value ? value.__v_isVNode === true : false;
   }
@@ -2714,7 +2750,7 @@ if (uni.restoreGlobal) {
      */
     zIndex: makeNumberProp(99)
   };
-  const __default__ = {
+  const __default__$1 = {
     name: "wd-tabbar",
     options: {
       addGlobalClass: true,
@@ -2722,8 +2758,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__,
+  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$1,
     props: tabbarProps,
     emits: ["change", "update:modelValue"],
     setup(__props, { emit: __emit }) {
@@ -2799,7 +2835,1089 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-70467ab8"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-70467ab8"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
+  const zhCN = {
+    calendar: {
+      placeholder: "请选择",
+      title: "选择日期",
+      day: "日",
+      week: "周",
+      month: "月",
+      confirm: "确定",
+      startTime: "开始时间",
+      endTime: "结束时间",
+      to: "至",
+      timeFormat: "YY年MM月DD日 HH:mm:ss",
+      dateFormat: "YYYY年MM月DD日",
+      weekFormat: (year, week) => `${year} 第 ${week} 周`,
+      startWeek: "开始周",
+      endWeek: "结束周",
+      startMonth: "开始月",
+      endMonth: "结束月",
+      monthFormat: "YYYY年MM月"
+    },
+    calendarView: {
+      startTime: "开始",
+      endTime: "结束",
+      weeks: {
+        sun: "日",
+        mon: "一",
+        tue: "二",
+        wed: "三",
+        thu: "四",
+        fri: "五",
+        sat: "六"
+      },
+      rangePrompt: (maxRange) => `选择天数不能超过${maxRange}天`,
+      rangePromptWeek: (maxRange) => `选择周数不能超过${maxRange}周`,
+      rangePromptMonth: (maxRange) => `选择月份不能超过${maxRange}个月`,
+      monthTitle: "YYYY年M月",
+      yearTitle: "YYYY年",
+      month: "M月",
+      hour: (value) => `${value}时`,
+      minute: (value) => `${value}分`,
+      second: (value) => `${value}秒`
+    },
+    collapse: {
+      expand: "展开",
+      retract: "收起"
+    },
+    colPicker: {
+      title: "请选择",
+      placeholder: "请选择",
+      select: "请选择"
+    },
+    datetimePicker: {
+      start: "开始时间",
+      end: "结束时间",
+      to: "至",
+      placeholder: "请选择",
+      confirm: "完成",
+      cancel: "取消"
+    },
+    loadmore: {
+      loading: "正在努力加载中...",
+      finished: "已加载完毕",
+      error: "加载失败",
+      retry: "点击重试"
+    },
+    messageBox: {
+      inputPlaceholder: "请输入",
+      confirm: "确定",
+      cancel: "取消",
+      inputNoValidate: "输入的数据不合法"
+    },
+    numberKeyboard: {
+      confirm: "完成"
+    },
+    pagination: {
+      prev: "上一页",
+      next: "下一页",
+      page: (value) => `当前页：${value}`,
+      total: (total) => `当前数据：${total}条`,
+      size: (size) => `分页大小：${size}`
+    },
+    picker: {
+      cancel: "取消",
+      done: "完成",
+      placeholder: "请选择"
+    },
+    imgCropper: {
+      confirm: "完成",
+      cancel: "取消"
+    },
+    search: {
+      search: "搜索",
+      cancel: "取消"
+    },
+    steps: {
+      wait: "未开始",
+      finished: "已完成",
+      process: "进行中",
+      failed: "失败"
+    },
+    tabs: {
+      all: "全部"
+    },
+    upload: {
+      error: "上传失败"
+    },
+    input: {
+      placeholder: "请输入..."
+    },
+    selectPicker: {
+      title: "请选择",
+      placeholder: "请选择",
+      select: "请选择",
+      confirm: "确认",
+      filterPlaceholder: "搜索"
+    },
+    tag: {
+      placeholder: "请输入",
+      add: "新增标签"
+    },
+    textarea: {
+      placeholder: "请输入..."
+    },
+    tableCol: {
+      indexLabel: "序号"
+    }
+  };
+  const lang = vue.ref("zh-CN");
+  const messages$1 = vue.reactive({
+    "zh-CN": zhCN
+  });
+  const Locale = {
+    messages() {
+      return messages$1[lang.value];
+    },
+    use(newLang, newMessage) {
+      lang.value = newLang;
+      if (newMessage) {
+        this.add({ [newLang]: newMessage });
+      }
+    },
+    add(newMessages = {}) {
+      deepAssign(messages$1, newMessages);
+    }
+  };
+  const useTranslate = (name) => {
+    const prefix = name ? camelCase(name) + "." : "";
+    const translate = (key, ...args) => {
+      const currentMessages = Locale.messages();
+      const message = getPropByPath(currentMessages, prefix + key);
+      return isFunction(message) ? message(...args) : message;
+    };
+    return { translate };
+  };
+  const searchProps = {
+    ...baseProps,
+    /**
+     * 输入框内容，双向绑定
+     * 类型: string
+     * 默认值: ''
+     */
+    modelValue: makeStringProp(""),
+    /**
+     * 是否使用输入框右侧插槽
+     * 类型: boolean
+     * 默认值: false
+     * @deprecated 该属性已废弃，将在下一个minor版本被移除，直接使用插槽即可
+     */
+    useSuffixSlot: makeBooleanProp(false),
+    /**
+     * 搜索框占位文本
+     * 类型: string
+     */
+    placeholder: String,
+    /**
+     * 搜索框右侧文本
+     * 类型: string
+     */
+    cancelTxt: String,
+    /**
+     * 搜索框亮色（白色）
+     * 类型: boolean
+     * 默认值: false
+     */
+    light: makeBooleanProp(false),
+    /**
+     * 是否隐藏右侧文本
+     * 类型: boolean
+     * 默认值: false
+     */
+    hideCancel: makeBooleanProp(false),
+    /**
+     * 是否禁用搜索框
+     * 类型: boolean
+     * 默认值: false
+     */
+    disabled: makeBooleanProp(false),
+    /**
+     * 原生属性，设置最大长度。-1 表示无限制
+     * 类型: string / number
+     * 默认值: -1
+     */
+    maxlength: makeNumericProp(-1),
+    /**
+     * placeholder 居左边
+     * 类型: boolean
+     * 默认值: false
+     */
+    placeholderLeft: makeBooleanProp(false),
+    /**
+     * 是否自动聚焦
+     * 类型: boolean
+     * 默认值: false
+     * 最低版本: 0.1.63
+     */
+    focus: makeBooleanProp(false),
+    /**
+     * 是否在点击清除按钮时聚焦输入框
+     * 类型: boolean
+     * 默认值: false
+     * 最低版本: 0.1.63
+     */
+    focusWhenClear: makeBooleanProp(false)
+  };
+  const __default__ = {
+    name: "wd-search",
+    options: {
+      virtualHost: true,
+      addGlobalClass: true,
+      styleIsolation: "shared"
+    }
+  };
+  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
+    ...__default__,
+    props: searchProps,
+    emits: ["update:modelValue", "change", "clear", "search", "focus", "blur", "cancel"],
+    setup(__props, { emit: __emit }) {
+      const props = __props;
+      const emit = __emit;
+      const { translate } = useTranslate("search");
+      const isFocused = vue.ref(false);
+      const showInput = vue.ref(false);
+      const str = vue.ref("");
+      const showPlaceHolder = vue.ref(true);
+      const clearing = vue.ref(false);
+      vue.watch(
+        () => props.modelValue,
+        (newValue) => {
+          str.value = newValue;
+          if (newValue) {
+            showInput.value = true;
+          }
+        },
+        { immediate: true }
+      );
+      vue.watch(
+        () => props.focus,
+        (newValue) => {
+          if (newValue) {
+            if (props.disabled)
+              return;
+            closeCover();
+          }
+        }
+      );
+      vue.onMounted(() => {
+        if (props.focus) {
+          closeCover();
+        }
+      });
+      const rootClass = vue.computed(() => {
+        return `wd-search  ${props.light ? "is-light" : ""}  ${props.hideCancel ? "is-without-cancel" : ""} ${props.customClass}`;
+      });
+      const coverStyle = vue.computed(() => {
+        const coverStyle2 = {
+          display: str.value === "" && showPlaceHolder.value ? "flex" : "none"
+        };
+        return objToStyle(coverStyle2);
+      });
+      function hackFocus(focus) {
+        showInput.value = focus;
+        requestAnimationFrame(() => {
+          isFocused.value = focus;
+        });
+      }
+      function closeCover() {
+        if (props.disabled)
+          return;
+        requestAnimationFrame().then(() => requestAnimationFrame()).then(() => requestAnimationFrame()).then(() => {
+          showPlaceHolder.value = false;
+          hackFocus(true);
+        });
+      }
+      function inputValue(event) {
+        str.value = event.detail.value;
+        emit("update:modelValue", event.detail.value);
+        emit("change", {
+          value: event.detail.value
+        });
+      }
+      function clearSearch() {
+        str.value = "";
+        clearing.value = true;
+        if (props.focusWhenClear) {
+          isFocused.value = false;
+        }
+        requestAnimationFrame().then(() => requestAnimationFrame()).then(() => requestAnimationFrame()).then(() => {
+          if (props.focusWhenClear) {
+            showPlaceHolder.value = false;
+            hackFocus(true);
+          } else {
+            showPlaceHolder.value = true;
+            hackFocus(false);
+          }
+          emit("change", {
+            value: ""
+          });
+          emit("update:modelValue", "");
+          emit("clear");
+        });
+      }
+      function search({ detail: { value } }) {
+        emit("search", {
+          value
+        });
+      }
+      function searchFocus() {
+        if (clearing.value) {
+          clearing.value = false;
+          return;
+        }
+        showPlaceHolder.value = false;
+        emit("focus", {
+          value: str.value
+        });
+      }
+      function searchBlur() {
+        if (clearing.value)
+          return;
+        showPlaceHolder.value = !str.value;
+        showInput.value = !showPlaceHolder.value;
+        isFocused.value = false;
+        emit("blur", {
+          value: str.value
+        });
+      }
+      function handleCancel() {
+        emit("cancel", {
+          value: str.value
+        });
+      }
+      return (_ctx, _cache) => {
+        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_0$1);
+        return vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            class: vue.normalizeClass(rootClass.value),
+            style: vue.normalizeStyle(_ctx.customStyle)
+          },
+          [
+            vue.createCommentVNode("自定义label插槽"),
+            vue.createCommentVNode("搜索框主体"),
+            vue.createElementVNode("view", { class: "wd-search__block" }, [
+              vue.renderSlot(_ctx.$slots, "prefix", {}, void 0, true),
+              vue.createElementVNode("view", { class: "wd-search__field" }, [
+                !_ctx.placeholderLeft ? (vue.openBlock(), vue.createElementBlock(
+                  "view",
+                  {
+                    key: 0,
+                    style: vue.normalizeStyle(coverStyle.value),
+                    class: "wd-search__cover",
+                    onClick: closeCover
+                  },
+                  [
+                    vue.createVNode(_component_wd_icon, {
+                      name: "search",
+                      size: "18px",
+                      "custom-class": "wd-search__search-icon"
+                    }),
+                    vue.createElementVNode(
+                      "text",
+                      { class: "wd-search__placeholder-txt" },
+                      vue.toDisplayString(_ctx.placeholder || vue.unref(translate)("search")),
+                      1
+                      /* TEXT */
+                    )
+                  ],
+                  4
+                  /* STYLE */
+                )) : vue.createCommentVNode("v-if", true),
+                vue.createCommentVNode("icon:search"),
+                showInput.value || str.value || _ctx.placeholderLeft ? (vue.openBlock(), vue.createBlock(_component_wd_icon, {
+                  key: 1,
+                  name: "search",
+                  size: "18px",
+                  "custom-class": "wd-search__search-left-icon"
+                })) : vue.createCommentVNode("v-if", true),
+                vue.createCommentVNode("搜索框"),
+                showInput.value || str.value || _ctx.placeholderLeft ? vue.withDirectives((vue.openBlock(), vue.createElementBlock("input", {
+                  key: 2,
+                  placeholder: _ctx.placeholder || vue.unref(translate)("search"),
+                  "placeholder-class": "wd-search__placeholder-txt",
+                  "confirm-type": "search",
+                  "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => str.value = $event),
+                  class: "wd-search__input",
+                  onFocus: searchFocus,
+                  onInput: inputValue,
+                  onBlur: searchBlur,
+                  onConfirm: search,
+                  disabled: _ctx.disabled,
+                  maxlength: _ctx.maxlength,
+                  focus: isFocused.value
+                }, null, 40, ["placeholder", "disabled", "maxlength", "focus"])), [
+                  [vue.vModelText, str.value]
+                ]) : vue.createCommentVNode("v-if", true),
+                vue.createCommentVNode("icon:clear"),
+                str.value ? (vue.openBlock(), vue.createBlock(_component_wd_icon, {
+                  key: 3,
+                  "custom-class": "wd-search__clear wd-search__clear-icon",
+                  name: "error-fill",
+                  size: "16px",
+                  onClick: clearSearch
+                })) : vue.createCommentVNode("v-if", true)
+              ])
+            ]),
+            vue.createCommentVNode("the button behind input,care for hideCancel without displaying"),
+            !_ctx.hideCancel ? vue.renderSlot(_ctx.$slots, "suffix", { key: 0 }, () => [
+              vue.createCommentVNode("默认button"),
+              vue.createElementVNode(
+                "view",
+                {
+                  class: "wd-search__cancel",
+                  onClick: handleCancel
+                },
+                vue.toDisplayString(_ctx.cancelTxt || vue.unref(translate)("cancel")),
+                1
+                /* TEXT */
+              )
+            ], true) : vue.createCommentVNode("v-if", true)
+          ],
+          6
+          /* CLASS, STYLE */
+        );
+      };
+    }
+  });
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-cc0202be"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-search/wd-search.vue"]]);
+  const isObject = (val) => val !== null && typeof val === "object";
+  const defaultDelimiters = ["{", "}"];
+  class BaseFormatter {
+    constructor() {
+      this._caches = /* @__PURE__ */ Object.create(null);
+    }
+    interpolate(message, values, delimiters = defaultDelimiters) {
+      if (!values) {
+        return [message];
+      }
+      let tokens = this._caches[message];
+      if (!tokens) {
+        tokens = parse(message, delimiters);
+        this._caches[message] = tokens;
+      }
+      return compile(tokens, values);
+    }
+  }
+  const RE_TOKEN_LIST_VALUE = /^(?:\d)+/;
+  const RE_TOKEN_NAMED_VALUE = /^(?:\w)+/;
+  function parse(format, [startDelimiter, endDelimiter]) {
+    const tokens = [];
+    let position = 0;
+    let text = "";
+    while (position < format.length) {
+      let char = format[position++];
+      if (char === startDelimiter) {
+        if (text) {
+          tokens.push({ type: "text", value: text });
+        }
+        text = "";
+        let sub = "";
+        char = format[position++];
+        while (char !== void 0 && char !== endDelimiter) {
+          sub += char;
+          char = format[position++];
+        }
+        const isClosed = char === endDelimiter;
+        const type = RE_TOKEN_LIST_VALUE.test(sub) ? "list" : isClosed && RE_TOKEN_NAMED_VALUE.test(sub) ? "named" : "unknown";
+        tokens.push({ value: sub, type });
+      } else {
+        text += char;
+      }
+    }
+    text && tokens.push({ type: "text", value: text });
+    return tokens;
+  }
+  function compile(tokens, values) {
+    const compiled = [];
+    let index = 0;
+    const mode = Array.isArray(values) ? "list" : isObject(values) ? "named" : "unknown";
+    if (mode === "unknown") {
+      return compiled;
+    }
+    while (index < tokens.length) {
+      const token = tokens[index];
+      switch (token.type) {
+        case "text":
+          compiled.push(token.value);
+          break;
+        case "list":
+          compiled.push(values[parseInt(token.value, 10)]);
+          break;
+        case "named":
+          if (mode === "named") {
+            compiled.push(values[token.value]);
+          } else {
+            {
+              console.warn(`Type of token '${token.type}' and format of value '${mode}' don't match!`);
+            }
+          }
+          break;
+        case "unknown":
+          {
+            console.warn(`Detect 'unknown' type of token!`);
+          }
+          break;
+      }
+      index++;
+    }
+    return compiled;
+  }
+  const LOCALE_ZH_HANS = "zh-Hans";
+  const LOCALE_ZH_HANT = "zh-Hant";
+  const LOCALE_EN = "en";
+  const LOCALE_FR = "fr";
+  const LOCALE_ES = "es";
+  const hasOwnProperty = Object.prototype.hasOwnProperty;
+  const hasOwn = (val, key) => hasOwnProperty.call(val, key);
+  const defaultFormatter = new BaseFormatter();
+  function include(str, parts) {
+    return !!parts.find((part) => str.indexOf(part) !== -1);
+  }
+  function startsWith(str, parts) {
+    return parts.find((part) => str.indexOf(part) === 0);
+  }
+  function normalizeLocale(locale, messages2) {
+    if (!locale) {
+      return;
+    }
+    locale = locale.trim().replace(/_/g, "-");
+    if (messages2 && messages2[locale]) {
+      return locale;
+    }
+    locale = locale.toLowerCase();
+    if (locale === "chinese") {
+      return LOCALE_ZH_HANS;
+    }
+    if (locale.indexOf("zh") === 0) {
+      if (locale.indexOf("-hans") > -1) {
+        return LOCALE_ZH_HANS;
+      }
+      if (locale.indexOf("-hant") > -1) {
+        return LOCALE_ZH_HANT;
+      }
+      if (include(locale, ["-tw", "-hk", "-mo", "-cht"])) {
+        return LOCALE_ZH_HANT;
+      }
+      return LOCALE_ZH_HANS;
+    }
+    let locales = [LOCALE_EN, LOCALE_FR, LOCALE_ES];
+    if (messages2 && Object.keys(messages2).length > 0) {
+      locales = Object.keys(messages2);
+    }
+    const lang2 = startsWith(locale, locales);
+    if (lang2) {
+      return lang2;
+    }
+  }
+  class I18n {
+    constructor({ locale, fallbackLocale, messages: messages2, watcher, formater: formater2 }) {
+      this.locale = LOCALE_EN;
+      this.fallbackLocale = LOCALE_EN;
+      this.message = {};
+      this.messages = {};
+      this.watchers = [];
+      if (fallbackLocale) {
+        this.fallbackLocale = fallbackLocale;
+      }
+      this.formater = formater2 || defaultFormatter;
+      this.messages = messages2 || {};
+      this.setLocale(locale || LOCALE_EN);
+      if (watcher) {
+        this.watchLocale(watcher);
+      }
+    }
+    setLocale(locale) {
+      const oldLocale = this.locale;
+      this.locale = normalizeLocale(locale, this.messages) || this.fallbackLocale;
+      if (!this.messages[this.locale]) {
+        this.messages[this.locale] = {};
+      }
+      this.message = this.messages[this.locale];
+      if (oldLocale !== this.locale) {
+        this.watchers.forEach((watcher) => {
+          watcher(this.locale, oldLocale);
+        });
+      }
+    }
+    getLocale() {
+      return this.locale;
+    }
+    watchLocale(fn) {
+      const index = this.watchers.push(fn) - 1;
+      return () => {
+        this.watchers.splice(index, 1);
+      };
+    }
+    add(locale, message, override = true) {
+      const curMessages = this.messages[locale];
+      if (curMessages) {
+        if (override) {
+          Object.assign(curMessages, message);
+        } else {
+          Object.keys(message).forEach((key) => {
+            if (!hasOwn(curMessages, key)) {
+              curMessages[key] = message[key];
+            }
+          });
+        }
+      } else {
+        this.messages[locale] = message;
+      }
+    }
+    f(message, values, delimiters) {
+      return this.formater.interpolate(message, values, delimiters).join("");
+    }
+    t(key, locale, values) {
+      let message = this.message;
+      if (typeof locale === "string") {
+        locale = normalizeLocale(locale, this.messages);
+        locale && (message = this.messages[locale]);
+      } else {
+        values = locale;
+      }
+      if (!hasOwn(message, key)) {
+        console.warn(`Cannot translate the value of keypath ${key}. Use the value of keypath as default.`);
+        return key;
+      }
+      return this.formater.interpolate(message[key], values).join("");
+    }
+  }
+  function watchAppLocale(appVm, i18n) {
+    if (appVm.$watchLocale) {
+      appVm.$watchLocale((newLocale) => {
+        i18n.setLocale(newLocale);
+      });
+    } else {
+      appVm.$watch(() => appVm.$locale, (newLocale) => {
+        i18n.setLocale(newLocale);
+      });
+    }
+  }
+  function getDefaultLocale() {
+    if (typeof uni !== "undefined" && uni.getLocale) {
+      return uni.getLocale();
+    }
+    if (typeof global !== "undefined" && global.getLocale) {
+      return global.getLocale();
+    }
+    return LOCALE_EN;
+  }
+  function initVueI18n(locale, messages2 = {}, fallbackLocale, watcher) {
+    if (typeof locale !== "string") {
+      const options = [
+        messages2,
+        locale
+      ];
+      locale = options[0];
+      messages2 = options[1];
+    }
+    if (typeof locale !== "string") {
+      locale = getDefaultLocale();
+    }
+    if (typeof fallbackLocale !== "string") {
+      fallbackLocale = typeof __uniConfig !== "undefined" && __uniConfig.fallbackLocale || LOCALE_EN;
+    }
+    const i18n = new I18n({
+      locale,
+      fallbackLocale,
+      messages: messages2,
+      watcher
+    });
+    let t2 = (key, values) => {
+      if (typeof getApp !== "function") {
+        t2 = function(key2, values2) {
+          return i18n.t(key2, values2);
+        };
+      } else {
+        let isWatchedAppLocale = false;
+        t2 = function(key2, values2) {
+          const appVm = getApp().$vm;
+          if (appVm) {
+            appVm.$locale;
+            if (!isWatchedAppLocale) {
+              isWatchedAppLocale = true;
+              watchAppLocale(appVm, i18n);
+            }
+          }
+          return i18n.t(key2, values2);
+        };
+      }
+      return t2(key, values);
+    };
+    return {
+      i18n,
+      f(message, values, delimiters) {
+        return i18n.f(message, values, delimiters);
+      },
+      t(key, values) {
+        return t2(key, values);
+      },
+      add(locale2, message, override = true) {
+        return i18n.add(locale2, message, override);
+      },
+      watch(fn) {
+        return i18n.watchLocale(fn);
+      },
+      getLocale() {
+        return i18n.getLocale();
+      },
+      setLocale(newLocale) {
+        return i18n.setLocale(newLocale);
+      }
+    };
+  }
+  const en = {
+    "uni-search-bar.cancel": "cancel",
+    "uni-search-bar.placeholder": "Search enter content"
+  };
+  const zhHans = {
+    "uni-search-bar.cancel": "取消",
+    "uni-search-bar.placeholder": "请输入搜索内容"
+  };
+  const zhHant = {
+    "uni-search-bar.cancel": "取消",
+    "uni-search-bar.placeholder": "請輸入搜索內容"
+  };
+  const messages = {
+    en,
+    "zh-Hans": zhHans,
+    "zh-Hant": zhHant
+  };
+  const {
+    t
+  } = initVueI18n(messages);
+  const _sfc_main$3 = {
+    name: "UniSearchBar",
+    emits: ["input", "update:modelValue", "clear", "cancel", "confirm", "blur", "focus"],
+    props: {
+      placeholder: {
+        type: String,
+        default: ""
+      },
+      radius: {
+        type: [Number, String],
+        default: 5
+      },
+      clearButton: {
+        type: String,
+        default: "auto"
+      },
+      cancelButton: {
+        type: String,
+        default: "auto"
+      },
+      cancelText: {
+        type: String,
+        default: ""
+      },
+      bgColor: {
+        type: String,
+        default: "#F8F8F8"
+      },
+      textColor: {
+        type: String,
+        default: "#000000"
+      },
+      maxlength: {
+        type: [Number, String],
+        default: 100
+      },
+      value: {
+        type: [Number, String],
+        default: ""
+      },
+      modelValue: {
+        type: [Number, String],
+        default: ""
+      },
+      focus: {
+        type: Boolean,
+        default: false
+      },
+      readonly: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data() {
+      return {
+        show: false,
+        showSync: false,
+        searchVal: ""
+      };
+    },
+    computed: {
+      cancelTextI18n() {
+        return this.cancelText || t("uni-search-bar.cancel");
+      },
+      placeholderText() {
+        return this.placeholder || t("uni-search-bar.placeholder");
+      }
+    },
+    watch: {
+      modelValue: {
+        immediate: true,
+        handler(newVal) {
+          this.searchVal = newVal;
+          if (newVal) {
+            this.show = true;
+          }
+        }
+      },
+      focus: {
+        immediate: true,
+        handler(newVal) {
+          if (newVal) {
+            if (this.readonly)
+              return;
+            this.show = true;
+            this.$nextTick(() => {
+              this.showSync = true;
+            });
+          }
+        }
+      },
+      searchVal(newVal, oldVal) {
+        this.$emit("input", newVal);
+        this.$emit("update:modelValue", newVal);
+      }
+    },
+    methods: {
+      searchClick() {
+        if (this.readonly)
+          return;
+        if (this.show) {
+          return;
+        }
+        this.show = true;
+        this.$nextTick(() => {
+          this.showSync = true;
+        });
+      },
+      clear() {
+        this.searchVal = "";
+        this.$nextTick(() => {
+          this.$emit("clear", { value: "" });
+        });
+      },
+      cancel() {
+        if (this.readonly)
+          return;
+        this.$emit("cancel", {
+          value: this.searchVal
+        });
+        this.searchVal = "";
+        this.show = false;
+        this.showSync = false;
+        plus.key.hideSoftKeybord();
+      },
+      confirm() {
+        plus.key.hideSoftKeybord();
+        this.$emit("confirm", {
+          value: this.searchVal
+        });
+      },
+      blur() {
+        plus.key.hideSoftKeybord();
+        this.$emit("blur", {
+          value: this.searchVal
+        });
+      },
+      emitFocus(e) {
+        this.$emit("focus", e.detail);
+      }
+    }
+  };
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2$1);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-searchbar" }, [
+      vue.createElementVNode(
+        "view",
+        {
+          style: vue.normalizeStyle({ borderRadius: $props.radius + "px", backgroundColor: $props.bgColor }),
+          class: "uni-searchbar__box",
+          onClick: _cache[5] || (_cache[5] = (...args) => $options.searchClick && $options.searchClick(...args))
+        },
+        [
+          vue.createElementVNode("view", { class: "uni-searchbar__box-icon-search" }, [
+            vue.renderSlot(_ctx.$slots, "searchIcon", {}, () => [
+              vue.createVNode(_component_uni_icons, {
+                color: "#c0c4cc",
+                size: "18",
+                type: "search"
+              })
+            ], true)
+          ]),
+          $data.show || $data.searchVal ? vue.withDirectives((vue.openBlock(), vue.createElementBlock("input", {
+            key: 0,
+            focus: $data.showSync,
+            disabled: $props.readonly,
+            placeholder: $options.placeholderText,
+            maxlength: $props.maxlength,
+            class: "uni-searchbar__box-search-input",
+            "confirm-type": "search",
+            type: "text",
+            "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.searchVal = $event),
+            style: vue.normalizeStyle({ color: $props.textColor }),
+            onConfirm: _cache[1] || (_cache[1] = (...args) => $options.confirm && $options.confirm(...args)),
+            onBlur: _cache[2] || (_cache[2] = (...args) => $options.blur && $options.blur(...args)),
+            onFocus: _cache[3] || (_cache[3] = (...args) => $options.emitFocus && $options.emitFocus(...args))
+          }, null, 44, ["focus", "disabled", "placeholder", "maxlength"])), [
+            [vue.vModelText, $data.searchVal]
+          ]) : (vue.openBlock(), vue.createElementBlock(
+            "text",
+            {
+              key: 1,
+              class: "uni-searchbar__text-placeholder"
+            },
+            vue.toDisplayString($props.placeholder),
+            1
+            /* TEXT */
+          )),
+          $data.show && ($props.clearButton === "always" || $props.clearButton === "auto" && $data.searchVal !== "") && !$props.readonly ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 2,
+            class: "uni-searchbar__box-icon-clear",
+            onClick: _cache[4] || (_cache[4] = (...args) => $options.clear && $options.clear(...args))
+          }, [
+            vue.renderSlot(_ctx.$slots, "clearIcon", {}, () => [
+              vue.createVNode(_component_uni_icons, {
+                color: "#c0c4cc",
+                size: "20",
+                type: "clear"
+              })
+            ], true)
+          ])) : vue.createCommentVNode("v-if", true)
+        ],
+        4
+        /* STYLE */
+      ),
+      $props.cancelButton === "always" || $data.show && $props.cancelButton === "auto" ? (vue.openBlock(), vue.createElementBlock(
+        "text",
+        {
+          key: 0,
+          onClick: _cache[6] || (_cache[6] = (...args) => $options.cancel && $options.cancel(...args)),
+          class: "uni-searchbar__cancel"
+        },
+        vue.toDisplayString($options.cancelTextI18n),
+        1
+        /* TEXT */
+      )) : vue.createCommentVNode("v-if", true)
+    ]);
+  }
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-f07ef577"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue"]]);
+  const _sfc_main$2 = {
+    name: "tuiActionsheet",
+    props: {
+      //点击遮罩 是否可关闭
+      maskClosable: {
+        type: Boolean,
+        default: true
+      },
+      //显示操作菜单
+      show: {
+        type: Boolean,
+        default: true
+      },
+      //菜单按钮数组，自定义文本颜色，红色参考色：#e53a37
+      itemList: {
+        type: Array,
+        default: function() {
+          return [{
+            text: "确定",
+            color: "#1a1a1a"
+          }];
+        }
+      },
+      //提示文字
+      tips: {
+        type: String,
+        default: ""
+      },
+      //提示文字颜色
+      color: {
+        type: String,
+        default: "#9a9a9a"
+      },
+      //提示文字大小 rpx
+      size: {
+        type: Number,
+        default: 26
+      },
+      //是否需要取消按钮
+      isCancel: {
+        type: Boolean,
+        default: true
+      }
+    },
+    methods: {
+      handleClickMask() {
+        if (!this.maskClosable)
+          return;
+        this.handleClickCancel();
+      },
+      handleClickItem(e) {
+        if (!this.show)
+          return;
+        const dataset = e.currentTarget.dataset;
+        this.$emit("click", {
+          index: dataset.index
+        });
+      },
+      handleClickCancel() {
+        this.$emit("chooseCancel");
+      }
+    }
+  };
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2$1);
+    const _component_wd_search = resolveEasycom(vue.resolveDynamicComponent("wd-search"), __easycom_1);
+    const _component_uni_search_bar = resolveEasycom(vue.resolveDynamicComponent("uni-search-bar"), __easycom_2);
+    return vue.openBlock(), vue.createElementBlock("view", null, [
+      vue.createElementVNode(
+        "view",
+        {
+          class: vue.normalizeClass(["country-actionsheet", [$props.show ? "country-actionsheet-show" : ""]])
+        },
+        [
+          vue.createElementVNode("view", { class: "actionsheet-header" }, [
+            vue.createVNode(_component_uni_icons, {
+              type: "down",
+              size: "6.4vw"
+            }),
+            vue.createElementVNode("text", { class: "actionsheet-header-title" }, "Languages")
+          ]),
+          vue.createCommentVNode(` 			<view :class="[isCancel?'country-operate-box':'']">\r
+				<block v-for="(item,index) in itemList" :key="index">\r
+					<view class="country-actionsheet-btn country-actionsheet-divider"\r
+						:class="[(!isCancel && index==itemList.length-1)?'country-btn-last':'']"\r
+						hover-class="country-actionsheet-hover" :hover-stay-time="150" :data-index="index"\r
+						:style="{color:item.color || '#1a1a1a'}" @tap="handleClickItem">{{item.text}}</view>\r
+				</block>\r
+			</view> `),
+          vue.createVNode(_component_wd_search, {
+            class: "country-search-box",
+            placeholder: "Search language",
+            cancelButton: "none"
+          }),
+          vue.createElementVNode("view", { class: "actionsheet-body-container" }, [
+            vue.createVNode(_component_uni_search_bar, {
+              class: "country-search-box",
+              placeholder: "Search language",
+              cancelButton: "none"
+            })
+          ]),
+          vue.createCommentVNode(' 			<view class="country-actionsheet-btn country-actionsheet-cancel" hover-class="country-actionsheet-hover"\r\n				:hover-stay-time="150" v-if="isCancel" @tap="handleClickCancel">取消</view> ')
+        ],
+        2
+        /* CLASS */
+      ),
+      vue.createCommentVNode(` <view class="country-actionsheet-mask" :class="[show?'country-mask-show':'']" @tap="handleClickMask"></view> `)
+    ]);
+  }
+  const countryActionModal = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-07c36198"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/components/countryActionModal.vue"]]);
   const _sfc_main$1 = {
     data() {
       return {
@@ -2894,12 +4012,32 @@ if (uni.restoreGlobal) {
             icon: "🌍"
           }
         ],
-        registerFormData: {}
+        registerFormData: {},
+        showActionSheet: {
+          show: false,
+          maskClosable: true,
+          tips: "请选择申请节点身份，不同的节点消耗福卡不同",
+          itemList: [
+            {
+              text: "红包节点",
+              color: "#333"
+            },
+            {
+              text: "广告节点",
+              color: "#333"
+            }
+          ],
+          color: "#9a9a9a",
+          size: 26,
+          isCancel: true
+        }
       };
     },
     onLoad() {
     },
-    components: {},
+    components: {
+      countryActionModal
+    },
     methods: {
       onGenderRadioChange(value) {
         this.genderValue = value.detail.value;
@@ -2927,7 +4065,7 @@ if (uni.restoreGlobal) {
         }
         if (this.progressPercentage == 1) {
           this.isBackButtonDisable = false;
-          formatAppLog("log", "at pages/login/registerFormPage.vue:231", this.nickname, this.birthday);
+          formatAppLog("log", "at pages/login/registerFormPage.vue:257", this.nickname, this.birthday);
           if (this.nickname != "" && !this.birthday.includes(0)) {
             this.isNextButtonDisable = false;
             return true;
@@ -2935,7 +4073,7 @@ if (uni.restoreGlobal) {
         }
         if (this.progressPercentage == 2) {
           this.isBackButtonDisable = false;
-          formatAppLog("log", "at pages/login/registerFormPage.vue:240", this.relationshipGoal);
+          formatAppLog("log", "at pages/login/registerFormPage.vue:266", this.relationshipGoal);
           if (this.relationshipGoal != 0) {
             this.isNextButtonDisable = false;
             return true;
@@ -2949,16 +4087,24 @@ if (uni.restoreGlobal) {
           this.isNextButtonDisable = true;
         } else if (action == "back") {
           this.progressPercentage -= 1;
-          formatAppLog("log", "at pages/login/registerFormPage.vue:255", this.progressPercentage);
+          formatAppLog("log", "at pages/login/registerFormPage.vue:281", this.progressPercentage);
         }
         this.onCheckPageTurn();
+      },
+      chooseMenu() {
+        this.showActionSheet.show = true;
+      },
+      // 弹窗关闭
+      chooseCancel() {
+        this.showActionSheet.show = false;
       }
     }
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_wd_progress = resolveEasycom(vue.resolveDynamicComponent("wd-progress"), __easycom_0);
-    const _component_uni_nav_bar = resolveEasycom(vue.resolveDynamicComponent("uni-nav-bar"), __easycom_1);
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2);
+    const _component_uni_nav_bar = resolveEasycom(vue.resolveDynamicComponent("uni-nav-bar"), __easycom_1$1);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2$1);
+    const _component_countryActionModal = vue.resolveComponent("countryActionModal");
     const _component_uni_forms = resolveEasycom(vue.resolveDynamicComponent("uni-forms"), __easycom_3);
     const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_4);
     const _component_wd_tabbar = resolveEasycom(vue.resolveDynamicComponent("wd-tabbar"), __easycom_5);
@@ -3239,7 +4385,19 @@ if (uni.restoreGlobal) {
                         vue.createElementVNode("text", { class: "title-text-24 nationality-question-text" }, "What is your national language")
                       ]),
                       vue.createElementVNode("button", { class: "next-button-text-20 nationality-question-button" }, "Choose Country")
-                    ])
+                    ]),
+                    vue.createElementVNode("view", {
+                      style: { "height": "100px", "width": "100px", "border": "1px solid black" },
+                      onClick: _cache[6] || (_cache[6] = (...args) => $options.chooseMenu && $options.chooseMenu(...args))
+                    }),
+                    vue.createVNode(_component_countryActionModal, {
+                      tips: $data.showActionSheet.tips,
+                      itemList: $data.showActionSheet.itemList,
+                      show: true,
+                      maskClosable: $data.showActionSheet.maskClosable,
+                      isCancel: $data.showActionSheet.isCancel,
+                      onChooseCancel: $options.chooseCancel
+                    }, null, 8, ["tips", "itemList", "maskClosable", "isCancel", "onChooseCancel"])
                   ],
                   512
                   /* NEED_PATCH */
@@ -3262,7 +4420,7 @@ if (uni.restoreGlobal) {
             vue.createVNode(_component_wd_button, {
               disabled: $data.isBackButtonDisable,
               class: "back-button",
-              onClick: _cache[6] || (_cache[6] = ($event) => $options.onPageTurn("back"))
+              onClick: _cache[7] || (_cache[7] = ($event) => $options.onPageTurn("back"))
             }, {
               default: vue.withCtx(() => [
                 vue.createVNode(_component_uni_icons, {
@@ -3276,7 +4434,7 @@ if (uni.restoreGlobal) {
             vue.createVNode(_component_wd_button, {
               disabled: $data.isNextButtonDisable,
               class: "next-button next-button-text-20",
-              onClick: _cache[7] || (_cache[7] = ($event) => $options.onPageTurn("next"))
+              onClick: _cache[8] || (_cache[8] = ($event) => $options.onPageTurn("next"))
             }, {
               default: vue.withCtx(() => [
                 vue.createTextVNode("Next")
@@ -3293,7 +4451,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
+  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
   __definePage("pages/login/registerFormPage", PagesLoginRegisterFormPage);
   const _sfc_main = {
     onLaunch: function() {
@@ -3306,7 +4464,7 @@ if (uni.restoreGlobal) {
       formatAppLog("log", "at App.vue:10", "App Hide");
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
   function createApp() {
     const app = vue.createVueApp(App);
     return {
