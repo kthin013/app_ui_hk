@@ -81,21 +81,27 @@
 						<span>
 							<text class="title-text-24 .nationality-question-text">Where are you from</text>
 						</span>
-						<button class="next-button-text-20 nationality-question-button">Choose Country</button>
+						<button class="next-button-text-20 nationality-question-button" @click="()=>{
+								onClickCountryLanguageButton('country'); 
+							}">
+							Choose Country
+						</button>
 						<span>
 							<text class="title-text-24 nationality-question-text">What is your national language</text>
 						</span>
-						<button class="next-button-text-20 nationality-question-button">Choose Country</button>
+						<button class="next-button-text-20 nationality-question-button" @click="()=>{
+									onClickCountryLanguageButton('language'); 
+								}">
+							Choose Country
+						</button>
 					</div>
-					<view style="height: 100px; width: 100px; border: 1px solid black;" @tap="chooseMenu"></view>
-					<countryActionModal :tips="showActionSheet.tips" :itemList="showActionSheet.itemList" :show="true"
-						:maskClosable="showActionSheet.maskClosable" :isCancel="showActionSheet.isCancel"
-						@chooseCancel="chooseCancel" />
 				</div>
 			</uni-forms>
 		</view>
 	</view>
-
+	<countryActionModal :title="countryActionModalObj.title" :value="countryActionModalObj.value"
+		:isModalVisible="countryActionModalObj.isCountryActionModalVisible" @onClickItem="onClickCountryLanguageItem"
+		@onClickCollapseIcon="onClickCountryLanguageButton" />
 	<wd-tabbar fixed safeAreaInsetBottom placeholder class="next-page-tabbar">
 		<wd-button :disabled="isBackButtonDisable" class="back-button" @click="onPageTurn('back')"><uni-icons
 				type="left" size="2em" /></wd-button>
@@ -200,23 +206,18 @@
 				registerFormData: {
 
 				},
-
-				showActionSheet: {
-					show: false,
-					maskClosable: true,
-					tips: "请选择申请节点身份，不同的节点消耗福卡不同",
-					itemList: [{
-							text: "红包节点",
-							color: "#333"
-						},
-						{
-							text: "广告节点",
-							color: "#333"
-						},
-					],
-					color: "#9a9a9a",
-					size: 26,
-					isCancel: true,
+				countryActionModalObj: {
+					countryValue: {
+						title: "Country/Region",
+						value: "",
+					},
+					translationValue: {
+						title: "Languages",
+						value: "",
+					},
+					title: "",
+					value: "",
+					isCountryActionModalVisible: false,
 				}
 			}
 		},
@@ -241,6 +242,29 @@
 			onRelationshipRadioChange(value) {
 				this.relationshipGoal = value.detail.value;
 				this.onCheckPageTurn();
+			},
+			onClickCountryLanguageButton(action) {
+				this.countryActionModalObj.isCountryActionModalVisible = !this.countryActionModalObj
+					.isCountryActionModalVisible;
+				if (action == 'country') {
+					this.countryActionModalObj.title = this.countryActionModalObj.countryValue.title;
+					this.countryActionModalObj.value = this.countryActionModalObj.countryValue.value;
+				} else if (action == 'language') {
+					this.countryActionModalObj.title = this.countryActionModalObj.translationValue.title;
+					this.countryActionModalObj.value = this.countryActionModalObj.translationValue.value;
+				} else {
+					this.countryActionModalObj.title = '';
+					this.countryActionModalObj.value = '';
+				}
+				console.log(this.countryActionModalObj);
+			},
+			onClickCountryLanguageItem(item) {
+				this.countryActionModalObj.value = item.name;
+				if (this.countryActionModalObj.title == 'Country/Region') {
+					this.countryActionModalObj.countryValue.value = item.name;
+				} else if (this.countryActionModalObj.title == 'Languages') {
+					this.countryActionModalObj.translationValue.value = item.name;
+				}
 			},
 			onCheckPageTurn() {
 				if (this.progressPercentage == 0) {
@@ -281,14 +305,6 @@
 					console.log(this.progressPercentage);
 				}
 				this.onCheckPageTurn();
-			},
-			chooseMenu() {
-				this.showActionSheet.show = true;
-			},
-
-			// 弹窗关闭
-			chooseCancel() {
-				this.showActionSheet.show = false;
 			}
 		}
 	}
@@ -480,6 +496,55 @@
 			font-weight: 800;
 			color: black;
 		}
+	}
+
+	//search box in countryActionModal
+	.country-search-box {
+		height: 9.3vh !important;
+		padding: 0px !important;
+
+		.uni-searchbar__box {
+			height: 100% !important;
+			padding: 1.8em 2em;
+
+			.uni-searchbar__box-search-input {
+				font-family: Avenir !important;
+				font-size: 1.2em !important;
+				font-weight: 500 !important;
+				color: black;
+			}
+
+			.uni-searchbar__text-placeholder {
+				font-family: Avenir !important;
+				font-size: 1.1em !important;
+				font-weight: 500 !important;
+			}
+		}
+
+		.wd-search__block {
+			height: 100%;
+
+			.wd-search__input {
+				font-family: Avenir;
+				font-size: 1.8em;
+				font-weight: 500;
+			}
+
+			.wd-search__placeholder-txt {
+				font-family: Avenir;
+				font-size: 1.2em;
+				font-weight: 500;
+			}
+		}
+	}
+
+	//country list scroll view in countryActionModal
+	.uni-scroll-view-content {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-content: flex-start;
+		gap: 3.2vw;
 	}
 
 	//tabbar

@@ -84,17 +84,11 @@ if (uni.restoreGlobal) {
     }).toLowerCase();
     return newWord;
   }
-  function camelCase(word) {
-    return word.replace(/-(\w)/g, (_, c) => c.toUpperCase());
-  }
   function isArray(value) {
     if (typeof Array.isArray === "function") {
       return Array.isArray(value);
     }
     return Object.prototype.toString.call(value) === "[object Array]";
-  }
-  function isFunction(value) {
-    return getType(value) === "function";
   }
   function isString(value) {
     return getType(value) === "string";
@@ -119,36 +113,6 @@ if (uni.restoreGlobal) {
     }
     return "";
   }
-  const requestAnimationFrame = (cb = () => {
-  }) => {
-    return new Promise((resolve) => {
-      const timer = setInterval(() => {
-        clearInterval(timer);
-        resolve(true);
-        cb();
-      }, 1e3 / 30);
-    });
-  };
-  function deepAssign(target, source) {
-    Object.keys(source).forEach((key) => {
-      const targetValue = target[key];
-      const newObjValue = source[key];
-      if (isObj(targetValue) && isObj(newObjValue)) {
-        deepAssign(targetValue, newObjValue);
-      } else {
-        target[key] = newObjValue;
-      }
-    });
-    return target;
-  }
-  const getPropByPath = (obj, path) => {
-    const keys = path.split(".");
-    try {
-      return keys.reduce((acc, key) => acc !== void 0 && acc !== null ? acc[key] : void 0, obj);
-    } catch (error) {
-      return void 0;
-    }
-  };
   const numericProp = [Number, String];
   const makeRequiredProp = (type) => ({
     type,
@@ -199,7 +163,7 @@ if (uni.restoreGlobal) {
      */
     classPrefix: makeStringProp("wd-icon")
   };
-  const __default__$4 = {
+  const __default__$3 = {
     name: "wd-icon",
     options: {
       virtualHost: true,
@@ -207,8 +171,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$c = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$4,
+  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$3,
     props: iconProps,
     emits: ["click"],
     setup(__props, { emit: __emit }) {
@@ -267,7 +231,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-24906af6"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-icon/wd-icon.vue"]]);
   const progressProps = {
     ...baseProps,
     /**
@@ -294,7 +258,7 @@ if (uni.restoreGlobal) {
      */
     status: String
   };
-  const __default__$3 = {
+  const __default__$2 = {
     name: "wd-progress",
     options: {
       virtualHost: true,
@@ -302,8 +266,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$3,
+  const _sfc_main$a = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$2,
     props: progressProps,
     setup(__props) {
       const props = __props;
@@ -401,10 +365,10 @@ if (uni.restoreGlobal) {
           throw Error("All the percentage must can be formatted to Number");
         }
         const partNum = parseInt(`${100 / colorArray.length}`);
-        const partList = isObjArray ? colorArray.sort((a, b) => a.percentage - b.percentage) : colorArray.map((item, index) => {
+        const partList = isObjArray ? colorArray.sort((a, b) => a.percentage - b.percentage) : colorArray.map((item, index2) => {
           return {
             color: item,
-            percentage: (index + 1) * partNum
+            percentage: (index2 + 1) * partNum
           };
         });
         showPercent.value > percentage ? (
@@ -417,11 +381,11 @@ if (uni.restoreGlobal) {
           })
         ) : (
           // 增加使用分段动画
-          partList.some((part, index) => {
+          partList.some((part, index2) => {
             if (showPercent.value < part.percentage && part.percentage <= percentage) {
               update(part.percentage, part.color);
               return true;
-            } else if (index === partList.length - 1) {
+            } else if (index2 === partList.length - 1) {
               update(percentage, part.color);
             }
           })
@@ -472,7 +436,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-a240b147"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-progress/wd-progress.vue"]]);
   const fontData = [
     {
       "font_class": "arrow-down",
@@ -1123,7 +1087,7 @@ if (uni.restoreGlobal) {
     const reg = /^[0-9]*$/g;
     return typeof val === "number" || reg.test(val) ? val + "px" : val;
   };
-  const _sfc_main$a = {
+  const _sfc_main$9 = {
     name: "UniIcons",
     emits: ["click"],
     props: {
@@ -1192,8 +1156,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$6], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
-  const _sfc_main$9 = {
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$6], ["__scopeId", "data-v-d31e1c47"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const _sfc_main$8 = {
     name: "UniStatusBar",
     data() {
       return {
@@ -1218,9 +1182,9 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$5], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
+  const statusBar = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$5], ["__scopeId", "data-v-7920e3e0"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar.vue"]]);
   const getVal = (val) => typeof val === "number" ? val + "px" : val;
-  const _sfc_main$8 = {
+  const _sfc_main$7 = {
     name: "UniNavBar",
     components: {
       statusBar
@@ -1342,7 +1306,7 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_status_bar = vue.resolveComponent("status-bar");
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2$1);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1495,7 +1459,7 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$4], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$4], ["__scopeId", "data-v-26544265"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue"]]);
   var pattern = {
     email: /^\S+?@\S+?\.\S+?$/,
     idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
@@ -1611,7 +1575,7 @@ if (uni.restoreGlobal) {
     constructor(message) {
       this._message = message;
     }
-    async validateRule(fieldKey, fieldValue, value, data, allData) {
+    async validateRule(fieldKey, fieldValue, value, data2, allData) {
       var result = null;
       let rules = fieldValue.rules;
       let hasRequired = rules.findIndex((item) => {
@@ -1650,7 +1614,7 @@ if (uni.restoreGlobal) {
           }
         }
         if (rule.validateFunction) {
-          result = await this.validateFunction(rule, value, data, allData, vt);
+          result = await this.validateFunction(rule, value, data2, allData, vt);
           if (result !== null) {
             break;
           }
@@ -1661,11 +1625,11 @@ if (uni.restoreGlobal) {
       }
       return result;
     }
-    async validateFunction(rule, value, data, allData, vt) {
+    async validateFunction(rule, value, data2, allData, vt) {
       let result = null;
       try {
         let callbackMessage = null;
-        const res = await rule.validateFunction(rule, value, allData || data, (message) => {
+        const res = await rule.validateFunction(rule, value, allData || data2, (message) => {
           callbackMessage = message;
         });
         if (callbackMessage || typeof res === "string" && res || res === false) {
@@ -1713,20 +1677,20 @@ if (uni.restoreGlobal) {
         range,
         errorMessage
       } = rule;
-      let list = new Array(range.length);
+      let list2 = new Array(range.length);
       for (let i = 0; i < range.length; i++) {
         const item = range[i];
         if (types.object(item) && item.value !== void 0) {
-          list[i] = item.value;
+          list2[i] = item.value;
         } else {
-          list[i] = item;
+          list2[i] = item;
         }
       }
       let result = false;
       if (Array.isArray(value)) {
-        result = new Set(value.concat(list)).size === list.length;
+        result = new Set(value.concat(list2)).size === list2.length;
       } else {
-        if (list.indexOf(value) > -1) {
+        if (list2.indexOf(value) > -1) {
           result = true;
         }
       }
@@ -1811,33 +1775,33 @@ if (uni.restoreGlobal) {
     updateSchema(schema) {
       this._schema = schema;
     }
-    async validate(data, allData) {
-      let result = this._checkFieldInSchema(data);
+    async validate(data2, allData) {
+      let result = this._checkFieldInSchema(data2);
       if (!result) {
-        result = await this.invokeValidate(data, false, allData);
+        result = await this.invokeValidate(data2, false, allData);
       }
       return result.length ? result[0] : null;
     }
-    async validateAll(data, allData) {
-      let result = this._checkFieldInSchema(data);
+    async validateAll(data2, allData) {
+      let result = this._checkFieldInSchema(data2);
       if (!result) {
-        result = await this.invokeValidate(data, true, allData);
+        result = await this.invokeValidate(data2, true, allData);
       }
       return result;
     }
-    async validateUpdate(data, allData) {
-      let result = this._checkFieldInSchema(data);
+    async validateUpdate(data2, allData) {
+      let result = this._checkFieldInSchema(data2);
       if (!result) {
-        result = await this.invokeValidateUpdate(data, false, allData);
+        result = await this.invokeValidateUpdate(data2, false, allData);
       }
       return result.length ? result[0] : null;
     }
-    async invokeValidate(data, all, allData) {
+    async invokeValidate(data2, all, allData) {
       let result = [];
       let schema = this._schema;
       for (let key in schema) {
         let value = schema[key];
-        let errorMessage = await this.validateRule(key, value, data[key], data, allData);
+        let errorMessage = await this.validateRule(key, value, data2[key], data2, allData);
         if (errorMessage != null) {
           result.push({
             key,
@@ -1849,10 +1813,10 @@ if (uni.restoreGlobal) {
       }
       return result;
     }
-    async invokeValidateUpdate(data, all, allData) {
+    async invokeValidateUpdate(data2, all, allData) {
       let result = [];
-      for (let key in data) {
-        let errorMessage = await this.validateRule(key, this._schema[key], data[key], data, allData);
+      for (let key in data2) {
+        let errorMessage = await this.validateRule(key, this._schema[key], data2[key], data2, allData);
         if (errorMessage != null) {
           result.push({
             key,
@@ -1864,8 +1828,8 @@ if (uni.restoreGlobal) {
       }
       return result;
     }
-    _checkFieldInSchema(data) {
-      var keys = Object.keys(data);
+    _checkFieldInSchema(data2) {
+      var keys = Object.keys(data2);
       var keys2 = Object.keys(this._schema);
       if (new Set(keys.concat(keys2)).size === keys2.length) {
         return "";
@@ -1941,10 +1905,10 @@ if (uni.restoreGlobal) {
     formdata[field] = value;
     return value || "";
   };
-  const getDataValue = (field, data) => {
-    return objGet(data, field);
+  const getDataValue = (field, data2) => {
+    return objGet(data2, field);
   };
-  const realName = (name, data = {}) => {
+  const realName = (name, data2 = {}) => {
     const base_name = _basePath(name);
     if (typeof base_name === "object" && Array.isArray(base_name) && base_name.length > 1) {
       const realname = base_name.reduce((a, b) => a += `#${b}`, "_formdata_");
@@ -2059,7 +2023,7 @@ if (uni.restoreGlobal) {
       return false;
     }
   };
-  const _sfc_main$7 = {
+  const _sfc_main$6 = {
     name: "uniForms",
     emits: ["validate", "submit"],
     options: {
@@ -2363,7 +2327,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$3], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$3], ["__scopeId", "data-v-9a1e3c32"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-forms/components/uni-forms/uni-forms.vue"]]);
   const _b64chars = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"];
   const _mkUriSafe = (src) => src.replace(/[+/]/g, (m0) => m0 === "+" ? "-" : "_").replace(/=+\$/m, "");
   const fromUint8Array = (src, rfc4648 = false) => {
@@ -2469,7 +2433,7 @@ if (uni.restoreGlobal) {
      */
     showMessageCard: Boolean
   };
-  const __default__$2 = {
+  const __default__$1 = {
     name: "wd-button",
     options: {
       addGlobalClass: true,
@@ -2477,8 +2441,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$2,
+  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent({
+    ...__default__$1,
     props: buttonProps,
     emits: [
       "click",
@@ -2632,7 +2596,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-d858c170"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-d858c170"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-button/wd-button.vue"]]);
   function isVNode(value) {
     return value ? value.__v_isVNode === true : false;
   }
@@ -2659,11 +2623,11 @@ if (uni.restoreGlobal) {
     return result;
   }
   const findVNodeIndex = (vnodes, vnode) => {
-    const index = vnodes.indexOf(vnode);
-    if (index === -1) {
+    const index2 = vnodes.indexOf(vnode);
+    if (index2 === -1) {
       return vnodes.findIndex((item) => vnode.key !== void 0 && vnode.key !== null && item.type === vnode.type && item.key === vnode.key);
     }
-    return index;
+    return index2;
   };
   function sortChildren(parent, publicChildren, internalChildren) {
     const vnodes = parent && parent.subTree && parent.subTree.children ? flattenVNodes(parent.subTree.children) : [];
@@ -2688,9 +2652,9 @@ if (uni.restoreGlobal) {
         }
       };
       const unlink = (child) => {
-        const index = internalChildren.indexOf(child);
-        publicChildren.splice(index, 1);
-        internalChildren.splice(index, 1);
+        const index2 = internalChildren.indexOf(child);
+        publicChildren.splice(index2, 1);
+        internalChildren.splice(index2, 1);
       };
       vue.provide(
         key,
@@ -2750,7 +2714,7 @@ if (uni.restoreGlobal) {
      */
     zIndex: makeNumberProp(99)
   };
-  const __default__$1 = {
+  const __default__ = {
     name: "wd-tabbar",
     options: {
       addGlobalClass: true,
@@ -2758,8 +2722,8 @@ if (uni.restoreGlobal) {
       styleIsolation: "shared"
     }
   };
-  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__$1,
+  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
+    ...__default__,
     props: tabbarProps,
     emits: ["change", "update:modelValue"],
     setup(__props, { emit: __emit }) {
@@ -2835,454 +2799,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-70467ab8"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
-  const zhCN = {
-    calendar: {
-      placeholder: "请选择",
-      title: "选择日期",
-      day: "日",
-      week: "周",
-      month: "月",
-      confirm: "确定",
-      startTime: "开始时间",
-      endTime: "结束时间",
-      to: "至",
-      timeFormat: "YY年MM月DD日 HH:mm:ss",
-      dateFormat: "YYYY年MM月DD日",
-      weekFormat: (year, week) => `${year} 第 ${week} 周`,
-      startWeek: "开始周",
-      endWeek: "结束周",
-      startMonth: "开始月",
-      endMonth: "结束月",
-      monthFormat: "YYYY年MM月"
-    },
-    calendarView: {
-      startTime: "开始",
-      endTime: "结束",
-      weeks: {
-        sun: "日",
-        mon: "一",
-        tue: "二",
-        wed: "三",
-        thu: "四",
-        fri: "五",
-        sat: "六"
-      },
-      rangePrompt: (maxRange) => `选择天数不能超过${maxRange}天`,
-      rangePromptWeek: (maxRange) => `选择周数不能超过${maxRange}周`,
-      rangePromptMonth: (maxRange) => `选择月份不能超过${maxRange}个月`,
-      monthTitle: "YYYY年M月",
-      yearTitle: "YYYY年",
-      month: "M月",
-      hour: (value) => `${value}时`,
-      minute: (value) => `${value}分`,
-      second: (value) => `${value}秒`
-    },
-    collapse: {
-      expand: "展开",
-      retract: "收起"
-    },
-    colPicker: {
-      title: "请选择",
-      placeholder: "请选择",
-      select: "请选择"
-    },
-    datetimePicker: {
-      start: "开始时间",
-      end: "结束时间",
-      to: "至",
-      placeholder: "请选择",
-      confirm: "完成",
-      cancel: "取消"
-    },
-    loadmore: {
-      loading: "正在努力加载中...",
-      finished: "已加载完毕",
-      error: "加载失败",
-      retry: "点击重试"
-    },
-    messageBox: {
-      inputPlaceholder: "请输入",
-      confirm: "确定",
-      cancel: "取消",
-      inputNoValidate: "输入的数据不合法"
-    },
-    numberKeyboard: {
-      confirm: "完成"
-    },
-    pagination: {
-      prev: "上一页",
-      next: "下一页",
-      page: (value) => `当前页：${value}`,
-      total: (total) => `当前数据：${total}条`,
-      size: (size) => `分页大小：${size}`
-    },
-    picker: {
-      cancel: "取消",
-      done: "完成",
-      placeholder: "请选择"
-    },
-    imgCropper: {
-      confirm: "完成",
-      cancel: "取消"
-    },
-    search: {
-      search: "搜索",
-      cancel: "取消"
-    },
-    steps: {
-      wait: "未开始",
-      finished: "已完成",
-      process: "进行中",
-      failed: "失败"
-    },
-    tabs: {
-      all: "全部"
-    },
-    upload: {
-      error: "上传失败"
-    },
-    input: {
-      placeholder: "请输入..."
-    },
-    selectPicker: {
-      title: "请选择",
-      placeholder: "请选择",
-      select: "请选择",
-      confirm: "确认",
-      filterPlaceholder: "搜索"
-    },
-    tag: {
-      placeholder: "请输入",
-      add: "新增标签"
-    },
-    textarea: {
-      placeholder: "请输入..."
-    },
-    tableCol: {
-      indexLabel: "序号"
-    }
-  };
-  const lang = vue.ref("zh-CN");
-  const messages$1 = vue.reactive({
-    "zh-CN": zhCN
-  });
-  const Locale = {
-    messages() {
-      return messages$1[lang.value];
-    },
-    use(newLang, newMessage) {
-      lang.value = newLang;
-      if (newMessage) {
-        this.add({ [newLang]: newMessage });
-      }
-    },
-    add(newMessages = {}) {
-      deepAssign(messages$1, newMessages);
-    }
-  };
-  const useTranslate = (name) => {
-    const prefix = name ? camelCase(name) + "." : "";
-    const translate = (key, ...args) => {
-      const currentMessages = Locale.messages();
-      const message = getPropByPath(currentMessages, prefix + key);
-      return isFunction(message) ? message(...args) : message;
-    };
-    return { translate };
-  };
-  const searchProps = {
-    ...baseProps,
-    /**
-     * 输入框内容，双向绑定
-     * 类型: string
-     * 默认值: ''
-     */
-    modelValue: makeStringProp(""),
-    /**
-     * 是否使用输入框右侧插槽
-     * 类型: boolean
-     * 默认值: false
-     * @deprecated 该属性已废弃，将在下一个minor版本被移除，直接使用插槽即可
-     */
-    useSuffixSlot: makeBooleanProp(false),
-    /**
-     * 搜索框占位文本
-     * 类型: string
-     */
-    placeholder: String,
-    /**
-     * 搜索框右侧文本
-     * 类型: string
-     */
-    cancelTxt: String,
-    /**
-     * 搜索框亮色（白色）
-     * 类型: boolean
-     * 默认值: false
-     */
-    light: makeBooleanProp(false),
-    /**
-     * 是否隐藏右侧文本
-     * 类型: boolean
-     * 默认值: false
-     */
-    hideCancel: makeBooleanProp(false),
-    /**
-     * 是否禁用搜索框
-     * 类型: boolean
-     * 默认值: false
-     */
-    disabled: makeBooleanProp(false),
-    /**
-     * 原生属性，设置最大长度。-1 表示无限制
-     * 类型: string / number
-     * 默认值: -1
-     */
-    maxlength: makeNumericProp(-1),
-    /**
-     * placeholder 居左边
-     * 类型: boolean
-     * 默认值: false
-     */
-    placeholderLeft: makeBooleanProp(false),
-    /**
-     * 是否自动聚焦
-     * 类型: boolean
-     * 默认值: false
-     * 最低版本: 0.1.63
-     */
-    focus: makeBooleanProp(false),
-    /**
-     * 是否在点击清除按钮时聚焦输入框
-     * 类型: boolean
-     * 默认值: false
-     * 最低版本: 0.1.63
-     */
-    focusWhenClear: makeBooleanProp(false)
-  };
-  const __default__ = {
-    name: "wd-search",
-    options: {
-      virtualHost: true,
-      addGlobalClass: true,
-      styleIsolation: "shared"
-    }
-  };
-  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
-    ...__default__,
-    props: searchProps,
-    emits: ["update:modelValue", "change", "clear", "search", "focus", "blur", "cancel"],
-    setup(__props, { emit: __emit }) {
-      const props = __props;
-      const emit = __emit;
-      const { translate } = useTranslate("search");
-      const isFocused = vue.ref(false);
-      const showInput = vue.ref(false);
-      const str = vue.ref("");
-      const showPlaceHolder = vue.ref(true);
-      const clearing = vue.ref(false);
-      vue.watch(
-        () => props.modelValue,
-        (newValue) => {
-          str.value = newValue;
-          if (newValue) {
-            showInput.value = true;
-          }
-        },
-        { immediate: true }
-      );
-      vue.watch(
-        () => props.focus,
-        (newValue) => {
-          if (newValue) {
-            if (props.disabled)
-              return;
-            closeCover();
-          }
-        }
-      );
-      vue.onMounted(() => {
-        if (props.focus) {
-          closeCover();
-        }
-      });
-      const rootClass = vue.computed(() => {
-        return `wd-search  ${props.light ? "is-light" : ""}  ${props.hideCancel ? "is-without-cancel" : ""} ${props.customClass}`;
-      });
-      const coverStyle = vue.computed(() => {
-        const coverStyle2 = {
-          display: str.value === "" && showPlaceHolder.value ? "flex" : "none"
-        };
-        return objToStyle(coverStyle2);
-      });
-      function hackFocus(focus) {
-        showInput.value = focus;
-        requestAnimationFrame(() => {
-          isFocused.value = focus;
-        });
-      }
-      function closeCover() {
-        if (props.disabled)
-          return;
-        requestAnimationFrame().then(() => requestAnimationFrame()).then(() => requestAnimationFrame()).then(() => {
-          showPlaceHolder.value = false;
-          hackFocus(true);
-        });
-      }
-      function inputValue(event) {
-        str.value = event.detail.value;
-        emit("update:modelValue", event.detail.value);
-        emit("change", {
-          value: event.detail.value
-        });
-      }
-      function clearSearch() {
-        str.value = "";
-        clearing.value = true;
-        if (props.focusWhenClear) {
-          isFocused.value = false;
-        }
-        requestAnimationFrame().then(() => requestAnimationFrame()).then(() => requestAnimationFrame()).then(() => {
-          if (props.focusWhenClear) {
-            showPlaceHolder.value = false;
-            hackFocus(true);
-          } else {
-            showPlaceHolder.value = true;
-            hackFocus(false);
-          }
-          emit("change", {
-            value: ""
-          });
-          emit("update:modelValue", "");
-          emit("clear");
-        });
-      }
-      function search({ detail: { value } }) {
-        emit("search", {
-          value
-        });
-      }
-      function searchFocus() {
-        if (clearing.value) {
-          clearing.value = false;
-          return;
-        }
-        showPlaceHolder.value = false;
-        emit("focus", {
-          value: str.value
-        });
-      }
-      function searchBlur() {
-        if (clearing.value)
-          return;
-        showPlaceHolder.value = !str.value;
-        showInput.value = !showPlaceHolder.value;
-        isFocused.value = false;
-        emit("blur", {
-          value: str.value
-        });
-      }
-      function handleCancel() {
-        emit("cancel", {
-          value: str.value
-        });
-      }
-      return (_ctx, _cache) => {
-        const _component_wd_icon = resolveEasycom(vue.resolveDynamicComponent("wd-icon"), __easycom_0$1);
-        return vue.openBlock(), vue.createElementBlock(
-          "view",
-          {
-            class: vue.normalizeClass(rootClass.value),
-            style: vue.normalizeStyle(_ctx.customStyle)
-          },
-          [
-            vue.createCommentVNode("自定义label插槽"),
-            vue.createCommentVNode("搜索框主体"),
-            vue.createElementVNode("view", { class: "wd-search__block" }, [
-              vue.renderSlot(_ctx.$slots, "prefix", {}, void 0, true),
-              vue.createElementVNode("view", { class: "wd-search__field" }, [
-                !_ctx.placeholderLeft ? (vue.openBlock(), vue.createElementBlock(
-                  "view",
-                  {
-                    key: 0,
-                    style: vue.normalizeStyle(coverStyle.value),
-                    class: "wd-search__cover",
-                    onClick: closeCover
-                  },
-                  [
-                    vue.createVNode(_component_wd_icon, {
-                      name: "search",
-                      size: "18px",
-                      "custom-class": "wd-search__search-icon"
-                    }),
-                    vue.createElementVNode(
-                      "text",
-                      { class: "wd-search__placeholder-txt" },
-                      vue.toDisplayString(_ctx.placeholder || vue.unref(translate)("search")),
-                      1
-                      /* TEXT */
-                    )
-                  ],
-                  4
-                  /* STYLE */
-                )) : vue.createCommentVNode("v-if", true),
-                vue.createCommentVNode("icon:search"),
-                showInput.value || str.value || _ctx.placeholderLeft ? (vue.openBlock(), vue.createBlock(_component_wd_icon, {
-                  key: 1,
-                  name: "search",
-                  size: "18px",
-                  "custom-class": "wd-search__search-left-icon"
-                })) : vue.createCommentVNode("v-if", true),
-                vue.createCommentVNode("搜索框"),
-                showInput.value || str.value || _ctx.placeholderLeft ? vue.withDirectives((vue.openBlock(), vue.createElementBlock("input", {
-                  key: 2,
-                  placeholder: _ctx.placeholder || vue.unref(translate)("search"),
-                  "placeholder-class": "wd-search__placeholder-txt",
-                  "confirm-type": "search",
-                  "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => str.value = $event),
-                  class: "wd-search__input",
-                  onFocus: searchFocus,
-                  onInput: inputValue,
-                  onBlur: searchBlur,
-                  onConfirm: search,
-                  disabled: _ctx.disabled,
-                  maxlength: _ctx.maxlength,
-                  focus: isFocused.value
-                }, null, 40, ["placeholder", "disabled", "maxlength", "focus"])), [
-                  [vue.vModelText, str.value]
-                ]) : vue.createCommentVNode("v-if", true),
-                vue.createCommentVNode("icon:clear"),
-                str.value ? (vue.openBlock(), vue.createBlock(_component_wd_icon, {
-                  key: 3,
-                  "custom-class": "wd-search__clear wd-search__clear-icon",
-                  name: "error-fill",
-                  size: "16px",
-                  onClick: clearSearch
-                })) : vue.createCommentVNode("v-if", true)
-              ])
-            ]),
-            vue.createCommentVNode("the button behind input,care for hideCancel without displaying"),
-            !_ctx.hideCancel ? vue.renderSlot(_ctx.$slots, "suffix", { key: 0 }, () => [
-              vue.createCommentVNode("默认button"),
-              vue.createElementVNode(
-                "view",
-                {
-                  class: "wd-search__cancel",
-                  onClick: handleCancel
-                },
-                vue.toDisplayString(_ctx.cancelTxt || vue.unref(translate)("cancel")),
-                1
-                /* TEXT */
-              )
-            ], true) : vue.createCommentVNode("v-if", true)
-          ],
-          6
-          /* CLASS, STYLE */
-        );
-      };
-    }
-  });
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-cc0202be"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-search/wd-search.vue"]]);
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-70467ab8"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/wot-design-uni/components/wd-tabbar/wd-tabbar.vue"]]);
   const isObject = (val) => val !== null && typeof val === "object";
   const defaultDelimiters = ["{", "}"];
   class BaseFormatter {
@@ -3332,13 +2849,13 @@ if (uni.restoreGlobal) {
   }
   function compile(tokens, values) {
     const compiled = [];
-    let index = 0;
+    let index2 = 0;
     const mode = Array.isArray(values) ? "list" : isObject(values) ? "named" : "unknown";
     if (mode === "unknown") {
       return compiled;
     }
-    while (index < tokens.length) {
-      const token = tokens[index];
+    while (index2 < tokens.length) {
+      const token = tokens[index2];
       switch (token.type) {
         case "text":
           compiled.push(token.value);
@@ -3361,7 +2878,7 @@ if (uni.restoreGlobal) {
           }
           break;
       }
-      index++;
+      index2++;
     }
     return compiled;
   }
@@ -3407,9 +2924,9 @@ if (uni.restoreGlobal) {
     if (messages2 && Object.keys(messages2).length > 0) {
       locales = Object.keys(messages2);
     }
-    const lang2 = startsWith(locale, locales);
-    if (lang2) {
-      return lang2;
+    const lang = startsWith(locale, locales);
+    if (lang) {
+      return lang;
     }
   }
   class I18n {
@@ -3446,9 +2963,9 @@ if (uni.restoreGlobal) {
       return this.locale;
     }
     watchLocale(fn) {
-      const index = this.watchers.push(fn) - 1;
+      const index2 = this.watchers.push(fn) - 1;
       return () => {
-        this.watchers.splice(index, 1);
+        this.watchers.splice(index2, 1);
       };
     }
     add(locale, message, override = true) {
@@ -3732,7 +3249,7 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2$1);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "uni-searchbar" }, [
       vue.createElementVNode(
         "view",
@@ -3807,117 +3324,1699 @@ if (uni.restoreGlobal) {
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-f07ef577"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-f07ef577"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue"]]);
+  var data = {
+    AC: {
+      code: "AC",
+      unicode: "U+1F1E6 U+1F1E8",
+      name: "Ascension Island",
+      emoji: "🇦🇨"
+    },
+    AD: {
+      code: "AD",
+      unicode: "U+1F1E6 U+1F1E9",
+      name: "Andorra",
+      emoji: "🇦🇩"
+    },
+    AE: {
+      code: "AE",
+      unicode: "U+1F1E6 U+1F1EA",
+      name: "United Arab Emirates",
+      emoji: "🇦🇪"
+    },
+    AF: {
+      code: "AF",
+      unicode: "U+1F1E6 U+1F1EB",
+      name: "Afghanistan",
+      emoji: "🇦🇫"
+    },
+    AG: {
+      code: "AG",
+      unicode: "U+1F1E6 U+1F1EC",
+      name: "Antigua & Barbuda",
+      emoji: "🇦🇬"
+    },
+    AI: {
+      code: "AI",
+      unicode: "U+1F1E6 U+1F1EE",
+      name: "Anguilla",
+      emoji: "🇦🇮"
+    },
+    AL: {
+      code: "AL",
+      unicode: "U+1F1E6 U+1F1F1",
+      name: "Albania",
+      emoji: "🇦🇱"
+    },
+    AM: {
+      code: "AM",
+      unicode: "U+1F1E6 U+1F1F2",
+      name: "Armenia",
+      emoji: "🇦🇲"
+    },
+    AO: {
+      code: "AO",
+      unicode: "U+1F1E6 U+1F1F4",
+      name: "Angola",
+      emoji: "🇦🇴"
+    },
+    AQ: {
+      code: "AQ",
+      unicode: "U+1F1E6 U+1F1F6",
+      name: "Antarctica",
+      emoji: "🇦🇶"
+    },
+    AR: {
+      code: "AR",
+      unicode: "U+1F1E6 U+1F1F7",
+      name: "Argentina",
+      emoji: "🇦🇷"
+    },
+    AS: {
+      code: "AS",
+      unicode: "U+1F1E6 U+1F1F8",
+      name: "American Samoa",
+      emoji: "🇦🇸"
+    },
+    AT: {
+      code: "AT",
+      unicode: "U+1F1E6 U+1F1F9",
+      name: "Austria",
+      emoji: "🇦🇹"
+    },
+    AU: {
+      code: "AU",
+      unicode: "U+1F1E6 U+1F1FA",
+      name: "Australia",
+      emoji: "🇦🇺"
+    },
+    AW: {
+      code: "AW",
+      unicode: "U+1F1E6 U+1F1FC",
+      name: "Aruba",
+      emoji: "🇦🇼"
+    },
+    AX: {
+      code: "AX",
+      unicode: "U+1F1E6 U+1F1FD",
+      name: "Åland Islands",
+      emoji: "🇦🇽"
+    },
+    AZ: {
+      code: "AZ",
+      unicode: "U+1F1E6 U+1F1FF",
+      name: "Azerbaijan",
+      emoji: "🇦🇿"
+    },
+    BA: {
+      code: "BA",
+      unicode: "U+1F1E7 U+1F1E6",
+      name: "Bosnia & Herzegovina",
+      emoji: "🇧🇦"
+    },
+    BB: {
+      code: "BB",
+      unicode: "U+1F1E7 U+1F1E7",
+      name: "Barbados",
+      emoji: "🇧🇧"
+    },
+    BD: {
+      code: "BD",
+      unicode: "U+1F1E7 U+1F1E9",
+      name: "Bangladesh",
+      emoji: "🇧🇩"
+    },
+    BE: {
+      code: "BE",
+      unicode: "U+1F1E7 U+1F1EA",
+      name: "Belgium",
+      emoji: "🇧🇪"
+    },
+    BF: {
+      code: "BF",
+      unicode: "U+1F1E7 U+1F1EB",
+      name: "Burkina Faso",
+      emoji: "🇧🇫"
+    },
+    BG: {
+      code: "BG",
+      unicode: "U+1F1E7 U+1F1EC",
+      name: "Bulgaria",
+      emoji: "🇧🇬"
+    },
+    BH: {
+      code: "BH",
+      unicode: "U+1F1E7 U+1F1ED",
+      name: "Bahrain",
+      emoji: "🇧🇭"
+    },
+    BI: {
+      code: "BI",
+      unicode: "U+1F1E7 U+1F1EE",
+      name: "Burundi",
+      emoji: "🇧🇮"
+    },
+    BJ: {
+      code: "BJ",
+      unicode: "U+1F1E7 U+1F1EF",
+      name: "Benin",
+      emoji: "🇧🇯"
+    },
+    BL: {
+      code: "BL",
+      unicode: "U+1F1E7 U+1F1F1",
+      name: "St. Barthélemy",
+      emoji: "🇧🇱"
+    },
+    BM: {
+      code: "BM",
+      unicode: "U+1F1E7 U+1F1F2",
+      name: "Bermuda",
+      emoji: "🇧🇲"
+    },
+    BN: {
+      code: "BN",
+      unicode: "U+1F1E7 U+1F1F3",
+      name: "Brunei",
+      emoji: "🇧🇳"
+    },
+    BO: {
+      code: "BO",
+      unicode: "U+1F1E7 U+1F1F4",
+      name: "Bolivia",
+      emoji: "🇧🇴"
+    },
+    BQ: {
+      code: "BQ",
+      unicode: "U+1F1E7 U+1F1F6",
+      name: "Caribbean Netherlands",
+      emoji: "🇧🇶"
+    },
+    BR: {
+      code: "BR",
+      unicode: "U+1F1E7 U+1F1F7",
+      name: "Brazil",
+      emoji: "🇧🇷"
+    },
+    BS: {
+      code: "BS",
+      unicode: "U+1F1E7 U+1F1F8",
+      name: "Bahamas",
+      emoji: "🇧🇸"
+    },
+    BT: {
+      code: "BT",
+      unicode: "U+1F1E7 U+1F1F9",
+      name: "Bhutan",
+      emoji: "🇧🇹"
+    },
+    BV: {
+      code: "BV",
+      unicode: "U+1F1E7 U+1F1FB",
+      name: "Bouvet Island",
+      emoji: "🇧🇻"
+    },
+    BW: {
+      code: "BW",
+      unicode: "U+1F1E7 U+1F1FC",
+      name: "Botswana",
+      emoji: "🇧🇼"
+    },
+    BY: {
+      code: "BY",
+      unicode: "U+1F1E7 U+1F1FE",
+      name: "Belarus",
+      emoji: "🇧🇾"
+    },
+    BZ: {
+      code: "BZ",
+      unicode: "U+1F1E7 U+1F1FF",
+      name: "Belize",
+      emoji: "🇧🇿"
+    },
+    CA: {
+      code: "CA",
+      unicode: "U+1F1E8 U+1F1E6",
+      name: "Canada",
+      emoji: "🇨🇦"
+    },
+    CC: {
+      code: "CC",
+      unicode: "U+1F1E8 U+1F1E8",
+      name: "Cocos (Keeling) Islands",
+      emoji: "🇨🇨"
+    },
+    CD: {
+      code: "CD",
+      unicode: "U+1F1E8 U+1F1E9",
+      name: "Congo - Kinshasa",
+      emoji: "🇨🇩"
+    },
+    CF: {
+      code: "CF",
+      unicode: "U+1F1E8 U+1F1EB",
+      name: "Central African Republic",
+      emoji: "🇨🇫"
+    },
+    CG: {
+      code: "CG",
+      unicode: "U+1F1E8 U+1F1EC",
+      name: "Congo - Brazzaville",
+      emoji: "🇨🇬"
+    },
+    CH: {
+      code: "CH",
+      unicode: "U+1F1E8 U+1F1ED",
+      name: "Switzerland",
+      emoji: "🇨🇭"
+    },
+    CI: {
+      code: "CI",
+      unicode: "U+1F1E8 U+1F1EE",
+      name: "Côte d’Ivoire",
+      emoji: "🇨🇮"
+    },
+    CK: {
+      code: "CK",
+      unicode: "U+1F1E8 U+1F1F0",
+      name: "Cook Islands",
+      emoji: "🇨🇰"
+    },
+    CL: {
+      code: "CL",
+      unicode: "U+1F1E8 U+1F1F1",
+      name: "Chile",
+      emoji: "🇨🇱"
+    },
+    CM: {
+      code: "CM",
+      unicode: "U+1F1E8 U+1F1F2",
+      name: "Cameroon",
+      emoji: "🇨🇲"
+    },
+    CN: {
+      code: "CN",
+      unicode: "U+1F1E8 U+1F1F3",
+      name: "China",
+      emoji: "🇨🇳"
+    },
+    CO: {
+      code: "CO",
+      unicode: "U+1F1E8 U+1F1F4",
+      name: "Colombia",
+      emoji: "🇨🇴"
+    },
+    CP: {
+      code: "CP",
+      unicode: "U+1F1E8 U+1F1F5",
+      name: "Clipperton Island",
+      emoji: "🇨🇵"
+    },
+    CR: {
+      code: "CR",
+      unicode: "U+1F1E8 U+1F1F7",
+      name: "Costa Rica",
+      emoji: "🇨🇷"
+    },
+    CU: {
+      code: "CU",
+      unicode: "U+1F1E8 U+1F1FA",
+      name: "Cuba",
+      emoji: "🇨🇺"
+    },
+    CV: {
+      code: "CV",
+      unicode: "U+1F1E8 U+1F1FB",
+      name: "Cape Verde",
+      emoji: "🇨🇻"
+    },
+    CW: {
+      code: "CW",
+      unicode: "U+1F1E8 U+1F1FC",
+      name: "Curaçao",
+      emoji: "🇨🇼"
+    },
+    CX: {
+      code: "CX",
+      unicode: "U+1F1E8 U+1F1FD",
+      name: "Christmas Island",
+      emoji: "🇨🇽"
+    },
+    CY: {
+      code: "CY",
+      unicode: "U+1F1E8 U+1F1FE",
+      name: "Cyprus",
+      emoji: "🇨🇾"
+    },
+    CZ: {
+      code: "CZ",
+      unicode: "U+1F1E8 U+1F1FF",
+      name: "Czechia",
+      emoji: "🇨🇿"
+    },
+    DE: {
+      code: "DE",
+      unicode: "U+1F1E9 U+1F1EA",
+      name: "Germany",
+      emoji: "🇩🇪"
+    },
+    DG: {
+      code: "DG",
+      unicode: "U+1F1E9 U+1F1EC",
+      name: "Diego Garcia",
+      emoji: "🇩🇬"
+    },
+    DJ: {
+      code: "DJ",
+      unicode: "U+1F1E9 U+1F1EF",
+      name: "Djibouti",
+      emoji: "🇩🇯"
+    },
+    DK: {
+      code: "DK",
+      unicode: "U+1F1E9 U+1F1F0",
+      name: "Denmark",
+      emoji: "🇩🇰"
+    },
+    DM: {
+      code: "DM",
+      unicode: "U+1F1E9 U+1F1F2",
+      name: "Dominica",
+      emoji: "🇩🇲"
+    },
+    DO: {
+      code: "DO",
+      unicode: "U+1F1E9 U+1F1F4",
+      name: "Dominican Republic",
+      emoji: "🇩🇴"
+    },
+    DZ: {
+      code: "DZ",
+      unicode: "U+1F1E9 U+1F1FF",
+      name: "Algeria",
+      emoji: "🇩🇿"
+    },
+    EA: {
+      code: "EA",
+      unicode: "U+1F1EA U+1F1E6",
+      name: "Ceuta & Melilla",
+      emoji: "🇪🇦"
+    },
+    EC: {
+      code: "EC",
+      unicode: "U+1F1EA U+1F1E8",
+      name: "Ecuador",
+      emoji: "🇪🇨"
+    },
+    EE: {
+      code: "EE",
+      unicode: "U+1F1EA U+1F1EA",
+      name: "Estonia",
+      emoji: "🇪🇪"
+    },
+    EG: {
+      code: "EG",
+      unicode: "U+1F1EA U+1F1EC",
+      name: "Egypt",
+      emoji: "🇪🇬"
+    },
+    EH: {
+      code: "EH",
+      unicode: "U+1F1EA U+1F1ED",
+      name: "Western Sahara",
+      emoji: "🇪🇭"
+    },
+    ER: {
+      code: "ER",
+      unicode: "U+1F1EA U+1F1F7",
+      name: "Eritrea",
+      emoji: "🇪🇷"
+    },
+    ES: {
+      code: "ES",
+      unicode: "U+1F1EA U+1F1F8",
+      name: "Spain",
+      emoji: "🇪🇸"
+    },
+    ET: {
+      code: "ET",
+      unicode: "U+1F1EA U+1F1F9",
+      name: "Ethiopia",
+      emoji: "🇪🇹"
+    },
+    EU: {
+      code: "EU",
+      unicode: "U+1F1EA U+1F1FA",
+      name: "European Union",
+      emoji: "🇪🇺"
+    },
+    FI: {
+      code: "FI",
+      unicode: "U+1F1EB U+1F1EE",
+      name: "Finland",
+      emoji: "🇫🇮"
+    },
+    FJ: {
+      code: "FJ",
+      unicode: "U+1F1EB U+1F1EF",
+      name: "Fiji",
+      emoji: "🇫🇯"
+    },
+    FK: {
+      code: "FK",
+      unicode: "U+1F1EB U+1F1F0",
+      name: "Falkland Islands",
+      emoji: "🇫🇰"
+    },
+    FM: {
+      code: "FM",
+      unicode: "U+1F1EB U+1F1F2",
+      name: "Micronesia",
+      emoji: "🇫🇲"
+    },
+    FO: {
+      code: "FO",
+      unicode: "U+1F1EB U+1F1F4",
+      name: "Faroe Islands",
+      emoji: "🇫🇴"
+    },
+    FR: {
+      code: "FR",
+      unicode: "U+1F1EB U+1F1F7",
+      name: "France",
+      emoji: "🇫🇷"
+    },
+    GA: {
+      code: "GA",
+      unicode: "U+1F1EC U+1F1E6",
+      name: "Gabon",
+      emoji: "🇬🇦"
+    },
+    GB: {
+      code: "GB",
+      unicode: "U+1F1EC U+1F1E7",
+      name: "United Kingdom",
+      emoji: "🇬🇧"
+    },
+    GD: {
+      code: "GD",
+      unicode: "U+1F1EC U+1F1E9",
+      name: "Grenada",
+      emoji: "🇬🇩"
+    },
+    GE: {
+      code: "GE",
+      unicode: "U+1F1EC U+1F1EA",
+      name: "Georgia",
+      emoji: "🇬🇪"
+    },
+    GF: {
+      code: "GF",
+      unicode: "U+1F1EC U+1F1EB",
+      name: "French Guiana",
+      emoji: "🇬🇫"
+    },
+    GG: {
+      code: "GG",
+      unicode: "U+1F1EC U+1F1EC",
+      name: "Guernsey",
+      emoji: "🇬🇬"
+    },
+    GH: {
+      code: "GH",
+      unicode: "U+1F1EC U+1F1ED",
+      name: "Ghana",
+      emoji: "🇬🇭"
+    },
+    GI: {
+      code: "GI",
+      unicode: "U+1F1EC U+1F1EE",
+      name: "Gibraltar",
+      emoji: "🇬🇮"
+    },
+    GL: {
+      code: "GL",
+      unicode: "U+1F1EC U+1F1F1",
+      name: "Greenland",
+      emoji: "🇬🇱"
+    },
+    GM: {
+      code: "GM",
+      unicode: "U+1F1EC U+1F1F2",
+      name: "Gambia",
+      emoji: "🇬🇲"
+    },
+    GN: {
+      code: "GN",
+      unicode: "U+1F1EC U+1F1F3",
+      name: "Guinea",
+      emoji: "🇬🇳"
+    },
+    GP: {
+      code: "GP",
+      unicode: "U+1F1EC U+1F1F5",
+      name: "Guadeloupe",
+      emoji: "🇬🇵"
+    },
+    GQ: {
+      code: "GQ",
+      unicode: "U+1F1EC U+1F1F6",
+      name: "Equatorial Guinea",
+      emoji: "🇬🇶"
+    },
+    GR: {
+      code: "GR",
+      unicode: "U+1F1EC U+1F1F7",
+      name: "Greece",
+      emoji: "🇬🇷"
+    },
+    GS: {
+      code: "GS",
+      unicode: "U+1F1EC U+1F1F8",
+      name: "South Georgia & South Sandwich Islands",
+      emoji: "🇬🇸"
+    },
+    GT: {
+      code: "GT",
+      unicode: "U+1F1EC U+1F1F9",
+      name: "Guatemala",
+      emoji: "🇬🇹"
+    },
+    GU: {
+      code: "GU",
+      unicode: "U+1F1EC U+1F1FA",
+      name: "Guam",
+      emoji: "🇬🇺"
+    },
+    GW: {
+      code: "GW",
+      unicode: "U+1F1EC U+1F1FC",
+      name: "Guinea-Bissau",
+      emoji: "🇬🇼"
+    },
+    GY: {
+      code: "GY",
+      unicode: "U+1F1EC U+1F1FE",
+      name: "Guyana",
+      emoji: "🇬🇾"
+    },
+    HK: {
+      code: "HK",
+      unicode: "U+1F1ED U+1F1F0",
+      name: "Hong Kong SAR China",
+      emoji: "🇭🇰"
+    },
+    HM: {
+      code: "HM",
+      unicode: "U+1F1ED U+1F1F2",
+      name: "Heard & McDonald Islands",
+      emoji: "🇭🇲"
+    },
+    HN: {
+      code: "HN",
+      unicode: "U+1F1ED U+1F1F3",
+      name: "Honduras",
+      emoji: "🇭🇳"
+    },
+    HR: {
+      code: "HR",
+      unicode: "U+1F1ED U+1F1F7",
+      name: "Croatia",
+      emoji: "🇭🇷"
+    },
+    HT: {
+      code: "HT",
+      unicode: "U+1F1ED U+1F1F9",
+      name: "Haiti",
+      emoji: "🇭🇹"
+    },
+    HU: {
+      code: "HU",
+      unicode: "U+1F1ED U+1F1FA",
+      name: "Hungary",
+      emoji: "🇭🇺"
+    },
+    IC: {
+      code: "IC",
+      unicode: "U+1F1EE U+1F1E8",
+      name: "Canary Islands",
+      emoji: "🇮🇨"
+    },
+    ID: {
+      code: "ID",
+      unicode: "U+1F1EE U+1F1E9",
+      name: "Indonesia",
+      emoji: "🇮🇩"
+    },
+    IE: {
+      code: "IE",
+      unicode: "U+1F1EE U+1F1EA",
+      name: "Ireland",
+      emoji: "🇮🇪"
+    },
+    IL: {
+      code: "IL",
+      unicode: "U+1F1EE U+1F1F1",
+      name: "Israel",
+      emoji: "🇮🇱"
+    },
+    IM: {
+      code: "IM",
+      unicode: "U+1F1EE U+1F1F2",
+      name: "Isle of Man",
+      emoji: "🇮🇲"
+    },
+    IN: {
+      code: "IN",
+      unicode: "U+1F1EE U+1F1F3",
+      name: "India",
+      emoji: "🇮🇳"
+    },
+    IO: {
+      code: "IO",
+      unicode: "U+1F1EE U+1F1F4",
+      name: "British Indian Ocean Territory",
+      emoji: "🇮🇴"
+    },
+    IQ: {
+      code: "IQ",
+      unicode: "U+1F1EE U+1F1F6",
+      name: "Iraq",
+      emoji: "🇮🇶"
+    },
+    IR: {
+      code: "IR",
+      unicode: "U+1F1EE U+1F1F7",
+      name: "Iran",
+      emoji: "🇮🇷"
+    },
+    IS: {
+      code: "IS",
+      unicode: "U+1F1EE U+1F1F8",
+      name: "Iceland",
+      emoji: "🇮🇸"
+    },
+    IT: {
+      code: "IT",
+      unicode: "U+1F1EE U+1F1F9",
+      name: "Italy",
+      emoji: "🇮🇹"
+    },
+    JE: {
+      code: "JE",
+      unicode: "U+1F1EF U+1F1EA",
+      name: "Jersey",
+      emoji: "🇯🇪"
+    },
+    JM: {
+      code: "JM",
+      unicode: "U+1F1EF U+1F1F2",
+      name: "Jamaica",
+      emoji: "🇯🇲"
+    },
+    JO: {
+      code: "JO",
+      unicode: "U+1F1EF U+1F1F4",
+      name: "Jordan",
+      emoji: "🇯🇴"
+    },
+    JP: {
+      code: "JP",
+      unicode: "U+1F1EF U+1F1F5",
+      name: "Japan",
+      emoji: "🇯🇵"
+    },
+    KE: {
+      code: "KE",
+      unicode: "U+1F1F0 U+1F1EA",
+      name: "Kenya",
+      emoji: "🇰🇪"
+    },
+    KG: {
+      code: "KG",
+      unicode: "U+1F1F0 U+1F1EC",
+      name: "Kyrgyzstan",
+      emoji: "🇰🇬"
+    },
+    KH: {
+      code: "KH",
+      unicode: "U+1F1F0 U+1F1ED",
+      name: "Cambodia",
+      emoji: "🇰🇭"
+    },
+    KI: {
+      code: "KI",
+      unicode: "U+1F1F0 U+1F1EE",
+      name: "Kiribati",
+      emoji: "🇰🇮"
+    },
+    KM: {
+      code: "KM",
+      unicode: "U+1F1F0 U+1F1F2",
+      name: "Comoros",
+      emoji: "🇰🇲"
+    },
+    KN: {
+      code: "KN",
+      unicode: "U+1F1F0 U+1F1F3",
+      name: "St. Kitts & Nevis",
+      emoji: "🇰🇳"
+    },
+    KP: {
+      code: "KP",
+      unicode: "U+1F1F0 U+1F1F5",
+      name: "North Korea",
+      emoji: "🇰🇵"
+    },
+    KR: {
+      code: "KR",
+      unicode: "U+1F1F0 U+1F1F7",
+      name: "South Korea",
+      emoji: "🇰🇷"
+    },
+    KW: {
+      code: "KW",
+      unicode: "U+1F1F0 U+1F1FC",
+      name: "Kuwait",
+      emoji: "🇰🇼"
+    },
+    KY: {
+      code: "KY",
+      unicode: "U+1F1F0 U+1F1FE",
+      name: "Cayman Islands",
+      emoji: "🇰🇾"
+    },
+    KZ: {
+      code: "KZ",
+      unicode: "U+1F1F0 U+1F1FF",
+      name: "Kazakhstan",
+      emoji: "🇰🇿"
+    },
+    LA: {
+      code: "LA",
+      unicode: "U+1F1F1 U+1F1E6",
+      name: "Laos",
+      emoji: "🇱🇦"
+    },
+    LB: {
+      code: "LB",
+      unicode: "U+1F1F1 U+1F1E7",
+      name: "Lebanon",
+      emoji: "🇱🇧"
+    },
+    LC: {
+      code: "LC",
+      unicode: "U+1F1F1 U+1F1E8",
+      name: "St. Lucia",
+      emoji: "🇱🇨"
+    },
+    LI: {
+      code: "LI",
+      unicode: "U+1F1F1 U+1F1EE",
+      name: "Liechtenstein",
+      emoji: "🇱🇮"
+    },
+    LK: {
+      code: "LK",
+      unicode: "U+1F1F1 U+1F1F0",
+      name: "Sri Lanka",
+      emoji: "🇱🇰"
+    },
+    LR: {
+      code: "LR",
+      unicode: "U+1F1F1 U+1F1F7",
+      name: "Liberia",
+      emoji: "🇱🇷"
+    },
+    LS: {
+      code: "LS",
+      unicode: "U+1F1F1 U+1F1F8",
+      name: "Lesotho",
+      emoji: "🇱🇸"
+    },
+    LT: {
+      code: "LT",
+      unicode: "U+1F1F1 U+1F1F9",
+      name: "Lithuania",
+      emoji: "🇱🇹"
+    },
+    LU: {
+      code: "LU",
+      unicode: "U+1F1F1 U+1F1FA",
+      name: "Luxembourg",
+      emoji: "🇱🇺"
+    },
+    LV: {
+      code: "LV",
+      unicode: "U+1F1F1 U+1F1FB",
+      name: "Latvia",
+      emoji: "🇱🇻"
+    },
+    LY: {
+      code: "LY",
+      unicode: "U+1F1F1 U+1F1FE",
+      name: "Libya",
+      emoji: "🇱🇾"
+    },
+    MA: {
+      code: "MA",
+      unicode: "U+1F1F2 U+1F1E6",
+      name: "Morocco",
+      emoji: "🇲🇦"
+    },
+    MC: {
+      code: "MC",
+      unicode: "U+1F1F2 U+1F1E8",
+      name: "Monaco",
+      emoji: "🇲🇨"
+    },
+    MD: {
+      code: "MD",
+      unicode: "U+1F1F2 U+1F1E9",
+      name: "Moldova",
+      emoji: "🇲🇩"
+    },
+    ME: {
+      code: "ME",
+      unicode: "U+1F1F2 U+1F1EA",
+      name: "Montenegro",
+      emoji: "🇲🇪"
+    },
+    MF: {
+      code: "MF",
+      unicode: "U+1F1F2 U+1F1EB",
+      name: "St. Martin",
+      emoji: "🇲🇫"
+    },
+    MG: {
+      code: "MG",
+      unicode: "U+1F1F2 U+1F1EC",
+      name: "Madagascar",
+      emoji: "🇲🇬"
+    },
+    MH: {
+      code: "MH",
+      unicode: "U+1F1F2 U+1F1ED",
+      name: "Marshall Islands",
+      emoji: "🇲🇭"
+    },
+    MK: {
+      code: "MK",
+      unicode: "U+1F1F2 U+1F1F0",
+      name: "Macedonia",
+      emoji: "🇲🇰"
+    },
+    ML: {
+      code: "ML",
+      unicode: "U+1F1F2 U+1F1F1",
+      name: "Mali",
+      emoji: "🇲🇱"
+    },
+    MM: {
+      code: "MM",
+      unicode: "U+1F1F2 U+1F1F2",
+      name: "Myanmar (Burma)",
+      emoji: "🇲🇲"
+    },
+    MN: {
+      code: "MN",
+      unicode: "U+1F1F2 U+1F1F3",
+      name: "Mongolia",
+      emoji: "🇲🇳"
+    },
+    MO: {
+      code: "MO",
+      unicode: "U+1F1F2 U+1F1F4",
+      name: "Macau SAR China",
+      emoji: "🇲🇴"
+    },
+    MP: {
+      code: "MP",
+      unicode: "U+1F1F2 U+1F1F5",
+      name: "Northern Mariana Islands",
+      emoji: "🇲🇵"
+    },
+    MQ: {
+      code: "MQ",
+      unicode: "U+1F1F2 U+1F1F6",
+      name: "Martinique",
+      emoji: "🇲🇶"
+    },
+    MR: {
+      code: "MR",
+      unicode: "U+1F1F2 U+1F1F7",
+      name: "Mauritania",
+      emoji: "🇲🇷"
+    },
+    MS: {
+      code: "MS",
+      unicode: "U+1F1F2 U+1F1F8",
+      name: "Montserrat",
+      emoji: "🇲🇸"
+    },
+    MT: {
+      code: "MT",
+      unicode: "U+1F1F2 U+1F1F9",
+      name: "Malta",
+      emoji: "🇲🇹"
+    },
+    MU: {
+      code: "MU",
+      unicode: "U+1F1F2 U+1F1FA",
+      name: "Mauritius",
+      emoji: "🇲🇺"
+    },
+    MV: {
+      code: "MV",
+      unicode: "U+1F1F2 U+1F1FB",
+      name: "Maldives",
+      emoji: "🇲🇻"
+    },
+    MW: {
+      code: "MW",
+      unicode: "U+1F1F2 U+1F1FC",
+      name: "Malawi",
+      emoji: "🇲🇼"
+    },
+    MX: {
+      code: "MX",
+      unicode: "U+1F1F2 U+1F1FD",
+      name: "Mexico",
+      emoji: "🇲🇽"
+    },
+    MY: {
+      code: "MY",
+      unicode: "U+1F1F2 U+1F1FE",
+      name: "Malaysia",
+      emoji: "🇲🇾"
+    },
+    MZ: {
+      code: "MZ",
+      unicode: "U+1F1F2 U+1F1FF",
+      name: "Mozambique",
+      emoji: "🇲🇿"
+    },
+    NA: {
+      code: "NA",
+      unicode: "U+1F1F3 U+1F1E6",
+      name: "Namibia",
+      emoji: "🇳🇦"
+    },
+    NC: {
+      code: "NC",
+      unicode: "U+1F1F3 U+1F1E8",
+      name: "New Caledonia",
+      emoji: "🇳🇨"
+    },
+    NE: {
+      code: "NE",
+      unicode: "U+1F1F3 U+1F1EA",
+      name: "Niger",
+      emoji: "🇳🇪"
+    },
+    NF: {
+      code: "NF",
+      unicode: "U+1F1F3 U+1F1EB",
+      name: "Norfolk Island",
+      emoji: "🇳🇫"
+    },
+    NG: {
+      code: "NG",
+      unicode: "U+1F1F3 U+1F1EC",
+      name: "Nigeria",
+      emoji: "🇳🇬"
+    },
+    NI: {
+      code: "NI",
+      unicode: "U+1F1F3 U+1F1EE",
+      name: "Nicaragua",
+      emoji: "🇳🇮"
+    },
+    NL: {
+      code: "NL",
+      unicode: "U+1F1F3 U+1F1F1",
+      name: "Netherlands",
+      emoji: "🇳🇱"
+    },
+    NO: {
+      code: "NO",
+      unicode: "U+1F1F3 U+1F1F4",
+      name: "Norway",
+      emoji: "🇳🇴"
+    },
+    NP: {
+      code: "NP",
+      unicode: "U+1F1F3 U+1F1F5",
+      name: "Nepal",
+      emoji: "🇳🇵"
+    },
+    NR: {
+      code: "NR",
+      unicode: "U+1F1F3 U+1F1F7",
+      name: "Nauru",
+      emoji: "🇳🇷"
+    },
+    NU: {
+      code: "NU",
+      unicode: "U+1F1F3 U+1F1FA",
+      name: "Niue",
+      emoji: "🇳🇺"
+    },
+    NZ: {
+      code: "NZ",
+      unicode: "U+1F1F3 U+1F1FF",
+      name: "New Zealand",
+      emoji: "🇳🇿"
+    },
+    OM: {
+      code: "OM",
+      unicode: "U+1F1F4 U+1F1F2",
+      name: "Oman",
+      emoji: "🇴🇲"
+    },
+    PA: {
+      code: "PA",
+      unicode: "U+1F1F5 U+1F1E6",
+      name: "Panama",
+      emoji: "🇵🇦"
+    },
+    PE: {
+      code: "PE",
+      unicode: "U+1F1F5 U+1F1EA",
+      name: "Peru",
+      emoji: "🇵🇪"
+    },
+    PF: {
+      code: "PF",
+      unicode: "U+1F1F5 U+1F1EB",
+      name: "French Polynesia",
+      emoji: "🇵🇫"
+    },
+    PG: {
+      code: "PG",
+      unicode: "U+1F1F5 U+1F1EC",
+      name: "Papua New Guinea",
+      emoji: "🇵🇬"
+    },
+    PH: {
+      code: "PH",
+      unicode: "U+1F1F5 U+1F1ED",
+      name: "Philippines",
+      emoji: "🇵🇭"
+    },
+    PK: {
+      code: "PK",
+      unicode: "U+1F1F5 U+1F1F0",
+      name: "Pakistan",
+      emoji: "🇵🇰"
+    },
+    PL: {
+      code: "PL",
+      unicode: "U+1F1F5 U+1F1F1",
+      name: "Poland",
+      emoji: "🇵🇱"
+    },
+    PM: {
+      code: "PM",
+      unicode: "U+1F1F5 U+1F1F2",
+      name: "St. Pierre & Miquelon",
+      emoji: "🇵🇲"
+    },
+    PN: {
+      code: "PN",
+      unicode: "U+1F1F5 U+1F1F3",
+      name: "Pitcairn Islands",
+      emoji: "🇵🇳"
+    },
+    PR: {
+      code: "PR",
+      unicode: "U+1F1F5 U+1F1F7",
+      name: "Puerto Rico",
+      emoji: "🇵🇷"
+    },
+    PS: {
+      code: "PS",
+      unicode: "U+1F1F5 U+1F1F8",
+      name: "Palestinian Territories",
+      emoji: "🇵🇸"
+    },
+    PT: {
+      code: "PT",
+      unicode: "U+1F1F5 U+1F1F9",
+      name: "Portugal",
+      emoji: "🇵🇹"
+    },
+    PW: {
+      code: "PW",
+      unicode: "U+1F1F5 U+1F1FC",
+      name: "Palau",
+      emoji: "🇵🇼"
+    },
+    PY: {
+      code: "PY",
+      unicode: "U+1F1F5 U+1F1FE",
+      name: "Paraguay",
+      emoji: "🇵🇾"
+    },
+    QA: {
+      code: "QA",
+      unicode: "U+1F1F6 U+1F1E6",
+      name: "Qatar",
+      emoji: "🇶🇦"
+    },
+    RE: {
+      code: "RE",
+      unicode: "U+1F1F7 U+1F1EA",
+      name: "Réunion",
+      emoji: "🇷🇪"
+    },
+    RO: {
+      code: "RO",
+      unicode: "U+1F1F7 U+1F1F4",
+      name: "Romania",
+      emoji: "🇷🇴"
+    },
+    RS: {
+      code: "RS",
+      unicode: "U+1F1F7 U+1F1F8",
+      name: "Serbia",
+      emoji: "🇷🇸"
+    },
+    RU: {
+      code: "RU",
+      unicode: "U+1F1F7 U+1F1FA",
+      name: "Russia",
+      emoji: "🇷🇺"
+    },
+    RW: {
+      code: "RW",
+      unicode: "U+1F1F7 U+1F1FC",
+      name: "Rwanda",
+      emoji: "🇷🇼"
+    },
+    SA: {
+      code: "SA",
+      unicode: "U+1F1F8 U+1F1E6",
+      name: "Saudi Arabia",
+      emoji: "🇸🇦"
+    },
+    SB: {
+      code: "SB",
+      unicode: "U+1F1F8 U+1F1E7",
+      name: "Solomon Islands",
+      emoji: "🇸🇧"
+    },
+    SC: {
+      code: "SC",
+      unicode: "U+1F1F8 U+1F1E8",
+      name: "Seychelles",
+      emoji: "🇸🇨"
+    },
+    SD: {
+      code: "SD",
+      unicode: "U+1F1F8 U+1F1E9",
+      name: "Sudan",
+      emoji: "🇸🇩"
+    },
+    SE: {
+      code: "SE",
+      unicode: "U+1F1F8 U+1F1EA",
+      name: "Sweden",
+      emoji: "🇸🇪"
+    },
+    SG: {
+      code: "SG",
+      unicode: "U+1F1F8 U+1F1EC",
+      name: "Singapore",
+      emoji: "🇸🇬"
+    },
+    SH: {
+      code: "SH",
+      unicode: "U+1F1F8 U+1F1ED",
+      name: "St. Helena",
+      emoji: "🇸🇭"
+    },
+    SI: {
+      code: "SI",
+      unicode: "U+1F1F8 U+1F1EE",
+      name: "Slovenia",
+      emoji: "🇸🇮"
+    },
+    SJ: {
+      code: "SJ",
+      unicode: "U+1F1F8 U+1F1EF",
+      name: "Svalbard & Jan Mayen",
+      emoji: "🇸🇯"
+    },
+    SK: {
+      code: "SK",
+      unicode: "U+1F1F8 U+1F1F0",
+      name: "Slovakia",
+      emoji: "🇸🇰"
+    },
+    SL: {
+      code: "SL",
+      unicode: "U+1F1F8 U+1F1F1",
+      name: "Sierra Leone",
+      emoji: "🇸🇱"
+    },
+    SM: {
+      code: "SM",
+      unicode: "U+1F1F8 U+1F1F2",
+      name: "San Marino",
+      emoji: "🇸🇲"
+    },
+    SN: {
+      code: "SN",
+      unicode: "U+1F1F8 U+1F1F3",
+      name: "Senegal",
+      emoji: "🇸🇳"
+    },
+    SO: {
+      code: "SO",
+      unicode: "U+1F1F8 U+1F1F4",
+      name: "Somalia",
+      emoji: "🇸🇴"
+    },
+    SR: {
+      code: "SR",
+      unicode: "U+1F1F8 U+1F1F7",
+      name: "Suriname",
+      emoji: "🇸🇷"
+    },
+    SS: {
+      code: "SS",
+      unicode: "U+1F1F8 U+1F1F8",
+      name: "South Sudan",
+      emoji: "🇸🇸"
+    },
+    ST: {
+      code: "ST",
+      unicode: "U+1F1F8 U+1F1F9",
+      name: "São Tomé & Príncipe",
+      emoji: "🇸🇹"
+    },
+    SV: {
+      code: "SV",
+      unicode: "U+1F1F8 U+1F1FB",
+      name: "El Salvador",
+      emoji: "🇸🇻"
+    },
+    SX: {
+      code: "SX",
+      unicode: "U+1F1F8 U+1F1FD",
+      name: "Sint Maarten",
+      emoji: "🇸🇽"
+    },
+    SY: {
+      code: "SY",
+      unicode: "U+1F1F8 U+1F1FE",
+      name: "Syria",
+      emoji: "🇸🇾"
+    },
+    SZ: {
+      code: "SZ",
+      unicode: "U+1F1F8 U+1F1FF",
+      name: "Swaziland",
+      emoji: "🇸🇿"
+    },
+    TA: {
+      code: "TA",
+      unicode: "U+1F1F9 U+1F1E6",
+      name: "Tristan da Cunha",
+      emoji: "🇹🇦"
+    },
+    TC: {
+      code: "TC",
+      unicode: "U+1F1F9 U+1F1E8",
+      name: "Turks & Caicos Islands",
+      emoji: "🇹🇨"
+    },
+    TD: {
+      code: "TD",
+      unicode: "U+1F1F9 U+1F1E9",
+      name: "Chad",
+      emoji: "🇹🇩"
+    },
+    TF: {
+      code: "TF",
+      unicode: "U+1F1F9 U+1F1EB",
+      name: "French Southern Territories",
+      emoji: "🇹🇫"
+    },
+    TG: {
+      code: "TG",
+      unicode: "U+1F1F9 U+1F1EC",
+      name: "Togo",
+      emoji: "🇹🇬"
+    },
+    TH: {
+      code: "TH",
+      unicode: "U+1F1F9 U+1F1ED",
+      name: "Thailand",
+      emoji: "🇹🇭"
+    },
+    TJ: {
+      code: "TJ",
+      unicode: "U+1F1F9 U+1F1EF",
+      name: "Tajikistan",
+      emoji: "🇹🇯"
+    },
+    TK: {
+      code: "TK",
+      unicode: "U+1F1F9 U+1F1F0",
+      name: "Tokelau",
+      emoji: "🇹🇰"
+    },
+    TL: {
+      code: "TL",
+      unicode: "U+1F1F9 U+1F1F1",
+      name: "Timor-Leste",
+      emoji: "🇹🇱"
+    },
+    TM: {
+      code: "TM",
+      unicode: "U+1F1F9 U+1F1F2",
+      name: "Turkmenistan",
+      emoji: "🇹🇲"
+    },
+    TN: {
+      code: "TN",
+      unicode: "U+1F1F9 U+1F1F3",
+      name: "Tunisia",
+      emoji: "🇹🇳"
+    },
+    TO: {
+      code: "TO",
+      unicode: "U+1F1F9 U+1F1F4",
+      name: "Tonga",
+      emoji: "🇹🇴"
+    },
+    TR: {
+      code: "TR",
+      unicode: "U+1F1F9 U+1F1F7",
+      name: "Turkey",
+      emoji: "🇹🇷"
+    },
+    TT: {
+      code: "TT",
+      unicode: "U+1F1F9 U+1F1F9",
+      name: "Trinidad & Tobago",
+      emoji: "🇹🇹"
+    },
+    TV: {
+      code: "TV",
+      unicode: "U+1F1F9 U+1F1FB",
+      name: "Tuvalu",
+      emoji: "🇹🇻"
+    },
+    TW: {
+      code: "TW",
+      unicode: "U+1F1F9 U+1F1FC",
+      name: "Taiwan",
+      emoji: "🇹🇼"
+    },
+    TZ: {
+      code: "TZ",
+      unicode: "U+1F1F9 U+1F1FF",
+      name: "Tanzania",
+      emoji: "🇹🇿"
+    },
+    UA: {
+      code: "UA",
+      unicode: "U+1F1FA U+1F1E6",
+      name: "Ukraine",
+      emoji: "🇺🇦"
+    },
+    UG: {
+      code: "UG",
+      unicode: "U+1F1FA U+1F1EC",
+      name: "Uganda",
+      emoji: "🇺🇬"
+    },
+    UM: {
+      code: "UM",
+      unicode: "U+1F1FA U+1F1F2",
+      name: "U.S. Outlying Islands",
+      emoji: "🇺🇲"
+    },
+    UN: {
+      code: "UN",
+      unicode: "U+1F1FA U+1F1F3",
+      name: "United Nations",
+      emoji: "🇺🇳"
+    },
+    US: {
+      code: "US",
+      unicode: "U+1F1FA U+1F1F8",
+      name: "United States",
+      emoji: "🇺🇸"
+    },
+    UY: {
+      code: "UY",
+      unicode: "U+1F1FA U+1F1FE",
+      name: "Uruguay",
+      emoji: "🇺🇾"
+    },
+    UZ: {
+      code: "UZ",
+      unicode: "U+1F1FA U+1F1FF",
+      name: "Uzbekistan",
+      emoji: "🇺🇿"
+    },
+    VA: {
+      code: "VA",
+      unicode: "U+1F1FB U+1F1E6",
+      name: "Vatican City",
+      emoji: "🇻🇦"
+    },
+    VC: {
+      code: "VC",
+      unicode: "U+1F1FB U+1F1E8",
+      name: "St. Vincent & Grenadines",
+      emoji: "🇻🇨"
+    },
+    VE: {
+      code: "VE",
+      unicode: "U+1F1FB U+1F1EA",
+      name: "Venezuela",
+      emoji: "🇻🇪"
+    },
+    VG: {
+      code: "VG",
+      unicode: "U+1F1FB U+1F1EC",
+      name: "British Virgin Islands",
+      emoji: "🇻🇬"
+    },
+    VI: {
+      code: "VI",
+      unicode: "U+1F1FB U+1F1EE",
+      name: "U.S. Virgin Islands",
+      emoji: "🇻🇮"
+    },
+    VN: {
+      code: "VN",
+      unicode: "U+1F1FB U+1F1F3",
+      name: "Vietnam",
+      emoji: "🇻🇳"
+    },
+    VU: {
+      code: "VU",
+      unicode: "U+1F1FB U+1F1FA",
+      name: "Vanuatu",
+      emoji: "🇻🇺"
+    },
+    WF: {
+      code: "WF",
+      unicode: "U+1F1FC U+1F1EB",
+      name: "Wallis & Futuna",
+      emoji: "🇼🇫"
+    },
+    WS: {
+      code: "WS",
+      unicode: "U+1F1FC U+1F1F8",
+      name: "Samoa",
+      emoji: "🇼🇸"
+    },
+    XK: {
+      code: "XK",
+      unicode: "U+1F1FD U+1F1F0",
+      name: "Kosovo",
+      emoji: "🇽🇰"
+    },
+    YE: {
+      code: "YE",
+      unicode: "U+1F1FE U+1F1EA",
+      name: "Yemen",
+      emoji: "🇾🇪"
+    },
+    YT: {
+      code: "YT",
+      unicode: "U+1F1FE U+1F1F9",
+      name: "Mayotte",
+      emoji: "🇾🇹"
+    },
+    ZA: {
+      code: "ZA",
+      unicode: "U+1F1FF U+1F1E6",
+      name: "South Africa",
+      emoji: "🇿🇦"
+    },
+    ZM: {
+      code: "ZM",
+      unicode: "U+1F1FF U+1F1F2",
+      name: "Zambia",
+      emoji: "🇿🇲"
+    },
+    ZW: {
+      code: "ZW",
+      unicode: "U+1F1FF U+1F1FC",
+      name: "Zimbabwe",
+      emoji: "🇿🇼"
+    }
+  };
+  const countryCodes = Object.keys(data);
+  const list = Object.values(data);
+  const get = (countryCode) => {
+    if (countryCode === void 0) {
+      return list;
+    }
+    if (typeof countryCode !== "string") {
+      return void 0;
+    }
+    const code = countryCode.toUpperCase();
+    return Object.prototype.hasOwnProperty.call(data, code) ? data[code] : void 0;
+  };
+  var index = {
+    data,
+    countryCodes,
+    list,
+    get
+  };
   const _sfc_main$2 = {
     name: "tuiActionsheet",
+    data() {
+      return {
+        countryArray: index.list,
+        filterCountryArray: index.list,
+        scrollTop: 0,
+        searchValue: ""
+      };
+    },
     props: {
-      //点击遮罩 是否可关闭
-      maskClosable: {
-        type: Boolean,
-        default: true
-      },
-      //显示操作菜单
-      show: {
-        type: Boolean,
-        default: true
-      },
-      //菜单按钮数组，自定义文本颜色，红色参考色：#e53a37
-      itemList: {
-        type: Array,
-        default: function() {
-          return [{
-            text: "确定",
-            color: "#1a1a1a"
-          }];
-        }
-      },
-      //提示文字
-      tips: {
+      title: {
         type: String,
         default: ""
       },
-      //提示文字颜色
-      color: {
+      value: {
         type: String,
-        default: "#9a9a9a"
+        default: ""
       },
-      //提示文字大小 rpx
-      size: {
-        type: Number,
-        default: 26
-      },
-      //是否需要取消按钮
-      isCancel: {
+      //显示操作菜单
+      isModalVisible: {
         type: Boolean,
-        default: true
+        default: false
       }
     },
+    // computed: {
+    // 	filterCountryArray() {
+    // 		if (this.searchValue.trim().length > 0) {
+    // 			return this.countryArray.filter((item) => item.name.toLocaleLowerCase().includes(
+    // 				this.searchValue.toLocaleLowerCase()));
+    // 		}
+    // 		return this.countryArray;
+    // 	}
+    // },
     methods: {
-      handleClickMask() {
-        if (!this.maskClosable)
-          return;
-        this.handleClickCancel();
+      onSearchCountry(e) {
+        formatAppLog("log", "at components/countryActionModal.vue:69", e);
+        if (e.trim().length > 0) {
+          this.filterCountryArray = this.countryArray.filter((item) => item.name.toLocaleLowerCase().includes(
+            e.toLocaleLowerCase()
+          ));
+        } else {
+          this.filterCountryArray = this.countryArray;
+        }
       },
-      handleClickItem(e) {
-        if (!this.show)
-          return;
-        const dataset = e.currentTarget.dataset;
-        this.$emit("click", {
-          index: dataset.index
-        });
+      onClickCollapseIcon() {
+        this.$emit("onClickCollapseIcon", "");
       },
-      handleClickCancel() {
-        this.$emit("chooseCancel");
+      onClickItem(item) {
+        this.$emit("onClickItem", item);
       }
     }
   };
   function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2$1);
-    const _component_wd_search = resolveEasycom(vue.resolveDynamicComponent("wd-search"), __easycom_1);
-    const _component_uni_search_bar = resolveEasycom(vue.resolveDynamicComponent("uni-search-bar"), __easycom_2);
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2);
+    const _component_uni_search_bar = resolveEasycom(vue.resolveDynamicComponent("uni-search-bar"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock("view", null, [
       vue.createElementVNode(
         "view",
         {
-          class: vue.normalizeClass(["country-actionsheet", [$props.show ? "country-actionsheet-show" : ""]])
+          class: vue.normalizeClass(["country-actionsheet", [$props.isModalVisible ? "country-actionsheet-show" : ""]])
         },
         [
           vue.createElementVNode("view", { class: "actionsheet-header" }, [
             vue.createVNode(_component_uni_icons, {
               type: "down",
-              size: "6.4vw"
-            }),
-            vue.createElementVNode("text", { class: "actionsheet-header-title" }, "Languages")
+              size: "6.4vw",
+              onClick: $options.onClickCollapseIcon
+            }, null, 8, ["onClick"]),
+            vue.createElementVNode(
+              "text",
+              { class: "actionsheet-header-title" },
+              vue.toDisplayString($props.title),
+              1
+              /* TEXT */
+            )
           ]),
-          vue.createCommentVNode(` 			<view :class="[isCancel?'country-operate-box':'']">\r
-				<block v-for="(item,index) in itemList" :key="index">\r
-					<view class="country-actionsheet-btn country-actionsheet-divider"\r
-						:class="[(!isCancel && index==itemList.length-1)?'country-btn-last':'']"\r
-						hover-class="country-actionsheet-hover" :hover-stay-time="150" :data-index="index"\r
-						:style="{color:item.color || '#1a1a1a'}" @tap="handleClickItem">{{item.text}}</view>\r
-				</block>\r
-			</view> `),
-          vue.createVNode(_component_wd_search, {
-            class: "country-search-box",
-            placeholder: "Search language",
-            cancelButton: "none"
-          }),
           vue.createElementVNode("view", { class: "actionsheet-body-container" }, [
             vue.createVNode(_component_uni_search_bar, {
+              modelValue: $data.searchValue,
+              "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.searchValue = $event),
               class: "country-search-box",
               placeholder: "Search language",
-              cancelButton: "none"
-            })
-          ]),
-          vue.createCommentVNode(' 			<view class="country-actionsheet-btn country-actionsheet-cancel" hover-class="country-actionsheet-hover"\r\n				:hover-stay-time="150" v-if="isCancel" @tap="handleClickCancel">取消</view> ')
+              cancelButton: "none",
+              radius: "12",
+              onInput: $options.onSearchCountry
+            }, {
+              searchIcon: vue.withCtx(() => [
+                vue.createVNode(_component_uni_icons, {
+                  color: "#999999",
+                  size: "2em",
+                  type: "search"
+                })
+              ]),
+              _: 1
+              /* STABLE */
+            }, 8, ["modelValue", "onInput"]),
+            vue.createElementVNode("scroll-view", {
+              class: "country-list-container",
+              "scroll-y": true,
+              "scroll-top": $data.scrollTop,
+              "scroll-with-animation": true
+            }, [
+              (vue.openBlock(true), vue.createElementBlock(
+                vue.Fragment,
+                null,
+                vue.renderList($data.filterCountryArray, (item) => {
+                  return vue.openBlock(), vue.createElementBlock("view", {
+                    class: vue.normalizeClass(["country-item", item.name == $props.value ? "country-item-selected" : ""]),
+                    onClick: ($event) => $options.onClickItem(item)
+                  }, vue.toDisplayString(item.name) + " " + vue.toDisplayString(item.emoji), 11, ["onClick"]);
+                }),
+                256
+                /* UNKEYED_FRAGMENT */
+              ))
+            ], 8, ["scroll-top"])
+          ])
         ],
         2
         /* CLASS */
-      ),
-      vue.createCommentVNode(` <view class="country-actionsheet-mask" :class="[show?'country-mask-show':'']" @tap="handleClickMask"></view> `)
+      )
     ]);
   }
-  const countryActionModal = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-07c36198"], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/components/countryActionModal.vue"]]);
+  const countryActionModal = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-07c36198"], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/components/countryActionModal.vue"]]);
   const _sfc_main$1 = {
     data() {
       return {
@@ -4013,23 +5112,18 @@ if (uni.restoreGlobal) {
           }
         ],
         registerFormData: {},
-        showActionSheet: {
-          show: false,
-          maskClosable: true,
-          tips: "请选择申请节点身份，不同的节点消耗福卡不同",
-          itemList: [
-            {
-              text: "红包节点",
-              color: "#333"
-            },
-            {
-              text: "广告节点",
-              color: "#333"
-            }
-          ],
-          color: "#9a9a9a",
-          size: 26,
-          isCancel: true
+        countryActionModalObj: {
+          countryValue: {
+            title: "Country/Region",
+            value: ""
+          },
+          translationValue: {
+            title: "Languages",
+            value: ""
+          },
+          title: "",
+          value: "",
+          isCountryActionModalVisible: false
         }
       };
     },
@@ -4055,6 +5149,28 @@ if (uni.restoreGlobal) {
         this.relationshipGoal = value.detail.value;
         this.onCheckPageTurn();
       },
+      onClickCountryLanguageButton(action) {
+        this.countryActionModalObj.isCountryActionModalVisible = !this.countryActionModalObj.isCountryActionModalVisible;
+        if (action == "country") {
+          this.countryActionModalObj.title = this.countryActionModalObj.countryValue.title;
+          this.countryActionModalObj.value = this.countryActionModalObj.countryValue.value;
+        } else if (action == "language") {
+          this.countryActionModalObj.title = this.countryActionModalObj.translationValue.title;
+          this.countryActionModalObj.value = this.countryActionModalObj.translationValue.value;
+        } else {
+          this.countryActionModalObj.title = "";
+          this.countryActionModalObj.value = "";
+        }
+        formatAppLog("log", "at pages/login/registerFormPage.vue:259", this.countryActionModalObj);
+      },
+      onClickCountryLanguageItem(item) {
+        this.countryActionModalObj.value = item.name;
+        if (this.countryActionModalObj.title == "Country/Region") {
+          this.countryActionModalObj.countryValue.value = item.name;
+        } else if (this.countryActionModalObj.title == "Languages") {
+          this.countryActionModalObj.translationValue.value = item.name;
+        }
+      },
       onCheckPageTurn() {
         if (this.progressPercentage == 0) {
           this.isBackButtonDisable = true;
@@ -4065,7 +5181,7 @@ if (uni.restoreGlobal) {
         }
         if (this.progressPercentage == 1) {
           this.isBackButtonDisable = false;
-          formatAppLog("log", "at pages/login/registerFormPage.vue:257", this.nickname, this.birthday);
+          formatAppLog("log", "at pages/login/registerFormPage.vue:281", this.nickname, this.birthday);
           if (this.nickname != "" && !this.birthday.includes(0)) {
             this.isNextButtonDisable = false;
             return true;
@@ -4073,7 +5189,7 @@ if (uni.restoreGlobal) {
         }
         if (this.progressPercentage == 2) {
           this.isBackButtonDisable = false;
-          formatAppLog("log", "at pages/login/registerFormPage.vue:266", this.relationshipGoal);
+          formatAppLog("log", "at pages/login/registerFormPage.vue:290", this.relationshipGoal);
           if (this.relationshipGoal != 0) {
             this.isNextButtonDisable = false;
             return true;
@@ -4087,25 +5203,18 @@ if (uni.restoreGlobal) {
           this.isNextButtonDisable = true;
         } else if (action == "back") {
           this.progressPercentage -= 1;
-          formatAppLog("log", "at pages/login/registerFormPage.vue:281", this.progressPercentage);
+          formatAppLog("log", "at pages/login/registerFormPage.vue:305", this.progressPercentage);
         }
         this.onCheckPageTurn();
-      },
-      chooseMenu() {
-        this.showActionSheet.show = true;
-      },
-      // 弹窗关闭
-      chooseCancel() {
-        this.showActionSheet.show = false;
       }
     }
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_wd_progress = resolveEasycom(vue.resolveDynamicComponent("wd-progress"), __easycom_0);
     const _component_uni_nav_bar = resolveEasycom(vue.resolveDynamicComponent("uni-nav-bar"), __easycom_1$1);
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2$1);
-    const _component_countryActionModal = vue.resolveComponent("countryActionModal");
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_2);
     const _component_uni_forms = resolveEasycom(vue.resolveDynamicComponent("uni-forms"), __easycom_3);
+    const _component_countryActionModal = vue.resolveComponent("countryActionModal");
     const _component_wd_button = resolveEasycom(vue.resolveDynamicComponent("wd-button"), __easycom_4);
     const _component_wd_tabbar = resolveEasycom(vue.resolveDynamicComponent("wd-tabbar"), __easycom_5);
     return vue.openBlock(), vue.createElementBlock(
@@ -4380,24 +5489,22 @@ if (uni.restoreGlobal) {
                       vue.createElementVNode("span", null, [
                         vue.createElementVNode("text", { class: "title-text-24 .nationality-question-text" }, "Where are you from")
                       ]),
-                      vue.createElementVNode("button", { class: "next-button-text-20 nationality-question-button" }, "Choose Country"),
+                      vue.createElementVNode("button", {
+                        class: "next-button-text-20 nationality-question-button",
+                        onClick: _cache[6] || (_cache[6] = () => {
+                          $options.onClickCountryLanguageButton("country");
+                        })
+                      }, " Choose Country "),
                       vue.createElementVNode("span", null, [
                         vue.createElementVNode("text", { class: "title-text-24 nationality-question-text" }, "What is your national language")
                       ]),
-                      vue.createElementVNode("button", { class: "next-button-text-20 nationality-question-button" }, "Choose Country")
-                    ]),
-                    vue.createElementVNode("view", {
-                      style: { "height": "100px", "width": "100px", "border": "1px solid black" },
-                      onClick: _cache[6] || (_cache[6] = (...args) => $options.chooseMenu && $options.chooseMenu(...args))
-                    }),
-                    vue.createVNode(_component_countryActionModal, {
-                      tips: $data.showActionSheet.tips,
-                      itemList: $data.showActionSheet.itemList,
-                      show: true,
-                      maskClosable: $data.showActionSheet.maskClosable,
-                      isCancel: $data.showActionSheet.isCancel,
-                      onChooseCancel: $options.chooseCancel
-                    }, null, 8, ["tips", "itemList", "maskClosable", "isCancel", "onChooseCancel"])
+                      vue.createElementVNode("button", {
+                        class: "next-button-text-20 nationality-question-button",
+                        onClick: _cache[7] || (_cache[7] = () => {
+                          $options.onClickCountryLanguageButton("language");
+                        })
+                      }, " Choose Country ")
+                    ])
                   ],
                   512
                   /* NEED_PATCH */
@@ -4410,6 +5517,13 @@ if (uni.restoreGlobal) {
             }, 8, ["modelValue"])
           ])
         ]),
+        vue.createVNode(_component_countryActionModal, {
+          title: $data.countryActionModalObj.title,
+          value: $data.countryActionModalObj.value,
+          isModalVisible: $data.countryActionModalObj.isCountryActionModalVisible,
+          onOnClickItem: $options.onClickCountryLanguageItem,
+          onOnClickCollapseIcon: $options.onClickCountryLanguageButton
+        }, null, 8, ["title", "value", "isModalVisible", "onOnClickItem", "onOnClickCollapseIcon"]),
         vue.createVNode(_component_wd_tabbar, {
           fixed: "",
           safeAreaInsetBottom: "",
@@ -4420,7 +5534,7 @@ if (uni.restoreGlobal) {
             vue.createVNode(_component_wd_button, {
               disabled: $data.isBackButtonDisable,
               class: "back-button",
-              onClick: _cache[7] || (_cache[7] = ($event) => $options.onPageTurn("back"))
+              onClick: _cache[8] || (_cache[8] = ($event) => $options.onPageTurn("back"))
             }, {
               default: vue.withCtx(() => [
                 vue.createVNode(_component_uni_icons, {
@@ -4434,7 +5548,7 @@ if (uni.restoreGlobal) {
             vue.createVNode(_component_wd_button, {
               disabled: $data.isNextButtonDisable,
               class: "next-button next-button-text-20",
-              onClick: _cache[8] || (_cache[8] = ($event) => $options.onPageTurn("next"))
+              onClick: _cache[9] || (_cache[9] = ($event) => $options.onPageTurn("next"))
             }, {
               default: vue.withCtx(() => [
                 vue.createTextVNode("Next")
@@ -4451,7 +5565,7 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT */
     );
   }
-  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
+  const PagesLoginRegisterFormPage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/pages/login/registerFormPage.vue"]]);
   __definePage("pages/login/registerFormPage", PagesLoginRegisterFormPage);
   const _sfc_main = {
     onLaunch: function() {
@@ -4464,7 +5578,7 @@ if (uni.restoreGlobal) {
       formatAppLog("log", "at App.vue:10", "App Hide");
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/tamyu/OneDrive/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "C:/Users/User/Documents/HBuilderProjects/app_ui_hk/App.vue"]]);
   function createApp() {
     const app = vue.createVueApp(App);
     return {
